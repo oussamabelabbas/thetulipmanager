@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "81164748349",
+    "project_id": "tulip-manager",
+    "storage_bucket": "tulip-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81164748349:android:dd524bc69bdf97c5df0c54",
+        "android_client_info": {
+          "package_name": "com.amabelabbas.thetulipmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81164748349-2vplfn9p2fs9hecp5j3k431fit0esnni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9lyFk4bCi9w5OqceUKTqHsQcqzdl0AJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81164748349-2vplfn9p2fs9hecp5j3k431fit0esnni.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "81164748349-58pc67d8jst68g3hae3thsa7b7l33bpv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.amabelabbas.thetulipmanager"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
