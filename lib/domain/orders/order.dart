@@ -11,15 +11,25 @@ part 'order.freezed.dart';
 @freezed
 class Order with _$Order {
   const factory Order({
-    UniqueId? id,
-    required String orderTitle,
+    UniqueId? orderId,
     required Client client,
-    required String orderDescription,
+    required KtList<OrderTask> orderTasks,
     required DateTime orderDate,
-    required DateTime deliveryDate,
-    required Price price,
-    required KtList<OrderTask> tasks,
-    required bool isDone,
-    required bool isArchived,
+    required DateTime orderDeliveryDate,
+    required Price orderPrice,
+    required OrderState orderState,
   }) = _Order;
+}
+
+enum OrderState {
+  active('Active'),
+  delivered('Delivered'),
+  archived('Archived');
+
+  const OrderState(this.stateName);
+
+  factory OrderState.fromName(String name) =>
+      OrderState.values.firstWhere((state) => state.name == name, orElse: () => OrderState.active);
+
+  final String stateName;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'client.dart';
 
@@ -16,9 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Client {
-  UniqueId get id => throw _privateConstructorUsedError;
-  Name get name => throw _privateConstructorUsedError;
-  PhoneNumber get phoneNumber => throw _privateConstructorUsedError;
+  UniqueId? get clientId => throw _privateConstructorUsedError;
+  PhoneNumber get clientPhoneNumber => throw _privateConstructorUsedError;
+  Name get clientName => throw _privateConstructorUsedError;
+  Wilaya get clientWilaya => throw _privateConstructorUsedError;
+  String get clientAddress => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ClientCopyWith<Client> get copyWith => throw _privateConstructorUsedError;
@@ -29,7 +31,12 @@ abstract class $ClientCopyWith<$Res> {
   factory $ClientCopyWith(Client value, $Res Function(Client) then) =
       _$ClientCopyWithImpl<$Res, Client>;
   @useResult
-  $Res call({UniqueId id, Name name, PhoneNumber phoneNumber});
+  $Res call(
+      {UniqueId? clientId,
+      PhoneNumber clientPhoneNumber,
+      Name clientName,
+      Wilaya clientWilaya,
+      String clientAddress});
 }
 
 /// @nodoc
@@ -45,23 +52,33 @@ class _$ClientCopyWithImpl<$Res, $Val extends Client>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? phoneNumber = null,
+    Object? clientId = freezed,
+    Object? clientPhoneNumber = null,
+    Object? clientName = null,
+    Object? clientWilaya = null,
+    Object? clientAddress = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as UniqueId,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as Name,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
+      clientId: freezed == clientId
+          ? _value.clientId
+          : clientId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
+      clientPhoneNumber: null == clientPhoneNumber
+          ? _value.clientPhoneNumber
+          : clientPhoneNumber // ignore: cast_nullable_to_non_nullable
               as PhoneNumber,
+      clientName: null == clientName
+          ? _value.clientName
+          : clientName // ignore: cast_nullable_to_non_nullable
+              as Name,
+      clientWilaya: null == clientWilaya
+          ? _value.clientWilaya
+          : clientWilaya // ignore: cast_nullable_to_non_nullable
+              as Wilaya,
+      clientAddress: null == clientAddress
+          ? _value.clientAddress
+          : clientAddress // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -72,7 +89,12 @@ abstract class _$$_ClientCopyWith<$Res> implements $ClientCopyWith<$Res> {
       __$$_ClientCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({UniqueId id, Name name, PhoneNumber phoneNumber});
+  $Res call(
+      {UniqueId? clientId,
+      PhoneNumber clientPhoneNumber,
+      Name clientName,
+      Wilaya clientWilaya,
+      String clientAddress});
 }
 
 /// @nodoc
@@ -85,23 +107,33 @@ class __$$_ClientCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? phoneNumber = null,
+    Object? clientId = freezed,
+    Object? clientPhoneNumber = null,
+    Object? clientName = null,
+    Object? clientWilaya = null,
+    Object? clientAddress = null,
   }) {
     return _then(_$_Client(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as UniqueId,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as Name,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
+      clientId: freezed == clientId
+          ? _value.clientId
+          : clientId // ignore: cast_nullable_to_non_nullable
+              as UniqueId?,
+      clientPhoneNumber: null == clientPhoneNumber
+          ? _value.clientPhoneNumber
+          : clientPhoneNumber // ignore: cast_nullable_to_non_nullable
               as PhoneNumber,
+      clientName: null == clientName
+          ? _value.clientName
+          : clientName // ignore: cast_nullable_to_non_nullable
+              as Name,
+      clientWilaya: null == clientWilaya
+          ? _value.clientWilaya
+          : clientWilaya // ignore: cast_nullable_to_non_nullable
+              as Wilaya,
+      clientAddress: null == clientAddress
+          ? _value.clientAddress
+          : clientAddress // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -110,18 +142,26 @@ class __$$_ClientCopyWithImpl<$Res>
 
 class _$_Client implements _Client {
   const _$_Client(
-      {required this.id, required this.name, required this.phoneNumber});
+      {this.clientId,
+      required this.clientPhoneNumber,
+      required this.clientName,
+      required this.clientWilaya,
+      required this.clientAddress});
 
   @override
-  final UniqueId id;
+  final UniqueId? clientId;
   @override
-  final Name name;
+  final PhoneNumber clientPhoneNumber;
   @override
-  final PhoneNumber phoneNumber;
+  final Name clientName;
+  @override
+  final Wilaya clientWilaya;
+  @override
+  final String clientAddress;
 
   @override
   String toString() {
-    return 'Client(id: $id, name: $name, phoneNumber: $phoneNumber)';
+    return 'Client(clientId: $clientId, clientPhoneNumber: $clientPhoneNumber, clientName: $clientName, clientWilaya: $clientWilaya, clientAddress: $clientAddress)';
   }
 
   @override
@@ -129,14 +169,21 @@ class _$_Client implements _Client {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Client &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber));
+            (identical(other.clientId, clientId) ||
+                other.clientId == clientId) &&
+            (identical(other.clientPhoneNumber, clientPhoneNumber) ||
+                other.clientPhoneNumber == clientPhoneNumber) &&
+            (identical(other.clientName, clientName) ||
+                other.clientName == clientName) &&
+            (identical(other.clientWilaya, clientWilaya) ||
+                other.clientWilaya == clientWilaya) &&
+            (identical(other.clientAddress, clientAddress) ||
+                other.clientAddress == clientAddress));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, phoneNumber);
+  int get hashCode => Object.hash(runtimeType, clientId, clientPhoneNumber,
+      clientName, clientWilaya, clientAddress);
 
   @JsonKey(ignore: true)
   @override
@@ -147,16 +194,22 @@ class _$_Client implements _Client {
 
 abstract class _Client implements Client {
   const factory _Client(
-      {required final UniqueId id,
-      required final Name name,
-      required final PhoneNumber phoneNumber}) = _$_Client;
+      {final UniqueId? clientId,
+      required final PhoneNumber clientPhoneNumber,
+      required final Name clientName,
+      required final Wilaya clientWilaya,
+      required final String clientAddress}) = _$_Client;
 
   @override
-  UniqueId get id;
+  UniqueId? get clientId;
   @override
-  Name get name;
+  PhoneNumber get clientPhoneNumber;
   @override
-  PhoneNumber get phoneNumber;
+  Name get clientName;
+  @override
+  Wilaya get clientWilaya;
+  @override
+  String get clientAddress;
   @override
   @JsonKey(ignore: true)
   _$$_ClientCopyWith<_$_Client> get copyWith =>

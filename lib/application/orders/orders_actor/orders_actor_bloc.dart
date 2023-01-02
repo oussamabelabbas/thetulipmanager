@@ -1,7 +1,7 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dartz/dartz.dart' hide Order;
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:injectable/injectable.dart';
+import 'package:injectable/injectable.dart' hide Order;
 
 import '../../../domain/core/errors.dart';
 import '../../../domain/core/firebase_failure.dart';
@@ -11,57 +11,45 @@ import '../../../domain/orders/i_order_repository.dart';
 import '../../../domain/orders/order.dart';
 import '../../../domain/orders/order_task.dart';
 
+part 'orders_actor_bloc.freezed.dart';
 part 'orders_actor_event.dart';
 part 'orders_actor_state.dart';
-part 'orders_actor_bloc.freezed.dart';
 
 @injectable
 class OrdersActorBloc extends Bloc<OrdersActorEvent, OrdersActorState> {
   final IOrderRepository _orderRepository;
   OrdersActorBloc(this._orderRepository) : super(OrdersActorState.initial()) {
     on<ToggleTaskState>(_onToggleTaskState);
-    on<ToggleOrderDone>(_onToggleOrderDone);
-    on<ToggleOrderArchived>(_onToggleOrderArchived);
+    on<ToggleOrderState>(_onToggleOrderState);
     on<DeleteOrder>(_onDeleteOrder);
   }
 
   void _onToggleTaskState(ToggleTaskState event, Emitter<OrdersActorState> emit) async {
     if (state.isBusy) return;
 
-    if (event.order.id == null) throw FatalError();
+    if (event.order.orderId == null) throw FatalError();
 
     emit(state.copyWith(isBusy: true, failureOrSuccessOption: none()));
 
     Either<FirebaseFailure, FirebaseSuccess> failureOrSuccess = await _orderRepository.toggleTaskState(
-      orderId: event.order.id!,
-      tasks: event.order.tasks
+      orderId: event.order.orderId!,
+      tasks: event.order.orderTasks
           .asList()
-          .map((task) => task.taskId != event.task.taskId ? task : task.copyWith(isDone: !task.isDone))
+          .map((task) => task.taskId != event.task.taskId ? task : task.copyWith(isTaskDone: !task.isTaskDone))
           .toList(),
     );
 
     emit(state.copyWith(failureOrSuccessOption: some(failureOrSuccess), isBusy: false));
   }
 
-  void _onToggleOrderDone(ToggleOrderDone event, Emitter<OrdersActorState> emit) async {
+  void _onToggleOrderState(ToggleOrderState event, Emitter<OrdersActorState> emit) async {
     if (state.isBusy) return;
 
     emit(state.copyWith(isBusy: true, failureOrSuccessOption: none()));
 
-    Either<FirebaseFailure, FirebaseSuccess> failureOrSuccess = await _orderRepository.toggleOrderDone(
+    Either<FirebaseFailure, FirebaseSuccess> failureOrSuccess = await _orderRepository.toggleOrderState(
       orderId: event.orderId,
-    );
-
-    emit(state.copyWith(failureOrSuccessOption: some(failureOrSuccess), isBusy: false));
-  }
-
-  void _onToggleOrderArchived(ToggleOrderArchived event, Emitter<OrdersActorState> emit) async {
-    if (state.isBusy) return;
-
-    emit(state.copyWith(isBusy: true, failureOrSuccessOption: none()));
-
-    Either<FirebaseFailure, FirebaseSuccess> failureOrSuccess = await _orderRepository.toggleOrderArchived(
-      orderId: event.orderId,
+      orderState: event.orderState,
     );
 
     emit(state.copyWith(failureOrSuccessOption: some(failureOrSuccess), isBusy: false));

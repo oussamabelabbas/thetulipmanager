@@ -11,187 +11,194 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i15;
-import 'package:dartz/dartz.dart' as _i18;
-import 'package:flutter/material.dart' as _i16;
+import 'package:auto_route/auto_route.dart' as _i14;
+import 'package:auto_route/empty_router_widgets.dart' as _i2;
+import 'package:dartz/dartz.dart' as _i17;
+import 'package:flutter/material.dart' as _i15;
 
-import '../../../domain/core/value_object.dart' as _i17;
-import '../../core/home.dart' as _i4;
-import '../../screens/auth/auth_screen.dart' as _i2;
-import '../../screens/auth/sign_up_screen.dart' as _i3;
-import '../../screens/error/error_screen.dart' as _i10;
-import '../../screens/home/home_screen.dart' as _i11;
-import '../../screens/order/new_order/new_order_screen.dart' as _i9;
-import '../../screens/order/order/order_screen.dart' as _i8;
-import '../../screens/orders/orders_screen.dart' as _i12;
-import '../../screens/profile/pages/about_screen.dart' as _i7;
-import '../../screens/profile/pages/language_settings.dart' as _i6;
-import '../../screens/profile/pages/notificatons_settings.dart' as _i5;
-import '../../screens/profile/profile_screen.dart' as _i14;
+import '../../../domain/core/value_object.dart' as _i16;
+import '../../screens/auth/auth_screen.dart' as _i9;
+import '../../screens/error/error_screen.dart' as _i8;
+import '../../screens/home/home_screen.dart' as _i3;
+import '../../screens/orders/clients/clients_screen.dart' as _i6;
+import '../../screens/orders/new_order/new_order_screen.dart' as _i7;
+import '../../screens/orders/order/order_screen.dart' as _i4;
+import '../../screens/orders/products/products_screen.dart' as _i5;
+import '../../screens/profile/pages/about_screen.dart' as _i13;
+import '../../screens/profile/pages/language_settings.dart' as _i12;
+import '../../screens/profile/pages/notificatons_settings.dart' as _i11;
+import '../../screens/profile/profile_screen.dart' as _i10;
 import '../../screens/splash/splash_screen.dart' as _i1;
-import '../../screens/wallet/wallet_screen.dart' as _i13;
 
-class AppRouter extends _i15.RootStackRouter {
-  AppRouter([_i16.GlobalKey<_i16.NavigatorState>? navigatorKey])
+class AppRouter extends _i14.RootStackRouter {
+  AppRouter([_i15.GlobalKey<_i15.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i15.PageFactory> pagesMap = {
+  final Map<String, _i14.PageFactory> pagesMap = {
     SplashScreenRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
+      return _i14.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i1.SplashScreen(),
       );
     },
-    AuthScreenRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
+    AuthRoute.name: (routeData) {
+      return _i14.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i2.AuthScreen(),
+        child: const _i2.EmptyRouterPage(),
       );
     },
-    SignUpScreenRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
+    ProfileRoute.name: (routeData) {
+      return _i14.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i3.SignUpScreen(),
+        child: const _i2.EmptyRouterPage(),
       );
     },
-    HomeRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
+    HomeScreenRoute.name: (routeData) {
+      return _i14.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i4.Home(),
-      );
-    },
-    NotificationsSettingsRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const _i5.NotificationsSettings(),
-      );
-    },
-    LanguageSettingsRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const _i6.LanguageSettings(),
-      );
-    },
-    AboutScreenRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const _i7.AboutScreen(),
+        child: const _i3.HomeScreen(),
       );
     },
     OrderScreenRoute.name: (routeData) {
       final args = routeData.argsAs<OrderScreenRouteArgs>();
-      return _i15.MaterialPageX<dynamic>(
+      return _i14.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: _i8.OrderScreen(
+        child: _i4.OrderScreen(
           key: args.key,
           orderId: args.orderId,
         ),
       );
     },
+    ProductsScreenRoute.name: (routeData) {
+      final args = routeData.argsAs<ProductsScreenRouteArgs>(
+          orElse: () => const ProductsScreenRouteArgs());
+      return _i14.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: _i5.ProductsScreen(
+          key: args.key,
+          shouldReturnProduct: args.shouldReturnProduct,
+        ),
+      );
+    },
+    ClientsScreenRoute.name: (routeData) {
+      return _i14.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i6.ClientsScreen(),
+      );
+    },
     NewOrderScreenRoute.name: (routeData) {
       final args = routeData.argsAs<NewOrderScreenRouteArgs>();
-      return _i15.MaterialPageX<dynamic>(
+      return _i14.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: _i9.NewOrderScreen(
+        child: _i7.NewOrderScreen(
           key: args.key,
           orderIdOption: args.orderIdOption,
         ),
       );
     },
     ErrorScreenRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
+      return _i14.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i10.ErrorScreen(),
+        child: const _i8.ErrorScreen(),
       );
     },
-    HomeScreenRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
+    AuthScreenRoute.name: (routeData) {
+      return _i14.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i11.HomeScreen(),
-      );
-    },
-    OrdersScreenRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const _i12.OrdersScreen(),
-      );
-    },
-    WalletScreenRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const _i13.WalletScreen(),
+        child: const _i9.AuthScreen(),
       );
     },
     ProfileScreenRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
+      return _i14.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i14.ProfileScreen(),
+        child: const _i10.ProfileScreen(),
+      );
+    },
+    NotificationsSettingsRoute.name: (routeData) {
+      return _i14.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i11.NotificationsSettings(),
+      );
+    },
+    LanguageSettingsRoute.name: (routeData) {
+      return _i14.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i12.LanguageSettings(),
+      );
+    },
+    AboutScreenRoute.name: (routeData) {
+      return _i14.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i13.AboutScreen(),
       );
     },
   };
 
   @override
-  List<_i15.RouteConfig> get routes => [
-        _i15.RouteConfig(
+  List<_i14.RouteConfig> get routes => [
+        _i14.RouteConfig(
           SplashScreenRoute.name,
           path: '/',
         ),
-        _i15.RouteConfig(
-          AuthScreenRoute.name,
-          path: '/auth-screen',
-        ),
-        _i15.RouteConfig(
-          SignUpScreenRoute.name,
-          path: '/sign-up-screen',
-        ),
-        _i15.RouteConfig(
-          HomeRoute.name,
-          path: '/Home',
+        _i14.RouteConfig(
+          AuthRoute.name,
+          path: '/empty-router-page',
           children: [
-            _i15.RouteConfig(
-              HomeScreenRoute.name,
-              path: 'home-screen',
-              parent: HomeRoute.name,
-            ),
-            _i15.RouteConfig(
-              OrdersScreenRoute.name,
-              path: 'orders-screen',
-              parent: HomeRoute.name,
-            ),
-            _i15.RouteConfig(
-              WalletScreenRoute.name,
-              path: 'wallet-screen',
-              parent: HomeRoute.name,
-            ),
-            _i15.RouteConfig(
+            _i14.RouteConfig(
+              AuthScreenRoute.name,
+              path: '',
+              parent: AuthRoute.name,
+            )
+          ],
+        ),
+        _i14.RouteConfig(
+          ProfileRoute.name,
+          path: '/empty-router-page',
+          children: [
+            _i14.RouteConfig(
               ProfileScreenRoute.name,
-              path: 'profile-screen',
-              parent: HomeRoute.name,
+              path: '',
+              parent: ProfileRoute.name,
+            ),
+            _i14.RouteConfig(
+              NotificationsSettingsRoute.name,
+              path: 'notifications-settings',
+              parent: ProfileRoute.name,
+            ),
+            _i14.RouteConfig(
+              LanguageSettingsRoute.name,
+              path: 'language-settings',
+              parent: ProfileRoute.name,
+            ),
+            _i14.RouteConfig(
+              AboutScreenRoute.name,
+              path: 'about-screen',
+              parent: ProfileRoute.name,
             ),
           ],
         ),
-        _i15.RouteConfig(
-          NotificationsSettingsRoute.name,
-          path: '/notifications-settings',
+        _i14.RouteConfig(
+          HomeScreenRoute.name,
+          path: '/home-screen',
         ),
-        _i15.RouteConfig(
-          LanguageSettingsRoute.name,
-          path: '/language-settings',
-        ),
-        _i15.RouteConfig(
-          AboutScreenRoute.name,
-          path: '/about-screen',
-        ),
-        _i15.RouteConfig(
+        _i14.RouteConfig(
           OrderScreenRoute.name,
           path: '/order-screen',
         ),
-        _i15.RouteConfig(
+        _i14.RouteConfig(
+          ProductsScreenRoute.name,
+          path: '/products-screen',
+        ),
+        _i14.RouteConfig(
+          ClientsScreenRoute.name,
+          path: '/clients-screen',
+        ),
+        _i14.RouteConfig(
           NewOrderScreenRoute.name,
           path: '/new-order-screen',
         ),
-        _i15.RouteConfig(
+        _i14.RouteConfig(
           ErrorScreenRoute.name,
           path: '/error-screen',
         ),
@@ -200,7 +207,7 @@ class AppRouter extends _i15.RootStackRouter {
 
 /// generated route for
 /// [_i1.SplashScreen]
-class SplashScreenRoute extends _i15.PageRouteInfo<void> {
+class SplashScreenRoute extends _i14.PageRouteInfo<void> {
   const SplashScreenRoute()
       : super(
           SplashScreenRoute.name,
@@ -211,84 +218,49 @@ class SplashScreenRoute extends _i15.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.AuthScreen]
-class AuthScreenRoute extends _i15.PageRouteInfo<void> {
-  const AuthScreenRoute()
+/// [_i2.EmptyRouterPage]
+class AuthRoute extends _i14.PageRouteInfo<void> {
+  const AuthRoute({List<_i14.PageRouteInfo>? children})
       : super(
-          AuthScreenRoute.name,
-          path: '/auth-screen',
-        );
-
-  static const String name = 'AuthScreenRoute';
-}
-
-/// generated route for
-/// [_i3.SignUpScreen]
-class SignUpScreenRoute extends _i15.PageRouteInfo<void> {
-  const SignUpScreenRoute()
-      : super(
-          SignUpScreenRoute.name,
-          path: '/sign-up-screen',
-        );
-
-  static const String name = 'SignUpScreenRoute';
-}
-
-/// generated route for
-/// [_i4.Home]
-class HomeRoute extends _i15.PageRouteInfo<void> {
-  const HomeRoute({List<_i15.PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
-          path: '/Home',
+          AuthRoute.name,
+          path: '/empty-router-page',
           initialChildren: children,
         );
 
-  static const String name = 'HomeRoute';
+  static const String name = 'AuthRoute';
 }
 
 /// generated route for
-/// [_i5.NotificationsSettings]
-class NotificationsSettingsRoute extends _i15.PageRouteInfo<void> {
-  const NotificationsSettingsRoute()
+/// [_i2.EmptyRouterPage]
+class ProfileRoute extends _i14.PageRouteInfo<void> {
+  const ProfileRoute({List<_i14.PageRouteInfo>? children})
       : super(
-          NotificationsSettingsRoute.name,
-          path: '/notifications-settings',
+          ProfileRoute.name,
+          path: '/empty-router-page',
+          initialChildren: children,
         );
 
-  static const String name = 'NotificationsSettingsRoute';
+  static const String name = 'ProfileRoute';
 }
 
 /// generated route for
-/// [_i6.LanguageSettings]
-class LanguageSettingsRoute extends _i15.PageRouteInfo<void> {
-  const LanguageSettingsRoute()
+/// [_i3.HomeScreen]
+class HomeScreenRoute extends _i14.PageRouteInfo<void> {
+  const HomeScreenRoute()
       : super(
-          LanguageSettingsRoute.name,
-          path: '/language-settings',
+          HomeScreenRoute.name,
+          path: '/home-screen',
         );
 
-  static const String name = 'LanguageSettingsRoute';
+  static const String name = 'HomeScreenRoute';
 }
 
 /// generated route for
-/// [_i7.AboutScreen]
-class AboutScreenRoute extends _i15.PageRouteInfo<void> {
-  const AboutScreenRoute()
-      : super(
-          AboutScreenRoute.name,
-          path: '/about-screen',
-        );
-
-  static const String name = 'AboutScreenRoute';
-}
-
-/// generated route for
-/// [_i8.OrderScreen]
-class OrderScreenRoute extends _i15.PageRouteInfo<OrderScreenRouteArgs> {
+/// [_i4.OrderScreen]
+class OrderScreenRoute extends _i14.PageRouteInfo<OrderScreenRouteArgs> {
   OrderScreenRoute({
-    _i16.Key? key,
-    required _i17.UniqueId orderId,
+    _i15.Key? key,
+    required _i16.UniqueId orderId,
   }) : super(
           OrderScreenRoute.name,
           path: '/order-screen',
@@ -307,9 +279,9 @@ class OrderScreenRouteArgs {
     required this.orderId,
   });
 
-  final _i16.Key? key;
+  final _i15.Key? key;
 
-  final _i17.UniqueId orderId;
+  final _i16.UniqueId orderId;
 
   @override
   String toString() {
@@ -318,11 +290,57 @@ class OrderScreenRouteArgs {
 }
 
 /// generated route for
-/// [_i9.NewOrderScreen]
-class NewOrderScreenRoute extends _i15.PageRouteInfo<NewOrderScreenRouteArgs> {
+/// [_i5.ProductsScreen]
+class ProductsScreenRoute extends _i14.PageRouteInfo<ProductsScreenRouteArgs> {
+  ProductsScreenRoute({
+    _i15.Key? key,
+    bool shouldReturnProduct = true,
+  }) : super(
+          ProductsScreenRoute.name,
+          path: '/products-screen',
+          args: ProductsScreenRouteArgs(
+            key: key,
+            shouldReturnProduct: shouldReturnProduct,
+          ),
+        );
+
+  static const String name = 'ProductsScreenRoute';
+}
+
+class ProductsScreenRouteArgs {
+  const ProductsScreenRouteArgs({
+    this.key,
+    this.shouldReturnProduct = true,
+  });
+
+  final _i15.Key? key;
+
+  final bool shouldReturnProduct;
+
+  @override
+  String toString() {
+    return 'ProductsScreenRouteArgs{key: $key, shouldReturnProduct: $shouldReturnProduct}';
+  }
+}
+
+/// generated route for
+/// [_i6.ClientsScreen]
+class ClientsScreenRoute extends _i14.PageRouteInfo<void> {
+  const ClientsScreenRoute()
+      : super(
+          ClientsScreenRoute.name,
+          path: '/clients-screen',
+        );
+
+  static const String name = 'ClientsScreenRoute';
+}
+
+/// generated route for
+/// [_i7.NewOrderScreen]
+class NewOrderScreenRoute extends _i14.PageRouteInfo<NewOrderScreenRouteArgs> {
   NewOrderScreenRoute({
-    _i16.Key? key,
-    required _i18.Option<_i17.UniqueId> orderIdOption,
+    _i15.Key? key,
+    required _i17.Option<_i16.UniqueId> orderIdOption,
   }) : super(
           NewOrderScreenRoute.name,
           path: '/new-order-screen',
@@ -341,9 +359,9 @@ class NewOrderScreenRouteArgs {
     required this.orderIdOption,
   });
 
-  final _i16.Key? key;
+  final _i15.Key? key;
 
-  final _i18.Option<_i17.UniqueId> orderIdOption;
+  final _i17.Option<_i16.UniqueId> orderIdOption;
 
   @override
   String toString() {
@@ -352,8 +370,8 @@ class NewOrderScreenRouteArgs {
 }
 
 /// generated route for
-/// [_i10.ErrorScreen]
-class ErrorScreenRoute extends _i15.PageRouteInfo<void> {
+/// [_i8.ErrorScreen]
+class ErrorScreenRoute extends _i14.PageRouteInfo<void> {
   const ErrorScreenRoute()
       : super(
           ErrorScreenRoute.name,
@@ -364,49 +382,61 @@ class ErrorScreenRoute extends _i15.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i11.HomeScreen]
-class HomeScreenRoute extends _i15.PageRouteInfo<void> {
-  const HomeScreenRoute()
+/// [_i9.AuthScreen]
+class AuthScreenRoute extends _i14.PageRouteInfo<void> {
+  const AuthScreenRoute()
       : super(
-          HomeScreenRoute.name,
-          path: 'home-screen',
+          AuthScreenRoute.name,
+          path: '',
         );
 
-  static const String name = 'HomeScreenRoute';
+  static const String name = 'AuthScreenRoute';
 }
 
 /// generated route for
-/// [_i12.OrdersScreen]
-class OrdersScreenRoute extends _i15.PageRouteInfo<void> {
-  const OrdersScreenRoute()
-      : super(
-          OrdersScreenRoute.name,
-          path: 'orders-screen',
-        );
-
-  static const String name = 'OrdersScreenRoute';
-}
-
-/// generated route for
-/// [_i13.WalletScreen]
-class WalletScreenRoute extends _i15.PageRouteInfo<void> {
-  const WalletScreenRoute()
-      : super(
-          WalletScreenRoute.name,
-          path: 'wallet-screen',
-        );
-
-  static const String name = 'WalletScreenRoute';
-}
-
-/// generated route for
-/// [_i14.ProfileScreen]
-class ProfileScreenRoute extends _i15.PageRouteInfo<void> {
+/// [_i10.ProfileScreen]
+class ProfileScreenRoute extends _i14.PageRouteInfo<void> {
   const ProfileScreenRoute()
       : super(
           ProfileScreenRoute.name,
-          path: 'profile-screen',
+          path: '',
         );
 
   static const String name = 'ProfileScreenRoute';
+}
+
+/// generated route for
+/// [_i11.NotificationsSettings]
+class NotificationsSettingsRoute extends _i14.PageRouteInfo<void> {
+  const NotificationsSettingsRoute()
+      : super(
+          NotificationsSettingsRoute.name,
+          path: 'notifications-settings',
+        );
+
+  static const String name = 'NotificationsSettingsRoute';
+}
+
+/// generated route for
+/// [_i12.LanguageSettings]
+class LanguageSettingsRoute extends _i14.PageRouteInfo<void> {
+  const LanguageSettingsRoute()
+      : super(
+          LanguageSettingsRoute.name,
+          path: 'language-settings',
+        );
+
+  static const String name = 'LanguageSettingsRoute';
+}
+
+/// generated route for
+/// [_i13.AboutScreen]
+class AboutScreenRoute extends _i14.PageRouteInfo<void> {
+  const AboutScreenRoute()
+      : super(
+          AboutScreenRoute.name,
+          path: 'about-screen',
+        );
+
+  static const String name = 'AboutScreenRoute';
 }

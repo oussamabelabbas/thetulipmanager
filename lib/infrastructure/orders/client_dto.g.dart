@@ -7,14 +7,16 @@ part of 'client_dto.dart';
 // **************************************************************************
 
 _$_ClientDto _$$_ClientDtoFromJson(Map<String, dynamic> json) => _$_ClientDto(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      phoneNumber: json['phoneNumber'] as String,
+      clientName: json['clientName'] as String,
+      clientAddress: json['clientAddress'] as String,
+      clientWilayaCode: json['clientWilayaCode'] as int,
+      clientPhoneNumber: json['clientPhoneNumber'] as String,
     );
 
 Map<String, dynamic> _$$_ClientDtoToJson(_$_ClientDto instance) =>
     <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'phoneNumber': instance.phoneNumber,
+      'clientName': instance.clientName,
+      'clientAddress': instance.clientAddress,
+      'clientWilayaCode': instance.clientWilayaCode,
+      'clientPhoneNumber': instance.clientPhoneNumber,
     };

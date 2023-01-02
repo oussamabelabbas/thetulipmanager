@@ -9,13 +9,17 @@ part of 'order_task_dto.dart';
 _$_OrderTaskDto _$$_OrderTaskDtoFromJson(Map<String, dynamic> json) =>
     _$_OrderTaskDto(
       taskId: json['taskId'] as String,
-      description: json['description'] as String,
-      isDone: json['isDone'] as bool,
+      productId: json['productId'] as String,
+      product: ProductDto.fromJson(json['product'] as Map<String, dynamic>),
+      taskDescription: json['taskDescription'] as String,
+      isTaskDone: json['isTaskDone'] as int,
     );
 
 Map<String, dynamic> _$$_OrderTaskDtoToJson(_$_OrderTaskDto instance) =>
     <String, dynamic>{
       'taskId': instance.taskId,
-      'description': instance.description,
-      'isDone': instance.isDone,
+      'productId': instance.productId,
+      'product': instance.product.toJson(),
+      'taskDescription': instance.taskDescription,
+      'isTaskDone': instance.isTaskDone,
     };

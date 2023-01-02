@@ -43,55 +43,58 @@ class EditorDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      title: Text(_getTitle()),
-      content: Text(_getSubtitle()),
-      actionsAlignment: MainAxisAlignment.center,
-      actionsOverflowDirection: VerticalDirection.down,
-      actions: [
-        BlocProvider(
-          create: (context) => getIt<AccountSettingsBloc>(),
-          child: BlocConsumer<AccountSettingsBloc, AccountSettingsState>(
-            listener: (context, state) {
-              state.failureOrSuccessOption.fold(
-                () => null,
-                (failureOrSuccess) => failureOrSuccess.fold(
-                  (f) => Flushbar(
-                    message: f.message,
-                    shouldIconPulse: true,
-                    margin: const EdgeInsets.all(16.0),
-                    flushbarStyle: FlushbarStyle.FLOATING,
-                    borderRadius: BorderRadius.circular(32.0),
-                    duration: const Duration(milliseconds: 2510),
-                    backgroundColor: Theme.of(context).colorScheme.error,
-                    icon: Icon(IconlyBroken.info_circle, size: 32.0, color: Theme.of(context).colorScheme.onError),
-                  ).show(context),
-                  (_) => context.router.pop(),
+    return BlocProvider(
+      create: (context) => getIt<AccountSettingsBloc>(),
+      child: BlocConsumer<AccountSettingsBloc, AccountSettingsState>(
+        listener: (context, state) {
+          state.failureOrSuccessOption.fold(
+            () => null,
+            (failureOrSuccess) => failureOrSuccess.fold(
+              (f) => Flushbar(
+                message: f.message,
+                shouldIconPulse: true,
+                margin: const EdgeInsets.all(16.0),
+                flushbarStyle: FlushbarStyle.FLOATING,
+                borderRadius: BorderRadius.circular(32.0),
+                duration: const Duration(milliseconds: 2510),
+                backgroundColor: Theme.of(context).colorScheme.error,
+                icon: Icon(IconlyBroken.info_circle, size: 32.0, color: Theme.of(context).colorScheme.onError),
+              ).show(context),
+              (_) => context.router.pop(),
+            ),
+          );
+        },
+        builder: (context, state) {
+          return AlertDialog(
+            title: Text(_getTitle()),
+            content: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(_getSubtitle()),
+                const SizedBox(height: 24.0),
+                TextFormField(
+                  enabled: !state.inProgress,
+                  validator: (_) => _validator(context),
+                  initialValue: displayName ?? emailAddress ?? '',
+                  onChanged: (value) => _onChanged(context, value),
+                  decoration: InputDecoration(label: Text(_getTitle())),
                 ),
-              );
-            },
-            builder: (context, state) {
-              return Column(
-                children: [
-                  TextFormField(
-                    enabled: !state.inProgress,
-                    initialValue: displayName ?? emailAddress ?? '',
-                    onChanged: (value) => _onChanged(context, value),
-                    validator: (_) => _validator(context),
-                    decoration: InputDecoration(label: Text(_getTitle())),
-                  ),
-                  const SizedBox(height: 8.0),
-                  OutlinedButton(
-                    onPressed: () => _onPressed(context),
-                    child: Text('Change ${_getTitle()}'),
-                  ),
-                  TextButton(onPressed: context.router.pop, child: const Text('Cancel')),
-                ],
-              );
-            },
-          ),
-        ),
-      ],
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: state.inProgress ? null : context.router.pop,
+                child: const Text('Cancel'),
+              ),
+              TextButton(
+                onPressed: state.inProgress ? null : () => _onPressed(context),
+                child: Text('Confirm'),
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 }

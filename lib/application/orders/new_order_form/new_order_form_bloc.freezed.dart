@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'new_order_form_bloc.dart';
 
@@ -19,17 +19,22 @@ mixin _$NewOrderFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<UniqueId> orderIdOption) started,
-    required TResult Function(String orderTitle) orderTitleChanged,
     required TResult Function(String clientName) clientNameChanged,
     required TResult Function(String clientPhoneNumber)
         clientPhoneNumberChanged,
-    required TResult Function(String orderDescription) orderDescriptionChanged,
-    required TResult Function(DateTime deliveryDate) deliveryDateChanged,
-    required TResult Function(String price) priceChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
     required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
     required TResult Function(UniqueId taskId, String taskDescription)
         taskDescriptionChanged,
     required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
     required TResult Function() confirmOrderPressed,
     required TResult Function(UniqueId orderId) updateOrderPressed,
   }) =>
@@ -37,16 +42,19 @@ mixin _$NewOrderFormEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<UniqueId> orderIdOption)? started,
-    TResult? Function(String orderTitle)? orderTitleChanged,
     TResult? Function(String clientName)? clientNameChanged,
     TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult? Function(String orderDescription)? orderDescriptionChanged,
-    TResult? Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult? Function(String price)? priceChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
     TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult? Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult? Function()? confirmOrderPressed,
     TResult? Function(UniqueId orderId)? updateOrderPressed,
   }) =>
@@ -54,16 +62,19 @@ mixin _$NewOrderFormEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> orderIdOption)? started,
-    TResult Function(String orderTitle)? orderTitleChanged,
     TResult Function(String clientName)? clientNameChanged,
     TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult Function(String orderDescription)? orderDescriptionChanged,
-    TResult Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult Function(String price)? priceChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
     TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult Function()? confirmOrderPressed,
     TResult Function(UniqueId orderId)? updateOrderPressed,
     required TResult orElse(),
@@ -72,18 +83,21 @@ mixin _$NewOrderFormEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(OrderTitleChanged value) orderTitleChanged,
     required TResult Function(ClientNameChanged value) clientNameChanged,
     required TResult Function(ClientPhoneNumberChanged value)
         clientPhoneNumberChanged,
-    required TResult Function(OrderDescriptionChanged value)
-        orderDescriptionChanged,
-    required TResult Function(DeliveryDateChanged value) deliveryDateChanged,
-    required TResult Function(PriceChanged value) priceChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
     required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
     required TResult Function(TaskDescriptionChanged value)
         taskDescriptionChanged,
     required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
     required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
     required TResult Function(UpdateOrderPressed value) updateOrderPressed,
   }) =>
@@ -91,15 +105,18 @@ mixin _$NewOrderFormEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(OrderTitleChanged value)? orderTitleChanged,
     TResult? Function(ClientNameChanged value)? clientNameChanged,
     TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult? Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult? Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult? Function(PriceChanged value)? priceChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
     TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
     TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
     TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
   }) =>
@@ -107,15 +124,18 @@ mixin _$NewOrderFormEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(OrderTitleChanged value)? orderTitleChanged,
     TResult Function(ClientNameChanged value)? clientNameChanged,
     TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult Function(PriceChanged value)? priceChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
     TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
     TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
     TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult Function(UpdateOrderPressed value)? updateOrderPressed,
     required TResult orElse(),
@@ -205,17 +225,22 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<UniqueId> orderIdOption) started,
-    required TResult Function(String orderTitle) orderTitleChanged,
     required TResult Function(String clientName) clientNameChanged,
     required TResult Function(String clientPhoneNumber)
         clientPhoneNumberChanged,
-    required TResult Function(String orderDescription) orderDescriptionChanged,
-    required TResult Function(DateTime deliveryDate) deliveryDateChanged,
-    required TResult Function(String price) priceChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
     required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
     required TResult Function(UniqueId taskId, String taskDescription)
         taskDescriptionChanged,
     required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
     required TResult Function() confirmOrderPressed,
     required TResult Function(UniqueId orderId) updateOrderPressed,
   }) {
@@ -226,16 +251,19 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<UniqueId> orderIdOption)? started,
-    TResult? Function(String orderTitle)? orderTitleChanged,
     TResult? Function(String clientName)? clientNameChanged,
     TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult? Function(String orderDescription)? orderDescriptionChanged,
-    TResult? Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult? Function(String price)? priceChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
     TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult? Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult? Function()? confirmOrderPressed,
     TResult? Function(UniqueId orderId)? updateOrderPressed,
   }) {
@@ -246,16 +274,19 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> orderIdOption)? started,
-    TResult Function(String orderTitle)? orderTitleChanged,
     TResult Function(String clientName)? clientNameChanged,
     TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult Function(String orderDescription)? orderDescriptionChanged,
-    TResult Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult Function(String price)? priceChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
     TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult Function()? confirmOrderPressed,
     TResult Function(UniqueId orderId)? updateOrderPressed,
     required TResult orElse(),
@@ -270,18 +301,21 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(OrderTitleChanged value) orderTitleChanged,
     required TResult Function(ClientNameChanged value) clientNameChanged,
     required TResult Function(ClientPhoneNumberChanged value)
         clientPhoneNumberChanged,
-    required TResult Function(OrderDescriptionChanged value)
-        orderDescriptionChanged,
-    required TResult Function(DeliveryDateChanged value) deliveryDateChanged,
-    required TResult Function(PriceChanged value) priceChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
     required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
     required TResult Function(TaskDescriptionChanged value)
         taskDescriptionChanged,
     required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
     required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
     required TResult Function(UpdateOrderPressed value) updateOrderPressed,
   }) {
@@ -292,15 +326,18 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(OrderTitleChanged value)? orderTitleChanged,
     TResult? Function(ClientNameChanged value)? clientNameChanged,
     TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult? Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult? Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult? Function(PriceChanged value)? priceChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
     TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
     TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
     TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
   }) {
@@ -311,15 +348,18 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(OrderTitleChanged value)? orderTitleChanged,
     TResult Function(ClientNameChanged value)? clientNameChanged,
     TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult Function(PriceChanged value)? priceChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
     TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
     TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
     TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult Function(UpdateOrderPressed value)? updateOrderPressed,
     required TResult orElse(),
@@ -338,208 +378,6 @@ abstract class Started implements NewOrderFormEvent {
   Option<UniqueId> get orderIdOption;
   @JsonKey(ignore: true)
   _$$StartedCopyWith<_$Started> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$OrderTitleChangedCopyWith<$Res> {
-  factory _$$OrderTitleChangedCopyWith(
-          _$OrderTitleChanged value, $Res Function(_$OrderTitleChanged) then) =
-      __$$OrderTitleChangedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String orderTitle});
-}
-
-/// @nodoc
-class __$$OrderTitleChangedCopyWithImpl<$Res>
-    extends _$NewOrderFormEventCopyWithImpl<$Res, _$OrderTitleChanged>
-    implements _$$OrderTitleChangedCopyWith<$Res> {
-  __$$OrderTitleChangedCopyWithImpl(
-      _$OrderTitleChanged _value, $Res Function(_$OrderTitleChanged) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? orderTitle = null,
-  }) {
-    return _then(_$OrderTitleChanged(
-      orderTitle: null == orderTitle
-          ? _value.orderTitle
-          : orderTitle // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$OrderTitleChanged implements OrderTitleChanged {
-  const _$OrderTitleChanged({required this.orderTitle});
-
-  @override
-  final String orderTitle;
-
-  @override
-  String toString() {
-    return 'NewOrderFormEvent.orderTitleChanged(orderTitle: $orderTitle)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OrderTitleChanged &&
-            (identical(other.orderTitle, orderTitle) ||
-                other.orderTitle == orderTitle));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, orderTitle);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OrderTitleChangedCopyWith<_$OrderTitleChanged> get copyWith =>
-      __$$OrderTitleChangedCopyWithImpl<_$OrderTitleChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Option<UniqueId> orderIdOption) started,
-    required TResult Function(String orderTitle) orderTitleChanged,
-    required TResult Function(String clientName) clientNameChanged,
-    required TResult Function(String clientPhoneNumber)
-        clientPhoneNumberChanged,
-    required TResult Function(String orderDescription) orderDescriptionChanged,
-    required TResult Function(DateTime deliveryDate) deliveryDateChanged,
-    required TResult Function(String price) priceChanged,
-    required TResult Function() taskAdded,
-    required TResult Function(UniqueId taskId, String taskDescription)
-        taskDescriptionChanged,
-    required TResult Function(UniqueId taskId) taskDeleted,
-    required TResult Function() confirmOrderPressed,
-    required TResult Function(UniqueId orderId) updateOrderPressed,
-  }) {
-    return orderTitleChanged(orderTitle);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Option<UniqueId> orderIdOption)? started,
-    TResult? Function(String orderTitle)? orderTitleChanged,
-    TResult? Function(String clientName)? clientNameChanged,
-    TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult? Function(String orderDescription)? orderDescriptionChanged,
-    TResult? Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult? Function(String price)? priceChanged,
-    TResult? Function()? taskAdded,
-    TResult? Function(UniqueId taskId, String taskDescription)?
-        taskDescriptionChanged,
-    TResult? Function(UniqueId taskId)? taskDeleted,
-    TResult? Function()? confirmOrderPressed,
-    TResult? Function(UniqueId orderId)? updateOrderPressed,
-  }) {
-    return orderTitleChanged?.call(orderTitle);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<UniqueId> orderIdOption)? started,
-    TResult Function(String orderTitle)? orderTitleChanged,
-    TResult Function(String clientName)? clientNameChanged,
-    TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult Function(String orderDescription)? orderDescriptionChanged,
-    TResult Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult Function(String price)? priceChanged,
-    TResult Function()? taskAdded,
-    TResult Function(UniqueId taskId, String taskDescription)?
-        taskDescriptionChanged,
-    TResult Function(UniqueId taskId)? taskDeleted,
-    TResult Function()? confirmOrderPressed,
-    TResult Function(UniqueId orderId)? updateOrderPressed,
-    required TResult orElse(),
-  }) {
-    if (orderTitleChanged != null) {
-      return orderTitleChanged(orderTitle);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Started value) started,
-    required TResult Function(OrderTitleChanged value) orderTitleChanged,
-    required TResult Function(ClientNameChanged value) clientNameChanged,
-    required TResult Function(ClientPhoneNumberChanged value)
-        clientPhoneNumberChanged,
-    required TResult Function(OrderDescriptionChanged value)
-        orderDescriptionChanged,
-    required TResult Function(DeliveryDateChanged value) deliveryDateChanged,
-    required TResult Function(PriceChanged value) priceChanged,
-    required TResult Function(TaskAdded value) taskAdded,
-    required TResult Function(TaskDescriptionChanged value)
-        taskDescriptionChanged,
-    required TResult Function(TaskDeleted value) taskDeleted,
-    required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
-    required TResult Function(UpdateOrderPressed value) updateOrderPressed,
-  }) {
-    return orderTitleChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Started value)? started,
-    TResult? Function(OrderTitleChanged value)? orderTitleChanged,
-    TResult? Function(ClientNameChanged value)? clientNameChanged,
-    TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult? Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult? Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult? Function(PriceChanged value)? priceChanged,
-    TResult? Function(TaskAdded value)? taskAdded,
-    TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
-    TResult? Function(TaskDeleted value)? taskDeleted,
-    TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
-    TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
-  }) {
-    return orderTitleChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Started value)? started,
-    TResult Function(OrderTitleChanged value)? orderTitleChanged,
-    TResult Function(ClientNameChanged value)? clientNameChanged,
-    TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult Function(PriceChanged value)? priceChanged,
-    TResult Function(TaskAdded value)? taskAdded,
-    TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
-    TResult Function(TaskDeleted value)? taskDeleted,
-    TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
-    TResult Function(UpdateOrderPressed value)? updateOrderPressed,
-    required TResult orElse(),
-  }) {
-    if (orderTitleChanged != null) {
-      return orderTitleChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class OrderTitleChanged implements NewOrderFormEvent {
-  const factory OrderTitleChanged({required final String orderTitle}) =
-      _$OrderTitleChanged;
-
-  String get orderTitle;
-  @JsonKey(ignore: true)
-  _$$OrderTitleChangedCopyWith<_$OrderTitleChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -609,17 +447,22 @@ class _$ClientNameChanged implements ClientNameChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<UniqueId> orderIdOption) started,
-    required TResult Function(String orderTitle) orderTitleChanged,
     required TResult Function(String clientName) clientNameChanged,
     required TResult Function(String clientPhoneNumber)
         clientPhoneNumberChanged,
-    required TResult Function(String orderDescription) orderDescriptionChanged,
-    required TResult Function(DateTime deliveryDate) deliveryDateChanged,
-    required TResult Function(String price) priceChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
     required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
     required TResult Function(UniqueId taskId, String taskDescription)
         taskDescriptionChanged,
     required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
     required TResult Function() confirmOrderPressed,
     required TResult Function(UniqueId orderId) updateOrderPressed,
   }) {
@@ -630,16 +473,19 @@ class _$ClientNameChanged implements ClientNameChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<UniqueId> orderIdOption)? started,
-    TResult? Function(String orderTitle)? orderTitleChanged,
     TResult? Function(String clientName)? clientNameChanged,
     TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult? Function(String orderDescription)? orderDescriptionChanged,
-    TResult? Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult? Function(String price)? priceChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
     TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult? Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult? Function()? confirmOrderPressed,
     TResult? Function(UniqueId orderId)? updateOrderPressed,
   }) {
@@ -650,16 +496,19 @@ class _$ClientNameChanged implements ClientNameChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> orderIdOption)? started,
-    TResult Function(String orderTitle)? orderTitleChanged,
     TResult Function(String clientName)? clientNameChanged,
     TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult Function(String orderDescription)? orderDescriptionChanged,
-    TResult Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult Function(String price)? priceChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
     TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult Function()? confirmOrderPressed,
     TResult Function(UniqueId orderId)? updateOrderPressed,
     required TResult orElse(),
@@ -674,18 +523,21 @@ class _$ClientNameChanged implements ClientNameChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(OrderTitleChanged value) orderTitleChanged,
     required TResult Function(ClientNameChanged value) clientNameChanged,
     required TResult Function(ClientPhoneNumberChanged value)
         clientPhoneNumberChanged,
-    required TResult Function(OrderDescriptionChanged value)
-        orderDescriptionChanged,
-    required TResult Function(DeliveryDateChanged value) deliveryDateChanged,
-    required TResult Function(PriceChanged value) priceChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
     required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
     required TResult Function(TaskDescriptionChanged value)
         taskDescriptionChanged,
     required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
     required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
     required TResult Function(UpdateOrderPressed value) updateOrderPressed,
   }) {
@@ -696,15 +548,18 @@ class _$ClientNameChanged implements ClientNameChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(OrderTitleChanged value)? orderTitleChanged,
     TResult? Function(ClientNameChanged value)? clientNameChanged,
     TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult? Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult? Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult? Function(PriceChanged value)? priceChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
     TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
     TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
     TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
   }) {
@@ -715,15 +570,18 @@ class _$ClientNameChanged implements ClientNameChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(OrderTitleChanged value)? orderTitleChanged,
     TResult Function(ClientNameChanged value)? clientNameChanged,
     TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult Function(PriceChanged value)? priceChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
     TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
     TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
     TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult Function(UpdateOrderPressed value)? updateOrderPressed,
     required TResult orElse(),
@@ -813,17 +671,22 @@ class _$ClientPhoneNumberChanged implements ClientPhoneNumberChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<UniqueId> orderIdOption) started,
-    required TResult Function(String orderTitle) orderTitleChanged,
     required TResult Function(String clientName) clientNameChanged,
     required TResult Function(String clientPhoneNumber)
         clientPhoneNumberChanged,
-    required TResult Function(String orderDescription) orderDescriptionChanged,
-    required TResult Function(DateTime deliveryDate) deliveryDateChanged,
-    required TResult Function(String price) priceChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
     required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
     required TResult Function(UniqueId taskId, String taskDescription)
         taskDescriptionChanged,
     required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
     required TResult Function() confirmOrderPressed,
     required TResult Function(UniqueId orderId) updateOrderPressed,
   }) {
@@ -834,16 +697,19 @@ class _$ClientPhoneNumberChanged implements ClientPhoneNumberChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<UniqueId> orderIdOption)? started,
-    TResult? Function(String orderTitle)? orderTitleChanged,
     TResult? Function(String clientName)? clientNameChanged,
     TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult? Function(String orderDescription)? orderDescriptionChanged,
-    TResult? Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult? Function(String price)? priceChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
     TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult? Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult? Function()? confirmOrderPressed,
     TResult? Function(UniqueId orderId)? updateOrderPressed,
   }) {
@@ -854,16 +720,19 @@ class _$ClientPhoneNumberChanged implements ClientPhoneNumberChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> orderIdOption)? started,
-    TResult Function(String orderTitle)? orderTitleChanged,
     TResult Function(String clientName)? clientNameChanged,
     TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult Function(String orderDescription)? orderDescriptionChanged,
-    TResult Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult Function(String price)? priceChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
     TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult Function()? confirmOrderPressed,
     TResult Function(UniqueId orderId)? updateOrderPressed,
     required TResult orElse(),
@@ -878,18 +747,21 @@ class _$ClientPhoneNumberChanged implements ClientPhoneNumberChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(OrderTitleChanged value) orderTitleChanged,
     required TResult Function(ClientNameChanged value) clientNameChanged,
     required TResult Function(ClientPhoneNumberChanged value)
         clientPhoneNumberChanged,
-    required TResult Function(OrderDescriptionChanged value)
-        orderDescriptionChanged,
-    required TResult Function(DeliveryDateChanged value) deliveryDateChanged,
-    required TResult Function(PriceChanged value) priceChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
     required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
     required TResult Function(TaskDescriptionChanged value)
         taskDescriptionChanged,
     required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
     required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
     required TResult Function(UpdateOrderPressed value) updateOrderPressed,
   }) {
@@ -900,15 +772,18 @@ class _$ClientPhoneNumberChanged implements ClientPhoneNumberChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(OrderTitleChanged value)? orderTitleChanged,
     TResult? Function(ClientNameChanged value)? clientNameChanged,
     TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult? Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult? Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult? Function(PriceChanged value)? priceChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
     TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
     TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
     TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
   }) {
@@ -919,15 +794,18 @@ class _$ClientPhoneNumberChanged implements ClientPhoneNumberChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(OrderTitleChanged value)? orderTitleChanged,
     TResult Function(ClientNameChanged value)? clientNameChanged,
     TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult Function(PriceChanged value)? priceChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
     TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
     TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
     TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult Function(UpdateOrderPressed value)? updateOrderPressed,
     required TResult orElse(),
@@ -950,31 +828,31 @@ abstract class ClientPhoneNumberChanged implements NewOrderFormEvent {
 }
 
 /// @nodoc
-abstract class _$$OrderDescriptionChangedCopyWith<$Res> {
-  factory _$$OrderDescriptionChangedCopyWith(_$OrderDescriptionChanged value,
-          $Res Function(_$OrderDescriptionChanged) then) =
-      __$$OrderDescriptionChangedCopyWithImpl<$Res>;
+abstract class _$$ClientAddressChangedCopyWith<$Res> {
+  factory _$$ClientAddressChangedCopyWith(_$ClientAddressChanged value,
+          $Res Function(_$ClientAddressChanged) then) =
+      __$$ClientAddressChangedCopyWithImpl<$Res>;
   @useResult
-  $Res call({String orderDescription});
+  $Res call({String clientAddress});
 }
 
 /// @nodoc
-class __$$OrderDescriptionChangedCopyWithImpl<$Res>
-    extends _$NewOrderFormEventCopyWithImpl<$Res, _$OrderDescriptionChanged>
-    implements _$$OrderDescriptionChangedCopyWith<$Res> {
-  __$$OrderDescriptionChangedCopyWithImpl(_$OrderDescriptionChanged _value,
-      $Res Function(_$OrderDescriptionChanged) _then)
+class __$$ClientAddressChangedCopyWithImpl<$Res>
+    extends _$NewOrderFormEventCopyWithImpl<$Res, _$ClientAddressChanged>
+    implements _$$ClientAddressChangedCopyWith<$Res> {
+  __$$ClientAddressChangedCopyWithImpl(_$ClientAddressChanged _value,
+      $Res Function(_$ClientAddressChanged) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? orderDescription = null,
+    Object? clientAddress = null,
   }) {
-    return _then(_$OrderDescriptionChanged(
-      orderDescription: null == orderDescription
-          ? _value.orderDescription
-          : orderDescription // ignore: cast_nullable_to_non_nullable
+    return _then(_$ClientAddressChanged(
+      clientAddress: null == clientAddress
+          ? _value.clientAddress
+          : clientAddress // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -982,97 +860,108 @@ class __$$OrderDescriptionChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OrderDescriptionChanged implements OrderDescriptionChanged {
-  const _$OrderDescriptionChanged({required this.orderDescription});
+class _$ClientAddressChanged implements ClientAddressChanged {
+  const _$ClientAddressChanged({required this.clientAddress});
 
   @override
-  final String orderDescription;
+  final String clientAddress;
 
   @override
   String toString() {
-    return 'NewOrderFormEvent.orderDescriptionChanged(orderDescription: $orderDescription)';
+    return 'NewOrderFormEvent.clientAddressChanged(clientAddress: $clientAddress)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OrderDescriptionChanged &&
-            (identical(other.orderDescription, orderDescription) ||
-                other.orderDescription == orderDescription));
+            other is _$ClientAddressChanged &&
+            (identical(other.clientAddress, clientAddress) ||
+                other.clientAddress == clientAddress));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, orderDescription);
+  int get hashCode => Object.hash(runtimeType, clientAddress);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OrderDescriptionChangedCopyWith<_$OrderDescriptionChanged> get copyWith =>
-      __$$OrderDescriptionChangedCopyWithImpl<_$OrderDescriptionChanged>(
+  _$$ClientAddressChangedCopyWith<_$ClientAddressChanged> get copyWith =>
+      __$$ClientAddressChangedCopyWithImpl<_$ClientAddressChanged>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<UniqueId> orderIdOption) started,
-    required TResult Function(String orderTitle) orderTitleChanged,
     required TResult Function(String clientName) clientNameChanged,
     required TResult Function(String clientPhoneNumber)
         clientPhoneNumberChanged,
-    required TResult Function(String orderDescription) orderDescriptionChanged,
-    required TResult Function(DateTime deliveryDate) deliveryDateChanged,
-    required TResult Function(String price) priceChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
     required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
     required TResult Function(UniqueId taskId, String taskDescription)
         taskDescriptionChanged,
     required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
     required TResult Function() confirmOrderPressed,
     required TResult Function(UniqueId orderId) updateOrderPressed,
   }) {
-    return orderDescriptionChanged(orderDescription);
+    return clientAddressChanged(clientAddress);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<UniqueId> orderIdOption)? started,
-    TResult? Function(String orderTitle)? orderTitleChanged,
     TResult? Function(String clientName)? clientNameChanged,
     TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult? Function(String orderDescription)? orderDescriptionChanged,
-    TResult? Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult? Function(String price)? priceChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
     TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult? Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult? Function()? confirmOrderPressed,
     TResult? Function(UniqueId orderId)? updateOrderPressed,
   }) {
-    return orderDescriptionChanged?.call(orderDescription);
+    return clientAddressChanged?.call(clientAddress);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> orderIdOption)? started,
-    TResult Function(String orderTitle)? orderTitleChanged,
     TResult Function(String clientName)? clientNameChanged,
     TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult Function(String orderDescription)? orderDescriptionChanged,
-    TResult Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult Function(String price)? priceChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
     TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult Function()? confirmOrderPressed,
     TResult Function(UniqueId orderId)? updateOrderPressed,
     required TResult orElse(),
   }) {
-    if (orderDescriptionChanged != null) {
-      return orderDescriptionChanged(orderDescription);
+    if (clientAddressChanged != null) {
+      return clientAddressChanged(clientAddress);
     }
     return orElse();
   }
@@ -1081,103 +970,335 @@ class _$OrderDescriptionChanged implements OrderDescriptionChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(OrderTitleChanged value) orderTitleChanged,
     required TResult Function(ClientNameChanged value) clientNameChanged,
     required TResult Function(ClientPhoneNumberChanged value)
         clientPhoneNumberChanged,
-    required TResult Function(OrderDescriptionChanged value)
-        orderDescriptionChanged,
-    required TResult Function(DeliveryDateChanged value) deliveryDateChanged,
-    required TResult Function(PriceChanged value) priceChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
     required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
     required TResult Function(TaskDescriptionChanged value)
         taskDescriptionChanged,
     required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
     required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
     required TResult Function(UpdateOrderPressed value) updateOrderPressed,
   }) {
-    return orderDescriptionChanged(this);
+    return clientAddressChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(OrderTitleChanged value)? orderTitleChanged,
     TResult? Function(ClientNameChanged value)? clientNameChanged,
     TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult? Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult? Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult? Function(PriceChanged value)? priceChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
     TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
     TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
     TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
   }) {
-    return orderDescriptionChanged?.call(this);
+    return clientAddressChanged?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(OrderTitleChanged value)? orderTitleChanged,
     TResult Function(ClientNameChanged value)? clientNameChanged,
     TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult Function(PriceChanged value)? priceChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
     TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
     TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
     TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult Function(UpdateOrderPressed value)? updateOrderPressed,
     required TResult orElse(),
   }) {
-    if (orderDescriptionChanged != null) {
-      return orderDescriptionChanged(this);
+    if (clientAddressChanged != null) {
+      return clientAddressChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class OrderDescriptionChanged implements NewOrderFormEvent {
-  const factory OrderDescriptionChanged(
-      {required final String orderDescription}) = _$OrderDescriptionChanged;
+abstract class ClientAddressChanged implements NewOrderFormEvent {
+  const factory ClientAddressChanged({required final String clientAddress}) =
+      _$ClientAddressChanged;
 
-  String get orderDescription;
+  String get clientAddress;
   @JsonKey(ignore: true)
-  _$$OrderDescriptionChangedCopyWith<_$OrderDescriptionChanged> get copyWith =>
+  _$$ClientAddressChangedCopyWith<_$ClientAddressChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DeliveryDateChangedCopyWith<$Res> {
-  factory _$$DeliveryDateChangedCopyWith(_$DeliveryDateChanged value,
-          $Res Function(_$DeliveryDateChanged) then) =
-      __$$DeliveryDateChangedCopyWithImpl<$Res>;
+abstract class _$$ClientWilayaChangedCopyWith<$Res> {
+  factory _$$ClientWilayaChangedCopyWith(_$ClientWilayaChanged value,
+          $Res Function(_$ClientWilayaChanged) then) =
+      __$$ClientWilayaChangedCopyWithImpl<$Res>;
   @useResult
-  $Res call({DateTime deliveryDate});
+  $Res call({Wilaya? clientWilaya});
 }
 
 /// @nodoc
-class __$$DeliveryDateChangedCopyWithImpl<$Res>
-    extends _$NewOrderFormEventCopyWithImpl<$Res, _$DeliveryDateChanged>
-    implements _$$DeliveryDateChangedCopyWith<$Res> {
-  __$$DeliveryDateChangedCopyWithImpl(
-      _$DeliveryDateChanged _value, $Res Function(_$DeliveryDateChanged) _then)
+class __$$ClientWilayaChangedCopyWithImpl<$Res>
+    extends _$NewOrderFormEventCopyWithImpl<$Res, _$ClientWilayaChanged>
+    implements _$$ClientWilayaChangedCopyWith<$Res> {
+  __$$ClientWilayaChangedCopyWithImpl(
+      _$ClientWilayaChanged _value, $Res Function(_$ClientWilayaChanged) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? deliveryDate = null,
+    Object? clientWilaya = freezed,
   }) {
-    return _then(_$DeliveryDateChanged(
-      deliveryDate: null == deliveryDate
-          ? _value.deliveryDate
-          : deliveryDate // ignore: cast_nullable_to_non_nullable
+    return _then(_$ClientWilayaChanged(
+      clientWilaya: freezed == clientWilaya
+          ? _value.clientWilaya
+          : clientWilaya // ignore: cast_nullable_to_non_nullable
+              as Wilaya?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ClientWilayaChanged implements ClientWilayaChanged {
+  const _$ClientWilayaChanged({required this.clientWilaya});
+
+  @override
+  final Wilaya? clientWilaya;
+
+  @override
+  String toString() {
+    return 'NewOrderFormEvent.clientWilayaChanged(clientWilaya: $clientWilaya)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ClientWilayaChanged &&
+            (identical(other.clientWilaya, clientWilaya) ||
+                other.clientWilaya == clientWilaya));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, clientWilaya);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ClientWilayaChangedCopyWith<_$ClientWilayaChanged> get copyWith =>
+      __$$ClientWilayaChangedCopyWithImpl<_$ClientWilayaChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<UniqueId> orderIdOption) started,
+    required TResult Function(String clientName) clientNameChanged,
+    required TResult Function(String clientPhoneNumber)
+        clientPhoneNumberChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
+    required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
+    required TResult Function(UniqueId taskId, String taskDescription)
+        taskDescriptionChanged,
+    required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
+    required TResult Function() confirmOrderPressed,
+    required TResult Function(UniqueId orderId) updateOrderPressed,
+  }) {
+    return clientWilayaChanged(clientWilaya);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Option<UniqueId> orderIdOption)? started,
+    TResult? Function(String clientName)? clientNameChanged,
+    TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
+    TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
+    TResult? Function(UniqueId taskId, String taskDescription)?
+        taskDescriptionChanged,
+    TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
+    TResult? Function()? confirmOrderPressed,
+    TResult? Function(UniqueId orderId)? updateOrderPressed,
+  }) {
+    return clientWilayaChanged?.call(clientWilaya);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<UniqueId> orderIdOption)? started,
+    TResult Function(String clientName)? clientNameChanged,
+    TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
+    TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
+    TResult Function(UniqueId taskId, String taskDescription)?
+        taskDescriptionChanged,
+    TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
+    TResult Function()? confirmOrderPressed,
+    TResult Function(UniqueId orderId)? updateOrderPressed,
+    required TResult orElse(),
+  }) {
+    if (clientWilayaChanged != null) {
+      return clientWilayaChanged(clientWilaya);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Started value) started,
+    required TResult Function(ClientNameChanged value) clientNameChanged,
+    required TResult Function(ClientPhoneNumberChanged value)
+        clientPhoneNumberChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
+    required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
+    required TResult Function(TaskDescriptionChanged value)
+        taskDescriptionChanged,
+    required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
+    required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
+    required TResult Function(UpdateOrderPressed value) updateOrderPressed,
+  }) {
+    return clientWilayaChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Started value)? started,
+    TResult? Function(ClientNameChanged value)? clientNameChanged,
+    TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
+    TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
+    TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
+    TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
+    TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
+    TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
+  }) {
+    return clientWilayaChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Started value)? started,
+    TResult Function(ClientNameChanged value)? clientNameChanged,
+    TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
+    TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
+    TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
+    TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
+    TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
+    TResult Function(UpdateOrderPressed value)? updateOrderPressed,
+    required TResult orElse(),
+  }) {
+    if (clientWilayaChanged != null) {
+      return clientWilayaChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ClientWilayaChanged implements NewOrderFormEvent {
+  const factory ClientWilayaChanged({required final Wilaya? clientWilaya}) =
+      _$ClientWilayaChanged;
+
+  Wilaya? get clientWilaya;
+  @JsonKey(ignore: true)
+  _$$ClientWilayaChangedCopyWith<_$ClientWilayaChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OrderDateChangedCopyWith<$Res> {
+  factory _$$OrderDateChangedCopyWith(
+          _$OrderDateChanged value, $Res Function(_$OrderDateChanged) then) =
+      __$$OrderDateChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DateTime orderDate});
+}
+
+/// @nodoc
+class __$$OrderDateChangedCopyWithImpl<$Res>
+    extends _$NewOrderFormEventCopyWithImpl<$Res, _$OrderDateChanged>
+    implements _$$OrderDateChangedCopyWith<$Res> {
+  __$$OrderDateChangedCopyWithImpl(
+      _$OrderDateChanged _value, $Res Function(_$OrderDateChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orderDate = null,
+  }) {
+    return _then(_$OrderDateChanged(
+      orderDate: null == orderDate
+          ? _value.orderDate
+          : orderDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -1185,97 +1306,107 @@ class __$$DeliveryDateChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DeliveryDateChanged implements DeliveryDateChanged {
-  const _$DeliveryDateChanged({required this.deliveryDate});
+class _$OrderDateChanged implements OrderDateChanged {
+  const _$OrderDateChanged({required this.orderDate});
 
   @override
-  final DateTime deliveryDate;
+  final DateTime orderDate;
 
   @override
   String toString() {
-    return 'NewOrderFormEvent.deliveryDateChanged(deliveryDate: $deliveryDate)';
+    return 'NewOrderFormEvent.orderDateChanged(orderDate: $orderDate)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeliveryDateChanged &&
-            (identical(other.deliveryDate, deliveryDate) ||
-                other.deliveryDate == deliveryDate));
+            other is _$OrderDateChanged &&
+            (identical(other.orderDate, orderDate) ||
+                other.orderDate == orderDate));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, deliveryDate);
+  int get hashCode => Object.hash(runtimeType, orderDate);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DeliveryDateChangedCopyWith<_$DeliveryDateChanged> get copyWith =>
-      __$$DeliveryDateChangedCopyWithImpl<_$DeliveryDateChanged>(
-          this, _$identity);
+  _$$OrderDateChangedCopyWith<_$OrderDateChanged> get copyWith =>
+      __$$OrderDateChangedCopyWithImpl<_$OrderDateChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<UniqueId> orderIdOption) started,
-    required TResult Function(String orderTitle) orderTitleChanged,
     required TResult Function(String clientName) clientNameChanged,
     required TResult Function(String clientPhoneNumber)
         clientPhoneNumberChanged,
-    required TResult Function(String orderDescription) orderDescriptionChanged,
-    required TResult Function(DateTime deliveryDate) deliveryDateChanged,
-    required TResult Function(String price) priceChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
     required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
     required TResult Function(UniqueId taskId, String taskDescription)
         taskDescriptionChanged,
     required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
     required TResult Function() confirmOrderPressed,
     required TResult Function(UniqueId orderId) updateOrderPressed,
   }) {
-    return deliveryDateChanged(deliveryDate);
+    return orderDateChanged(orderDate);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<UniqueId> orderIdOption)? started,
-    TResult? Function(String orderTitle)? orderTitleChanged,
     TResult? Function(String clientName)? clientNameChanged,
     TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult? Function(String orderDescription)? orderDescriptionChanged,
-    TResult? Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult? Function(String price)? priceChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
     TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult? Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult? Function()? confirmOrderPressed,
     TResult? Function(UniqueId orderId)? updateOrderPressed,
   }) {
-    return deliveryDateChanged?.call(deliveryDate);
+    return orderDateChanged?.call(orderDate);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> orderIdOption)? started,
-    TResult Function(String orderTitle)? orderTitleChanged,
     TResult Function(String clientName)? clientNameChanged,
     TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult Function(String orderDescription)? orderDescriptionChanged,
-    TResult Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult Function(String price)? priceChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
     TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult Function()? confirmOrderPressed,
     TResult Function(UniqueId orderId)? updateOrderPressed,
     required TResult orElse(),
   }) {
-    if (deliveryDateChanged != null) {
-      return deliveryDateChanged(deliveryDate);
+    if (orderDateChanged != null) {
+      return orderDateChanged(orderDate);
     }
     return orElse();
   }
@@ -1284,103 +1415,336 @@ class _$DeliveryDateChanged implements DeliveryDateChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(OrderTitleChanged value) orderTitleChanged,
     required TResult Function(ClientNameChanged value) clientNameChanged,
     required TResult Function(ClientPhoneNumberChanged value)
         clientPhoneNumberChanged,
-    required TResult Function(OrderDescriptionChanged value)
-        orderDescriptionChanged,
-    required TResult Function(DeliveryDateChanged value) deliveryDateChanged,
-    required TResult Function(PriceChanged value) priceChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
     required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
     required TResult Function(TaskDescriptionChanged value)
         taskDescriptionChanged,
     required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
     required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
     required TResult Function(UpdateOrderPressed value) updateOrderPressed,
   }) {
-    return deliveryDateChanged(this);
+    return orderDateChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(OrderTitleChanged value)? orderTitleChanged,
     TResult? Function(ClientNameChanged value)? clientNameChanged,
     TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult? Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult? Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult? Function(PriceChanged value)? priceChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
     TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
     TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
     TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
   }) {
-    return deliveryDateChanged?.call(this);
+    return orderDateChanged?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(OrderTitleChanged value)? orderTitleChanged,
     TResult Function(ClientNameChanged value)? clientNameChanged,
     TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult Function(PriceChanged value)? priceChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
     TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
     TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
     TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult Function(UpdateOrderPressed value)? updateOrderPressed,
     required TResult orElse(),
   }) {
-    if (deliveryDateChanged != null) {
-      return deliveryDateChanged(this);
+    if (orderDateChanged != null) {
+      return orderDateChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class DeliveryDateChanged implements NewOrderFormEvent {
-  const factory DeliveryDateChanged({required final DateTime deliveryDate}) =
-      _$DeliveryDateChanged;
+abstract class OrderDateChanged implements NewOrderFormEvent {
+  const factory OrderDateChanged({required final DateTime orderDate}) =
+      _$OrderDateChanged;
 
-  DateTime get deliveryDate;
+  DateTime get orderDate;
   @JsonKey(ignore: true)
-  _$$DeliveryDateChangedCopyWith<_$DeliveryDateChanged> get copyWith =>
+  _$$OrderDateChangedCopyWith<_$OrderDateChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$PriceChangedCopyWith<$Res> {
-  factory _$$PriceChangedCopyWith(
-          _$PriceChanged value, $Res Function(_$PriceChanged) then) =
-      __$$PriceChangedCopyWithImpl<$Res>;
+abstract class _$$OrderDeliveryDateChangedCopyWith<$Res> {
+  factory _$$OrderDeliveryDateChangedCopyWith(_$OrderDeliveryDateChanged value,
+          $Res Function(_$OrderDeliveryDateChanged) then) =
+      __$$OrderDeliveryDateChangedCopyWithImpl<$Res>;
   @useResult
-  $Res call({String price});
+  $Res call({DateTime orderDeliveryDate});
 }
 
 /// @nodoc
-class __$$PriceChangedCopyWithImpl<$Res>
-    extends _$NewOrderFormEventCopyWithImpl<$Res, _$PriceChanged>
-    implements _$$PriceChangedCopyWith<$Res> {
-  __$$PriceChangedCopyWithImpl(
-      _$PriceChanged _value, $Res Function(_$PriceChanged) _then)
+class __$$OrderDeliveryDateChangedCopyWithImpl<$Res>
+    extends _$NewOrderFormEventCopyWithImpl<$Res, _$OrderDeliveryDateChanged>
+    implements _$$OrderDeliveryDateChangedCopyWith<$Res> {
+  __$$OrderDeliveryDateChangedCopyWithImpl(_$OrderDeliveryDateChanged _value,
+      $Res Function(_$OrderDeliveryDateChanged) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? price = null,
+    Object? orderDeliveryDate = null,
   }) {
-    return _then(_$PriceChanged(
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
+    return _then(_$OrderDeliveryDateChanged(
+      orderDeliveryDate: null == orderDeliveryDate
+          ? _value.orderDeliveryDate
+          : orderDeliveryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OrderDeliveryDateChanged implements OrderDeliveryDateChanged {
+  const _$OrderDeliveryDateChanged({required this.orderDeliveryDate});
+
+  @override
+  final DateTime orderDeliveryDate;
+
+  @override
+  String toString() {
+    return 'NewOrderFormEvent.orderDeliveryDateChanged(orderDeliveryDate: $orderDeliveryDate)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OrderDeliveryDateChanged &&
+            (identical(other.orderDeliveryDate, orderDeliveryDate) ||
+                other.orderDeliveryDate == orderDeliveryDate));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, orderDeliveryDate);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OrderDeliveryDateChangedCopyWith<_$OrderDeliveryDateChanged>
+      get copyWith =>
+          __$$OrderDeliveryDateChangedCopyWithImpl<_$OrderDeliveryDateChanged>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<UniqueId> orderIdOption) started,
+    required TResult Function(String clientName) clientNameChanged,
+    required TResult Function(String clientPhoneNumber)
+        clientPhoneNumberChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
+    required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
+    required TResult Function(UniqueId taskId, String taskDescription)
+        taskDescriptionChanged,
+    required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
+    required TResult Function() confirmOrderPressed,
+    required TResult Function(UniqueId orderId) updateOrderPressed,
+  }) {
+    return orderDeliveryDateChanged(orderDeliveryDate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Option<UniqueId> orderIdOption)? started,
+    TResult? Function(String clientName)? clientNameChanged,
+    TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
+    TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
+    TResult? Function(UniqueId taskId, String taskDescription)?
+        taskDescriptionChanged,
+    TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
+    TResult? Function()? confirmOrderPressed,
+    TResult? Function(UniqueId orderId)? updateOrderPressed,
+  }) {
+    return orderDeliveryDateChanged?.call(orderDeliveryDate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<UniqueId> orderIdOption)? started,
+    TResult Function(String clientName)? clientNameChanged,
+    TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
+    TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
+    TResult Function(UniqueId taskId, String taskDescription)?
+        taskDescriptionChanged,
+    TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
+    TResult Function()? confirmOrderPressed,
+    TResult Function(UniqueId orderId)? updateOrderPressed,
+    required TResult orElse(),
+  }) {
+    if (orderDeliveryDateChanged != null) {
+      return orderDeliveryDateChanged(orderDeliveryDate);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Started value) started,
+    required TResult Function(ClientNameChanged value) clientNameChanged,
+    required TResult Function(ClientPhoneNumberChanged value)
+        clientPhoneNumberChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
+    required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
+    required TResult Function(TaskDescriptionChanged value)
+        taskDescriptionChanged,
+    required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
+    required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
+    required TResult Function(UpdateOrderPressed value) updateOrderPressed,
+  }) {
+    return orderDeliveryDateChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Started value)? started,
+    TResult? Function(ClientNameChanged value)? clientNameChanged,
+    TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
+    TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
+    TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
+    TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
+    TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
+    TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
+  }) {
+    return orderDeliveryDateChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Started value)? started,
+    TResult Function(ClientNameChanged value)? clientNameChanged,
+    TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
+    TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
+    TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
+    TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
+    TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
+    TResult Function(UpdateOrderPressed value)? updateOrderPressed,
+    required TResult orElse(),
+  }) {
+    if (orderDeliveryDateChanged != null) {
+      return orderDeliveryDateChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OrderDeliveryDateChanged implements NewOrderFormEvent {
+  const factory OrderDeliveryDateChanged(
+      {required final DateTime orderDeliveryDate}) = _$OrderDeliveryDateChanged;
+
+  DateTime get orderDeliveryDate;
+  @JsonKey(ignore: true)
+  _$$OrderDeliveryDateChangedCopyWith<_$OrderDeliveryDateChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OrderPriceChangedCopyWith<$Res> {
+  factory _$$OrderPriceChangedCopyWith(
+          _$OrderPriceChanged value, $Res Function(_$OrderPriceChanged) then) =
+      __$$OrderPriceChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String orderPrice});
+}
+
+/// @nodoc
+class __$$OrderPriceChangedCopyWithImpl<$Res>
+    extends _$NewOrderFormEventCopyWithImpl<$Res, _$OrderPriceChanged>
+    implements _$$OrderPriceChangedCopyWith<$Res> {
+  __$$OrderPriceChangedCopyWithImpl(
+      _$OrderPriceChanged _value, $Res Function(_$OrderPriceChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orderPrice = null,
+  }) {
+    return _then(_$OrderPriceChanged(
+      orderPrice: null == orderPrice
+          ? _value.orderPrice
+          : orderPrice // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -1388,95 +1752,107 @@ class __$$PriceChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PriceChanged implements PriceChanged {
-  const _$PriceChanged({required this.price});
+class _$OrderPriceChanged implements OrderPriceChanged {
+  const _$OrderPriceChanged({required this.orderPrice});
 
   @override
-  final String price;
+  final String orderPrice;
 
   @override
   String toString() {
-    return 'NewOrderFormEvent.priceChanged(price: $price)';
+    return 'NewOrderFormEvent.orderPriceChanged(orderPrice: $orderPrice)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PriceChanged &&
-            (identical(other.price, price) || other.price == price));
+            other is _$OrderPriceChanged &&
+            (identical(other.orderPrice, orderPrice) ||
+                other.orderPrice == orderPrice));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, price);
+  int get hashCode => Object.hash(runtimeType, orderPrice);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PriceChangedCopyWith<_$PriceChanged> get copyWith =>
-      __$$PriceChangedCopyWithImpl<_$PriceChanged>(this, _$identity);
+  _$$OrderPriceChangedCopyWith<_$OrderPriceChanged> get copyWith =>
+      __$$OrderPriceChangedCopyWithImpl<_$OrderPriceChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<UniqueId> orderIdOption) started,
-    required TResult Function(String orderTitle) orderTitleChanged,
     required TResult Function(String clientName) clientNameChanged,
     required TResult Function(String clientPhoneNumber)
         clientPhoneNumberChanged,
-    required TResult Function(String orderDescription) orderDescriptionChanged,
-    required TResult Function(DateTime deliveryDate) deliveryDateChanged,
-    required TResult Function(String price) priceChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
     required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
     required TResult Function(UniqueId taskId, String taskDescription)
         taskDescriptionChanged,
     required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
     required TResult Function() confirmOrderPressed,
     required TResult Function(UniqueId orderId) updateOrderPressed,
   }) {
-    return priceChanged(price);
+    return orderPriceChanged(orderPrice);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<UniqueId> orderIdOption)? started,
-    TResult? Function(String orderTitle)? orderTitleChanged,
     TResult? Function(String clientName)? clientNameChanged,
     TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult? Function(String orderDescription)? orderDescriptionChanged,
-    TResult? Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult? Function(String price)? priceChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
     TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult? Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult? Function()? confirmOrderPressed,
     TResult? Function(UniqueId orderId)? updateOrderPressed,
   }) {
-    return priceChanged?.call(price);
+    return orderPriceChanged?.call(orderPrice);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> orderIdOption)? started,
-    TResult Function(String orderTitle)? orderTitleChanged,
     TResult Function(String clientName)? clientNameChanged,
     TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult Function(String orderDescription)? orderDescriptionChanged,
-    TResult Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult Function(String price)? priceChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
     TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult Function()? confirmOrderPressed,
     TResult Function(UniqueId orderId)? updateOrderPressed,
     required TResult orElse(),
   }) {
-    if (priceChanged != null) {
-      return priceChanged(price);
+    if (orderPriceChanged != null) {
+      return orderPriceChanged(orderPrice);
     }
     return orElse();
   }
@@ -1485,73 +1861,83 @@ class _$PriceChanged implements PriceChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(OrderTitleChanged value) orderTitleChanged,
     required TResult Function(ClientNameChanged value) clientNameChanged,
     required TResult Function(ClientPhoneNumberChanged value)
         clientPhoneNumberChanged,
-    required TResult Function(OrderDescriptionChanged value)
-        orderDescriptionChanged,
-    required TResult Function(DeliveryDateChanged value) deliveryDateChanged,
-    required TResult Function(PriceChanged value) priceChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
     required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
     required TResult Function(TaskDescriptionChanged value)
         taskDescriptionChanged,
     required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
     required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
     required TResult Function(UpdateOrderPressed value) updateOrderPressed,
   }) {
-    return priceChanged(this);
+    return orderPriceChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(OrderTitleChanged value)? orderTitleChanged,
     TResult? Function(ClientNameChanged value)? clientNameChanged,
     TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult? Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult? Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult? Function(PriceChanged value)? priceChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
     TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
     TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
     TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
   }) {
-    return priceChanged?.call(this);
+    return orderPriceChanged?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(OrderTitleChanged value)? orderTitleChanged,
     TResult Function(ClientNameChanged value)? clientNameChanged,
     TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult Function(PriceChanged value)? priceChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
     TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
     TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
     TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult Function(UpdateOrderPressed value)? updateOrderPressed,
     required TResult orElse(),
   }) {
-    if (priceChanged != null) {
-      return priceChanged(this);
+    if (orderPriceChanged != null) {
+      return orderPriceChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class PriceChanged implements NewOrderFormEvent {
-  const factory PriceChanged({required final String price}) = _$PriceChanged;
+abstract class OrderPriceChanged implements NewOrderFormEvent {
+  const factory OrderPriceChanged({required final String orderPrice}) =
+      _$OrderPriceChanged;
 
-  String get price;
+  String get orderPrice;
   @JsonKey(ignore: true)
-  _$$PriceChangedCopyWith<_$PriceChanged> get copyWith =>
+  _$$OrderPriceChangedCopyWith<_$OrderPriceChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1594,17 +1980,22 @@ class _$TaskAdded implements TaskAdded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<UniqueId> orderIdOption) started,
-    required TResult Function(String orderTitle) orderTitleChanged,
     required TResult Function(String clientName) clientNameChanged,
     required TResult Function(String clientPhoneNumber)
         clientPhoneNumberChanged,
-    required TResult Function(String orderDescription) orderDescriptionChanged,
-    required TResult Function(DateTime deliveryDate) deliveryDateChanged,
-    required TResult Function(String price) priceChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
     required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
     required TResult Function(UniqueId taskId, String taskDescription)
         taskDescriptionChanged,
     required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
     required TResult Function() confirmOrderPressed,
     required TResult Function(UniqueId orderId) updateOrderPressed,
   }) {
@@ -1615,16 +2006,19 @@ class _$TaskAdded implements TaskAdded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<UniqueId> orderIdOption)? started,
-    TResult? Function(String orderTitle)? orderTitleChanged,
     TResult? Function(String clientName)? clientNameChanged,
     TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult? Function(String orderDescription)? orderDescriptionChanged,
-    TResult? Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult? Function(String price)? priceChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
     TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult? Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult? Function()? confirmOrderPressed,
     TResult? Function(UniqueId orderId)? updateOrderPressed,
   }) {
@@ -1635,16 +2029,19 @@ class _$TaskAdded implements TaskAdded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> orderIdOption)? started,
-    TResult Function(String orderTitle)? orderTitleChanged,
     TResult Function(String clientName)? clientNameChanged,
     TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult Function(String orderDescription)? orderDescriptionChanged,
-    TResult Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult Function(String price)? priceChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
     TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult Function()? confirmOrderPressed,
     TResult Function(UniqueId orderId)? updateOrderPressed,
     required TResult orElse(),
@@ -1659,18 +2056,21 @@ class _$TaskAdded implements TaskAdded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(OrderTitleChanged value) orderTitleChanged,
     required TResult Function(ClientNameChanged value) clientNameChanged,
     required TResult Function(ClientPhoneNumberChanged value)
         clientPhoneNumberChanged,
-    required TResult Function(OrderDescriptionChanged value)
-        orderDescriptionChanged,
-    required TResult Function(DeliveryDateChanged value) deliveryDateChanged,
-    required TResult Function(PriceChanged value) priceChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
     required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
     required TResult Function(TaskDescriptionChanged value)
         taskDescriptionChanged,
     required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
     required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
     required TResult Function(UpdateOrderPressed value) updateOrderPressed,
   }) {
@@ -1681,15 +2081,18 @@ class _$TaskAdded implements TaskAdded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(OrderTitleChanged value)? orderTitleChanged,
     TResult? Function(ClientNameChanged value)? clientNameChanged,
     TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult? Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult? Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult? Function(PriceChanged value)? priceChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
     TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
     TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
     TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
   }) {
@@ -1700,15 +2103,18 @@ class _$TaskAdded implements TaskAdded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(OrderTitleChanged value)? orderTitleChanged,
     TResult Function(ClientNameChanged value)? clientNameChanged,
     TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult Function(PriceChanged value)? priceChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
     TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
     TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
     TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult Function(UpdateOrderPressed value)? updateOrderPressed,
     required TResult orElse(),
@@ -1722,6 +2128,248 @@ class _$TaskAdded implements TaskAdded {
 
 abstract class TaskAdded implements NewOrderFormEvent {
   const factory TaskAdded() = _$TaskAdded;
+}
+
+/// @nodoc
+abstract class _$$TaskProductChangedCopyWith<$Res> {
+  factory _$$TaskProductChangedCopyWith(_$TaskProductChanged value,
+          $Res Function(_$TaskProductChanged) then) =
+      __$$TaskProductChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UniqueId taskId, Product product});
+
+  $ProductCopyWith<$Res> get product;
+}
+
+/// @nodoc
+class __$$TaskProductChangedCopyWithImpl<$Res>
+    extends _$NewOrderFormEventCopyWithImpl<$Res, _$TaskProductChanged>
+    implements _$$TaskProductChangedCopyWith<$Res> {
+  __$$TaskProductChangedCopyWithImpl(
+      _$TaskProductChanged _value, $Res Function(_$TaskProductChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? taskId = null,
+    Object? product = null,
+  }) {
+    return _then(_$TaskProductChanged(
+      taskId: null == taskId
+          ? _value.taskId
+          : taskId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      product: null == product
+          ? _value.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as Product,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ProductCopyWith<$Res> get product {
+    return $ProductCopyWith<$Res>(_value.product, (value) {
+      return _then(_value.copyWith(product: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$TaskProductChanged implements TaskProductChanged {
+  const _$TaskProductChanged({required this.taskId, required this.product});
+
+  @override
+  final UniqueId taskId;
+  @override
+  final Product product;
+
+  @override
+  String toString() {
+    return 'NewOrderFormEvent.taskProductChanged(taskId: $taskId, product: $product)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TaskProductChanged &&
+            (identical(other.taskId, taskId) || other.taskId == taskId) &&
+            (identical(other.product, product) || other.product == product));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, taskId, product);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TaskProductChangedCopyWith<_$TaskProductChanged> get copyWith =>
+      __$$TaskProductChangedCopyWithImpl<_$TaskProductChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<UniqueId> orderIdOption) started,
+    required TResult Function(String clientName) clientNameChanged,
+    required TResult Function(String clientPhoneNumber)
+        clientPhoneNumberChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
+    required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
+    required TResult Function(UniqueId taskId, String taskDescription)
+        taskDescriptionChanged,
+    required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
+    required TResult Function() confirmOrderPressed,
+    required TResult Function(UniqueId orderId) updateOrderPressed,
+  }) {
+    return taskProductChanged(taskId, product);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Option<UniqueId> orderIdOption)? started,
+    TResult? Function(String clientName)? clientNameChanged,
+    TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
+    TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
+    TResult? Function(UniqueId taskId, String taskDescription)?
+        taskDescriptionChanged,
+    TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
+    TResult? Function()? confirmOrderPressed,
+    TResult? Function(UniqueId orderId)? updateOrderPressed,
+  }) {
+    return taskProductChanged?.call(taskId, product);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<UniqueId> orderIdOption)? started,
+    TResult Function(String clientName)? clientNameChanged,
+    TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
+    TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
+    TResult Function(UniqueId taskId, String taskDescription)?
+        taskDescriptionChanged,
+    TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
+    TResult Function()? confirmOrderPressed,
+    TResult Function(UniqueId orderId)? updateOrderPressed,
+    required TResult orElse(),
+  }) {
+    if (taskProductChanged != null) {
+      return taskProductChanged(taskId, product);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Started value) started,
+    required TResult Function(ClientNameChanged value) clientNameChanged,
+    required TResult Function(ClientPhoneNumberChanged value)
+        clientPhoneNumberChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
+    required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
+    required TResult Function(TaskDescriptionChanged value)
+        taskDescriptionChanged,
+    required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
+    required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
+    required TResult Function(UpdateOrderPressed value) updateOrderPressed,
+  }) {
+    return taskProductChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Started value)? started,
+    TResult? Function(ClientNameChanged value)? clientNameChanged,
+    TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
+    TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
+    TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
+    TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
+    TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
+    TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
+  }) {
+    return taskProductChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Started value)? started,
+    TResult Function(ClientNameChanged value)? clientNameChanged,
+    TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
+    TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
+    TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
+    TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
+    TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
+    TResult Function(UpdateOrderPressed value)? updateOrderPressed,
+    required TResult orElse(),
+  }) {
+    if (taskProductChanged != null) {
+      return taskProductChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TaskProductChanged implements NewOrderFormEvent {
+  const factory TaskProductChanged(
+      {required final UniqueId taskId,
+      required final Product product}) = _$TaskProductChanged;
+
+  UniqueId get taskId;
+  Product get product;
+  @JsonKey(ignore: true)
+  _$$TaskProductChangedCopyWith<_$TaskProductChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1800,17 +2448,22 @@ class _$TaskDescriptionChanged implements TaskDescriptionChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<UniqueId> orderIdOption) started,
-    required TResult Function(String orderTitle) orderTitleChanged,
     required TResult Function(String clientName) clientNameChanged,
     required TResult Function(String clientPhoneNumber)
         clientPhoneNumberChanged,
-    required TResult Function(String orderDescription) orderDescriptionChanged,
-    required TResult Function(DateTime deliveryDate) deliveryDateChanged,
-    required TResult Function(String price) priceChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
     required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
     required TResult Function(UniqueId taskId, String taskDescription)
         taskDescriptionChanged,
     required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
     required TResult Function() confirmOrderPressed,
     required TResult Function(UniqueId orderId) updateOrderPressed,
   }) {
@@ -1821,16 +2474,19 @@ class _$TaskDescriptionChanged implements TaskDescriptionChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<UniqueId> orderIdOption)? started,
-    TResult? Function(String orderTitle)? orderTitleChanged,
     TResult? Function(String clientName)? clientNameChanged,
     TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult? Function(String orderDescription)? orderDescriptionChanged,
-    TResult? Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult? Function(String price)? priceChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
     TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult? Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult? Function()? confirmOrderPressed,
     TResult? Function(UniqueId orderId)? updateOrderPressed,
   }) {
@@ -1841,16 +2497,19 @@ class _$TaskDescriptionChanged implements TaskDescriptionChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> orderIdOption)? started,
-    TResult Function(String orderTitle)? orderTitleChanged,
     TResult Function(String clientName)? clientNameChanged,
     TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult Function(String orderDescription)? orderDescriptionChanged,
-    TResult Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult Function(String price)? priceChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
     TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult Function()? confirmOrderPressed,
     TResult Function(UniqueId orderId)? updateOrderPressed,
     required TResult orElse(),
@@ -1865,18 +2524,21 @@ class _$TaskDescriptionChanged implements TaskDescriptionChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(OrderTitleChanged value) orderTitleChanged,
     required TResult Function(ClientNameChanged value) clientNameChanged,
     required TResult Function(ClientPhoneNumberChanged value)
         clientPhoneNumberChanged,
-    required TResult Function(OrderDescriptionChanged value)
-        orderDescriptionChanged,
-    required TResult Function(DeliveryDateChanged value) deliveryDateChanged,
-    required TResult Function(PriceChanged value) priceChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
     required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
     required TResult Function(TaskDescriptionChanged value)
         taskDescriptionChanged,
     required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
     required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
     required TResult Function(UpdateOrderPressed value) updateOrderPressed,
   }) {
@@ -1887,15 +2549,18 @@ class _$TaskDescriptionChanged implements TaskDescriptionChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(OrderTitleChanged value)? orderTitleChanged,
     TResult? Function(ClientNameChanged value)? clientNameChanged,
     TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult? Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult? Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult? Function(PriceChanged value)? priceChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
     TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
     TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
     TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
   }) {
@@ -1906,15 +2571,18 @@ class _$TaskDescriptionChanged implements TaskDescriptionChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(OrderTitleChanged value)? orderTitleChanged,
     TResult Function(ClientNameChanged value)? clientNameChanged,
     TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult Function(PriceChanged value)? priceChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
     TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
     TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
     TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult Function(UpdateOrderPressed value)? updateOrderPressed,
     required TResult orElse(),
@@ -2003,17 +2671,22 @@ class _$TaskDeleted implements TaskDeleted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<UniqueId> orderIdOption) started,
-    required TResult Function(String orderTitle) orderTitleChanged,
     required TResult Function(String clientName) clientNameChanged,
     required TResult Function(String clientPhoneNumber)
         clientPhoneNumberChanged,
-    required TResult Function(String orderDescription) orderDescriptionChanged,
-    required TResult Function(DateTime deliveryDate) deliveryDateChanged,
-    required TResult Function(String price) priceChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
     required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
     required TResult Function(UniqueId taskId, String taskDescription)
         taskDescriptionChanged,
     required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
     required TResult Function() confirmOrderPressed,
     required TResult Function(UniqueId orderId) updateOrderPressed,
   }) {
@@ -2024,16 +2697,19 @@ class _$TaskDeleted implements TaskDeleted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<UniqueId> orderIdOption)? started,
-    TResult? Function(String orderTitle)? orderTitleChanged,
     TResult? Function(String clientName)? clientNameChanged,
     TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult? Function(String orderDescription)? orderDescriptionChanged,
-    TResult? Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult? Function(String price)? priceChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
     TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult? Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult? Function()? confirmOrderPressed,
     TResult? Function(UniqueId orderId)? updateOrderPressed,
   }) {
@@ -2044,16 +2720,19 @@ class _$TaskDeleted implements TaskDeleted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> orderIdOption)? started,
-    TResult Function(String orderTitle)? orderTitleChanged,
     TResult Function(String clientName)? clientNameChanged,
     TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult Function(String orderDescription)? orderDescriptionChanged,
-    TResult Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult Function(String price)? priceChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
     TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult Function()? confirmOrderPressed,
     TResult Function(UniqueId orderId)? updateOrderPressed,
     required TResult orElse(),
@@ -2068,18 +2747,21 @@ class _$TaskDeleted implements TaskDeleted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(OrderTitleChanged value) orderTitleChanged,
     required TResult Function(ClientNameChanged value) clientNameChanged,
     required TResult Function(ClientPhoneNumberChanged value)
         clientPhoneNumberChanged,
-    required TResult Function(OrderDescriptionChanged value)
-        orderDescriptionChanged,
-    required TResult Function(DeliveryDateChanged value) deliveryDateChanged,
-    required TResult Function(PriceChanged value) priceChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
     required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
     required TResult Function(TaskDescriptionChanged value)
         taskDescriptionChanged,
     required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
     required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
     required TResult Function(UpdateOrderPressed value) updateOrderPressed,
   }) {
@@ -2090,15 +2772,18 @@ class _$TaskDeleted implements TaskDeleted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(OrderTitleChanged value)? orderTitleChanged,
     TResult? Function(ClientNameChanged value)? clientNameChanged,
     TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult? Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult? Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult? Function(PriceChanged value)? priceChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
     TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
     TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
     TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
   }) {
@@ -2109,15 +2794,18 @@ class _$TaskDeleted implements TaskDeleted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(OrderTitleChanged value)? orderTitleChanged,
     TResult Function(ClientNameChanged value)? clientNameChanged,
     TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult Function(PriceChanged value)? priceChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
     TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
     TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
     TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult Function(UpdateOrderPressed value)? updateOrderPressed,
     required TResult orElse(),
@@ -2135,6 +2823,228 @@ abstract class TaskDeleted implements NewOrderFormEvent {
   UniqueId get taskId;
   @JsonKey(ignore: true)
   _$$TaskDeletedCopyWith<_$TaskDeleted> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OldClientChangedCopyWith<$Res> {
+  factory _$$OldClientChangedCopyWith(
+          _$OldClientChanged value, $Res Function(_$OldClientChanged) then) =
+      __$$OldClientChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Option<Client> oldClientOption});
+}
+
+/// @nodoc
+class __$$OldClientChangedCopyWithImpl<$Res>
+    extends _$NewOrderFormEventCopyWithImpl<$Res, _$OldClientChanged>
+    implements _$$OldClientChangedCopyWith<$Res> {
+  __$$OldClientChangedCopyWithImpl(
+      _$OldClientChanged _value, $Res Function(_$OldClientChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? oldClientOption = null,
+  }) {
+    return _then(_$OldClientChanged(
+      oldClientOption: null == oldClientOption
+          ? _value.oldClientOption
+          : oldClientOption // ignore: cast_nullable_to_non_nullable
+              as Option<Client>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OldClientChanged implements OldClientChanged {
+  const _$OldClientChanged({required this.oldClientOption});
+
+  @override
+  final Option<Client> oldClientOption;
+
+  @override
+  String toString() {
+    return 'NewOrderFormEvent.oldClientChanged(oldClientOption: $oldClientOption)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OldClientChanged &&
+            (identical(other.oldClientOption, oldClientOption) ||
+                other.oldClientOption == oldClientOption));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, oldClientOption);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OldClientChangedCopyWith<_$OldClientChanged> get copyWith =>
+      __$$OldClientChangedCopyWithImpl<_$OldClientChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<UniqueId> orderIdOption) started,
+    required TResult Function(String clientName) clientNameChanged,
+    required TResult Function(String clientPhoneNumber)
+        clientPhoneNumberChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
+    required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
+    required TResult Function(UniqueId taskId, String taskDescription)
+        taskDescriptionChanged,
+    required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
+    required TResult Function() confirmOrderPressed,
+    required TResult Function(UniqueId orderId) updateOrderPressed,
+  }) {
+    return oldClientChanged(oldClientOption);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Option<UniqueId> orderIdOption)? started,
+    TResult? Function(String clientName)? clientNameChanged,
+    TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
+    TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
+    TResult? Function(UniqueId taskId, String taskDescription)?
+        taskDescriptionChanged,
+    TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
+    TResult? Function()? confirmOrderPressed,
+    TResult? Function(UniqueId orderId)? updateOrderPressed,
+  }) {
+    return oldClientChanged?.call(oldClientOption);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<UniqueId> orderIdOption)? started,
+    TResult Function(String clientName)? clientNameChanged,
+    TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
+    TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
+    TResult Function(UniqueId taskId, String taskDescription)?
+        taskDescriptionChanged,
+    TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
+    TResult Function()? confirmOrderPressed,
+    TResult Function(UniqueId orderId)? updateOrderPressed,
+    required TResult orElse(),
+  }) {
+    if (oldClientChanged != null) {
+      return oldClientChanged(oldClientOption);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Started value) started,
+    required TResult Function(ClientNameChanged value) clientNameChanged,
+    required TResult Function(ClientPhoneNumberChanged value)
+        clientPhoneNumberChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
+    required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
+    required TResult Function(TaskDescriptionChanged value)
+        taskDescriptionChanged,
+    required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
+    required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
+    required TResult Function(UpdateOrderPressed value) updateOrderPressed,
+  }) {
+    return oldClientChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Started value)? started,
+    TResult? Function(ClientNameChanged value)? clientNameChanged,
+    TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
+    TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
+    TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
+    TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
+    TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
+    TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
+  }) {
+    return oldClientChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Started value)? started,
+    TResult Function(ClientNameChanged value)? clientNameChanged,
+    TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
+    TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
+    TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
+    TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
+    TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
+    TResult Function(UpdateOrderPressed value)? updateOrderPressed,
+    required TResult orElse(),
+  }) {
+    if (oldClientChanged != null) {
+      return oldClientChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OldClientChanged implements NewOrderFormEvent {
+  const factory OldClientChanged(
+      {required final Option<Client> oldClientOption}) = _$OldClientChanged;
+
+  Option<Client> get oldClientOption;
+  @JsonKey(ignore: true)
+  _$$OldClientChangedCopyWith<_$OldClientChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -2177,17 +3087,22 @@ class _$ConfirmOrderPressed implements ConfirmOrderPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<UniqueId> orderIdOption) started,
-    required TResult Function(String orderTitle) orderTitleChanged,
     required TResult Function(String clientName) clientNameChanged,
     required TResult Function(String clientPhoneNumber)
         clientPhoneNumberChanged,
-    required TResult Function(String orderDescription) orderDescriptionChanged,
-    required TResult Function(DateTime deliveryDate) deliveryDateChanged,
-    required TResult Function(String price) priceChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
     required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
     required TResult Function(UniqueId taskId, String taskDescription)
         taskDescriptionChanged,
     required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
     required TResult Function() confirmOrderPressed,
     required TResult Function(UniqueId orderId) updateOrderPressed,
   }) {
@@ -2198,16 +3113,19 @@ class _$ConfirmOrderPressed implements ConfirmOrderPressed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<UniqueId> orderIdOption)? started,
-    TResult? Function(String orderTitle)? orderTitleChanged,
     TResult? Function(String clientName)? clientNameChanged,
     TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult? Function(String orderDescription)? orderDescriptionChanged,
-    TResult? Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult? Function(String price)? priceChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
     TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult? Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult? Function()? confirmOrderPressed,
     TResult? Function(UniqueId orderId)? updateOrderPressed,
   }) {
@@ -2218,16 +3136,19 @@ class _$ConfirmOrderPressed implements ConfirmOrderPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> orderIdOption)? started,
-    TResult Function(String orderTitle)? orderTitleChanged,
     TResult Function(String clientName)? clientNameChanged,
     TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult Function(String orderDescription)? orderDescriptionChanged,
-    TResult Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult Function(String price)? priceChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
     TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult Function()? confirmOrderPressed,
     TResult Function(UniqueId orderId)? updateOrderPressed,
     required TResult orElse(),
@@ -2242,18 +3163,21 @@ class _$ConfirmOrderPressed implements ConfirmOrderPressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(OrderTitleChanged value) orderTitleChanged,
     required TResult Function(ClientNameChanged value) clientNameChanged,
     required TResult Function(ClientPhoneNumberChanged value)
         clientPhoneNumberChanged,
-    required TResult Function(OrderDescriptionChanged value)
-        orderDescriptionChanged,
-    required TResult Function(DeliveryDateChanged value) deliveryDateChanged,
-    required TResult Function(PriceChanged value) priceChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
     required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
     required TResult Function(TaskDescriptionChanged value)
         taskDescriptionChanged,
     required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
     required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
     required TResult Function(UpdateOrderPressed value) updateOrderPressed,
   }) {
@@ -2264,15 +3188,18 @@ class _$ConfirmOrderPressed implements ConfirmOrderPressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(OrderTitleChanged value)? orderTitleChanged,
     TResult? Function(ClientNameChanged value)? clientNameChanged,
     TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult? Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult? Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult? Function(PriceChanged value)? priceChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
     TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
     TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
     TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
   }) {
@@ -2283,15 +3210,18 @@ class _$ConfirmOrderPressed implements ConfirmOrderPressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(OrderTitleChanged value)? orderTitleChanged,
     TResult Function(ClientNameChanged value)? clientNameChanged,
     TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult Function(PriceChanged value)? priceChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
     TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
     TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
     TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult Function(UpdateOrderPressed value)? updateOrderPressed,
     required TResult orElse(),
@@ -2373,17 +3303,22 @@ class _$UpdateOrderPressed implements UpdateOrderPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Option<UniqueId> orderIdOption) started,
-    required TResult Function(String orderTitle) orderTitleChanged,
     required TResult Function(String clientName) clientNameChanged,
     required TResult Function(String clientPhoneNumber)
         clientPhoneNumberChanged,
-    required TResult Function(String orderDescription) orderDescriptionChanged,
-    required TResult Function(DateTime deliveryDate) deliveryDateChanged,
-    required TResult Function(String price) priceChanged,
+    required TResult Function(String clientAddress) clientAddressChanged,
+    required TResult Function(Wilaya? clientWilaya) clientWilayaChanged,
+    required TResult Function(DateTime orderDate) orderDateChanged,
+    required TResult Function(DateTime orderDeliveryDate)
+        orderDeliveryDateChanged,
+    required TResult Function(String orderPrice) orderPriceChanged,
     required TResult Function() taskAdded,
+    required TResult Function(UniqueId taskId, Product product)
+        taskProductChanged,
     required TResult Function(UniqueId taskId, String taskDescription)
         taskDescriptionChanged,
     required TResult Function(UniqueId taskId) taskDeleted,
+    required TResult Function(Option<Client> oldClientOption) oldClientChanged,
     required TResult Function() confirmOrderPressed,
     required TResult Function(UniqueId orderId) updateOrderPressed,
   }) {
@@ -2394,16 +3329,19 @@ class _$UpdateOrderPressed implements UpdateOrderPressed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Option<UniqueId> orderIdOption)? started,
-    TResult? Function(String orderTitle)? orderTitleChanged,
     TResult? Function(String clientName)? clientNameChanged,
     TResult? Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult? Function(String orderDescription)? orderDescriptionChanged,
-    TResult? Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult? Function(String price)? priceChanged,
+    TResult? Function(String clientAddress)? clientAddressChanged,
+    TResult? Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult? Function(DateTime orderDate)? orderDateChanged,
+    TResult? Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult? Function(String orderPrice)? orderPriceChanged,
     TResult? Function()? taskAdded,
+    TResult? Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult? Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult? Function(UniqueId taskId)? taskDeleted,
+    TResult? Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult? Function()? confirmOrderPressed,
     TResult? Function(UniqueId orderId)? updateOrderPressed,
   }) {
@@ -2414,16 +3352,19 @@ class _$UpdateOrderPressed implements UpdateOrderPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<UniqueId> orderIdOption)? started,
-    TResult Function(String orderTitle)? orderTitleChanged,
     TResult Function(String clientName)? clientNameChanged,
     TResult Function(String clientPhoneNumber)? clientPhoneNumberChanged,
-    TResult Function(String orderDescription)? orderDescriptionChanged,
-    TResult Function(DateTime deliveryDate)? deliveryDateChanged,
-    TResult Function(String price)? priceChanged,
+    TResult Function(String clientAddress)? clientAddressChanged,
+    TResult Function(Wilaya? clientWilaya)? clientWilayaChanged,
+    TResult Function(DateTime orderDate)? orderDateChanged,
+    TResult Function(DateTime orderDeliveryDate)? orderDeliveryDateChanged,
+    TResult Function(String orderPrice)? orderPriceChanged,
     TResult Function()? taskAdded,
+    TResult Function(UniqueId taskId, Product product)? taskProductChanged,
     TResult Function(UniqueId taskId, String taskDescription)?
         taskDescriptionChanged,
     TResult Function(UniqueId taskId)? taskDeleted,
+    TResult Function(Option<Client> oldClientOption)? oldClientChanged,
     TResult Function()? confirmOrderPressed,
     TResult Function(UniqueId orderId)? updateOrderPressed,
     required TResult orElse(),
@@ -2438,18 +3379,21 @@ class _$UpdateOrderPressed implements UpdateOrderPressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
-    required TResult Function(OrderTitleChanged value) orderTitleChanged,
     required TResult Function(ClientNameChanged value) clientNameChanged,
     required TResult Function(ClientPhoneNumberChanged value)
         clientPhoneNumberChanged,
-    required TResult Function(OrderDescriptionChanged value)
-        orderDescriptionChanged,
-    required TResult Function(DeliveryDateChanged value) deliveryDateChanged,
-    required TResult Function(PriceChanged value) priceChanged,
+    required TResult Function(ClientAddressChanged value) clientAddressChanged,
+    required TResult Function(ClientWilayaChanged value) clientWilayaChanged,
+    required TResult Function(OrderDateChanged value) orderDateChanged,
+    required TResult Function(OrderDeliveryDateChanged value)
+        orderDeliveryDateChanged,
+    required TResult Function(OrderPriceChanged value) orderPriceChanged,
     required TResult Function(TaskAdded value) taskAdded,
+    required TResult Function(TaskProductChanged value) taskProductChanged,
     required TResult Function(TaskDescriptionChanged value)
         taskDescriptionChanged,
     required TResult Function(TaskDeleted value) taskDeleted,
+    required TResult Function(OldClientChanged value) oldClientChanged,
     required TResult Function(ConfirmOrderPressed value) confirmOrderPressed,
     required TResult Function(UpdateOrderPressed value) updateOrderPressed,
   }) {
@@ -2460,15 +3404,18 @@ class _$UpdateOrderPressed implements UpdateOrderPressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
-    TResult? Function(OrderTitleChanged value)? orderTitleChanged,
     TResult? Function(ClientNameChanged value)? clientNameChanged,
     TResult? Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult? Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult? Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult? Function(PriceChanged value)? priceChanged,
+    TResult? Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult? Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult? Function(OrderDateChanged value)? orderDateChanged,
+    TResult? Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult? Function(OrderPriceChanged value)? orderPriceChanged,
     TResult? Function(TaskAdded value)? taskAdded,
+    TResult? Function(TaskProductChanged value)? taskProductChanged,
     TResult? Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult? Function(TaskDeleted value)? taskDeleted,
+    TResult? Function(OldClientChanged value)? oldClientChanged,
     TResult? Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult? Function(UpdateOrderPressed value)? updateOrderPressed,
   }) {
@@ -2479,15 +3426,18 @@ class _$UpdateOrderPressed implements UpdateOrderPressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
-    TResult Function(OrderTitleChanged value)? orderTitleChanged,
     TResult Function(ClientNameChanged value)? clientNameChanged,
     TResult Function(ClientPhoneNumberChanged value)? clientPhoneNumberChanged,
-    TResult Function(OrderDescriptionChanged value)? orderDescriptionChanged,
-    TResult Function(DeliveryDateChanged value)? deliveryDateChanged,
-    TResult Function(PriceChanged value)? priceChanged,
+    TResult Function(ClientAddressChanged value)? clientAddressChanged,
+    TResult Function(ClientWilayaChanged value)? clientWilayaChanged,
+    TResult Function(OrderDateChanged value)? orderDateChanged,
+    TResult Function(OrderDeliveryDateChanged value)? orderDeliveryDateChanged,
+    TResult Function(OrderPriceChanged value)? orderPriceChanged,
     TResult Function(TaskAdded value)? taskAdded,
+    TResult Function(TaskProductChanged value)? taskProductChanged,
     TResult Function(TaskDescriptionChanged value)? taskDescriptionChanged,
     TResult Function(TaskDeleted value)? taskDeleted,
+    TResult Function(OldClientChanged value)? oldClientChanged,
     TResult Function(ConfirmOrderPressed value)? confirmOrderPressed,
     TResult Function(UpdateOrderPressed value)? updateOrderPressed,
     required TResult orElse(),
@@ -2513,15 +3463,17 @@ abstract class UpdateOrderPressed implements NewOrderFormEvent {
 mixin _$NewOrderFormState {
   bool get inProgress => throw _privateConstructorUsedError;
   bool get autovalidate => throw _privateConstructorUsedError;
-  String get orderTitle => throw _privateConstructorUsedError;
   Name get clientName => throw _privateConstructorUsedError;
+  Wilaya? get clientWilaya => throw _privateConstructorUsedError;
+  String get clientAddress => throw _privateConstructorUsedError;
   PhoneNumber get clientPhoneNumber => throw _privateConstructorUsedError;
-  String get orderDescription => throw _privateConstructorUsedError;
-  DateTime get deliveryDate => throw _privateConstructorUsedError;
-  Price get price => throw _privateConstructorUsedError;
-  List<OrderTask> get tasks => throw _privateConstructorUsedError;
+  DateTime get orderDate => throw _privateConstructorUsedError;
+  DateTime get orderDeliveryDate => throw _privateConstructorUsedError;
+  Price get orderPrice => throw _privateConstructorUsedError;
+  List<OrderTask> get orderTasks => throw _privateConstructorUsedError;
   Option<Either<FirebaseFailure, FirebaseSuccess>> get failureOrSuccessOption =>
       throw _privateConstructorUsedError;
+  Option<Client> get oldClientOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NewOrderFormStateCopyWith<NewOrderFormState> get copyWith =>
@@ -2537,14 +3489,16 @@ abstract class $NewOrderFormStateCopyWith<$Res> {
   $Res call(
       {bool inProgress,
       bool autovalidate,
-      String orderTitle,
       Name clientName,
+      Wilaya? clientWilaya,
+      String clientAddress,
       PhoneNumber clientPhoneNumber,
-      String orderDescription,
-      DateTime deliveryDate,
-      Price price,
-      List<OrderTask> tasks,
-      Option<Either<FirebaseFailure, FirebaseSuccess>> failureOrSuccessOption});
+      DateTime orderDate,
+      DateTime orderDeliveryDate,
+      Price orderPrice,
+      List<OrderTask> orderTasks,
+      Option<Either<FirebaseFailure, FirebaseSuccess>> failureOrSuccessOption,
+      Option<Client> oldClientOption});
 }
 
 /// @nodoc
@@ -2562,14 +3516,16 @@ class _$NewOrderFormStateCopyWithImpl<$Res, $Val extends NewOrderFormState>
   $Res call({
     Object? inProgress = null,
     Object? autovalidate = null,
-    Object? orderTitle = null,
     Object? clientName = null,
+    Object? clientWilaya = freezed,
+    Object? clientAddress = null,
     Object? clientPhoneNumber = null,
-    Object? orderDescription = null,
-    Object? deliveryDate = null,
-    Object? price = null,
-    Object? tasks = null,
+    Object? orderDate = null,
+    Object? orderDeliveryDate = null,
+    Object? orderPrice = null,
+    Object? orderTasks = null,
     Object? failureOrSuccessOption = null,
+    Object? oldClientOption = null,
   }) {
     return _then(_value.copyWith(
       inProgress: null == inProgress
@@ -2580,38 +3536,46 @@ class _$NewOrderFormStateCopyWithImpl<$Res, $Val extends NewOrderFormState>
           ? _value.autovalidate
           : autovalidate // ignore: cast_nullable_to_non_nullable
               as bool,
-      orderTitle: null == orderTitle
-          ? _value.orderTitle
-          : orderTitle // ignore: cast_nullable_to_non_nullable
-              as String,
       clientName: null == clientName
           ? _value.clientName
           : clientName // ignore: cast_nullable_to_non_nullable
               as Name,
+      clientWilaya: freezed == clientWilaya
+          ? _value.clientWilaya
+          : clientWilaya // ignore: cast_nullable_to_non_nullable
+              as Wilaya?,
+      clientAddress: null == clientAddress
+          ? _value.clientAddress
+          : clientAddress // ignore: cast_nullable_to_non_nullable
+              as String,
       clientPhoneNumber: null == clientPhoneNumber
           ? _value.clientPhoneNumber
           : clientPhoneNumber // ignore: cast_nullable_to_non_nullable
               as PhoneNumber,
-      orderDescription: null == orderDescription
-          ? _value.orderDescription
-          : orderDescription // ignore: cast_nullable_to_non_nullable
-              as String,
-      deliveryDate: null == deliveryDate
-          ? _value.deliveryDate
-          : deliveryDate // ignore: cast_nullable_to_non_nullable
+      orderDate: null == orderDate
+          ? _value.orderDate
+          : orderDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
+      orderDeliveryDate: null == orderDeliveryDate
+          ? _value.orderDeliveryDate
+          : orderDeliveryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      orderPrice: null == orderPrice
+          ? _value.orderPrice
+          : orderPrice // ignore: cast_nullable_to_non_nullable
               as Price,
-      tasks: null == tasks
-          ? _value.tasks
-          : tasks // ignore: cast_nullable_to_non_nullable
+      orderTasks: null == orderTasks
+          ? _value.orderTasks
+          : orderTasks // ignore: cast_nullable_to_non_nullable
               as List<OrderTask>,
       failureOrSuccessOption: null == failureOrSuccessOption
           ? _value.failureOrSuccessOption
           : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<FirebaseFailure, FirebaseSuccess>>,
+      oldClientOption: null == oldClientOption
+          ? _value.oldClientOption
+          : oldClientOption // ignore: cast_nullable_to_non_nullable
+              as Option<Client>,
     ) as $Val);
   }
 }
@@ -2627,14 +3591,16 @@ abstract class _$$_NewOrderFormStateCopyWith<$Res>
   $Res call(
       {bool inProgress,
       bool autovalidate,
-      String orderTitle,
       Name clientName,
+      Wilaya? clientWilaya,
+      String clientAddress,
       PhoneNumber clientPhoneNumber,
-      String orderDescription,
-      DateTime deliveryDate,
-      Price price,
-      List<OrderTask> tasks,
-      Option<Either<FirebaseFailure, FirebaseSuccess>> failureOrSuccessOption});
+      DateTime orderDate,
+      DateTime orderDeliveryDate,
+      Price orderPrice,
+      List<OrderTask> orderTasks,
+      Option<Either<FirebaseFailure, FirebaseSuccess>> failureOrSuccessOption,
+      Option<Client> oldClientOption});
 }
 
 /// @nodoc
@@ -2650,14 +3616,16 @@ class __$$_NewOrderFormStateCopyWithImpl<$Res>
   $Res call({
     Object? inProgress = null,
     Object? autovalidate = null,
-    Object? orderTitle = null,
     Object? clientName = null,
+    Object? clientWilaya = freezed,
+    Object? clientAddress = null,
     Object? clientPhoneNumber = null,
-    Object? orderDescription = null,
-    Object? deliveryDate = null,
-    Object? price = null,
-    Object? tasks = null,
+    Object? orderDate = null,
+    Object? orderDeliveryDate = null,
+    Object? orderPrice = null,
+    Object? orderTasks = null,
     Object? failureOrSuccessOption = null,
+    Object? oldClientOption = null,
   }) {
     return _then(_$_NewOrderFormState(
       inProgress: null == inProgress
@@ -2668,38 +3636,46 @@ class __$$_NewOrderFormStateCopyWithImpl<$Res>
           ? _value.autovalidate
           : autovalidate // ignore: cast_nullable_to_non_nullable
               as bool,
-      orderTitle: null == orderTitle
-          ? _value.orderTitle
-          : orderTitle // ignore: cast_nullable_to_non_nullable
-              as String,
       clientName: null == clientName
           ? _value.clientName
           : clientName // ignore: cast_nullable_to_non_nullable
               as Name,
+      clientWilaya: freezed == clientWilaya
+          ? _value.clientWilaya
+          : clientWilaya // ignore: cast_nullable_to_non_nullable
+              as Wilaya?,
+      clientAddress: null == clientAddress
+          ? _value.clientAddress
+          : clientAddress // ignore: cast_nullable_to_non_nullable
+              as String,
       clientPhoneNumber: null == clientPhoneNumber
           ? _value.clientPhoneNumber
           : clientPhoneNumber // ignore: cast_nullable_to_non_nullable
               as PhoneNumber,
-      orderDescription: null == orderDescription
-          ? _value.orderDescription
-          : orderDescription // ignore: cast_nullable_to_non_nullable
-              as String,
-      deliveryDate: null == deliveryDate
-          ? _value.deliveryDate
-          : deliveryDate // ignore: cast_nullable_to_non_nullable
+      orderDate: null == orderDate
+          ? _value.orderDate
+          : orderDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
+      orderDeliveryDate: null == orderDeliveryDate
+          ? _value.orderDeliveryDate
+          : orderDeliveryDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      orderPrice: null == orderPrice
+          ? _value.orderPrice
+          : orderPrice // ignore: cast_nullable_to_non_nullable
               as Price,
-      tasks: null == tasks
-          ? _value._tasks
-          : tasks // ignore: cast_nullable_to_non_nullable
+      orderTasks: null == orderTasks
+          ? _value._orderTasks
+          : orderTasks // ignore: cast_nullable_to_non_nullable
               as List<OrderTask>,
       failureOrSuccessOption: null == failureOrSuccessOption
           ? _value.failureOrSuccessOption
           : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<FirebaseFailure, FirebaseSuccess>>,
+      oldClientOption: null == oldClientOption
+          ? _value.oldClientOption
+          : oldClientOption // ignore: cast_nullable_to_non_nullable
+              as Option<Client>,
     ));
   }
 }
@@ -2710,45 +3686,52 @@ class _$_NewOrderFormState implements _NewOrderFormState {
   const _$_NewOrderFormState(
       {required this.inProgress,
       required this.autovalidate,
-      required this.orderTitle,
       required this.clientName,
+      required this.clientWilaya,
+      required this.clientAddress,
       required this.clientPhoneNumber,
-      required this.orderDescription,
-      required this.deliveryDate,
-      required this.price,
-      required final List<OrderTask> tasks,
-      required this.failureOrSuccessOption})
-      : _tasks = tasks;
+      required this.orderDate,
+      required this.orderDeliveryDate,
+      required this.orderPrice,
+      required final List<OrderTask> orderTasks,
+      required this.failureOrSuccessOption,
+      required this.oldClientOption})
+      : _orderTasks = orderTasks;
 
   @override
   final bool inProgress;
   @override
   final bool autovalidate;
   @override
-  final String orderTitle;
-  @override
   final Name clientName;
+  @override
+  final Wilaya? clientWilaya;
+  @override
+  final String clientAddress;
   @override
   final PhoneNumber clientPhoneNumber;
   @override
-  final String orderDescription;
+  final DateTime orderDate;
   @override
-  final DateTime deliveryDate;
+  final DateTime orderDeliveryDate;
   @override
-  final Price price;
-  final List<OrderTask> _tasks;
+  final Price orderPrice;
+  final List<OrderTask> _orderTasks;
   @override
-  List<OrderTask> get tasks {
+  List<OrderTask> get orderTasks {
+    if (_orderTasks is EqualUnmodifiableListView) return _orderTasks;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tasks);
+    return EqualUnmodifiableListView(_orderTasks);
   }
 
   @override
   final Option<Either<FirebaseFailure, FirebaseSuccess>> failureOrSuccessOption;
+  @override
+  final Option<Client> oldClientOption;
 
   @override
   String toString() {
-    return 'NewOrderFormState(inProgress: $inProgress, autovalidate: $autovalidate, orderTitle: $orderTitle, clientName: $clientName, clientPhoneNumber: $clientPhoneNumber, orderDescription: $orderDescription, deliveryDate: $deliveryDate, price: $price, tasks: $tasks, failureOrSuccessOption: $failureOrSuccessOption)';
+    return 'NewOrderFormState(inProgress: $inProgress, autovalidate: $autovalidate, clientName: $clientName, clientWilaya: $clientWilaya, clientAddress: $clientAddress, clientPhoneNumber: $clientPhoneNumber, orderDate: $orderDate, orderDeliveryDate: $orderDeliveryDate, orderPrice: $orderPrice, orderTasks: $orderTasks, failureOrSuccessOption: $failureOrSuccessOption, oldClientOption: $oldClientOption)';
   }
 
   @override
@@ -2760,20 +3743,26 @@ class _$_NewOrderFormState implements _NewOrderFormState {
                 other.inProgress == inProgress) &&
             (identical(other.autovalidate, autovalidate) ||
                 other.autovalidate == autovalidate) &&
-            (identical(other.orderTitle, orderTitle) ||
-                other.orderTitle == orderTitle) &&
             (identical(other.clientName, clientName) ||
                 other.clientName == clientName) &&
+            (identical(other.clientWilaya, clientWilaya) ||
+                other.clientWilaya == clientWilaya) &&
+            (identical(other.clientAddress, clientAddress) ||
+                other.clientAddress == clientAddress) &&
             (identical(other.clientPhoneNumber, clientPhoneNumber) ||
                 other.clientPhoneNumber == clientPhoneNumber) &&
-            (identical(other.orderDescription, orderDescription) ||
-                other.orderDescription == orderDescription) &&
-            (identical(other.deliveryDate, deliveryDate) ||
-                other.deliveryDate == deliveryDate) &&
-            (identical(other.price, price) || other.price == price) &&
-            const DeepCollectionEquality().equals(other._tasks, _tasks) &&
+            (identical(other.orderDate, orderDate) ||
+                other.orderDate == orderDate) &&
+            (identical(other.orderDeliveryDate, orderDeliveryDate) ||
+                other.orderDeliveryDate == orderDeliveryDate) &&
+            (identical(other.orderPrice, orderPrice) ||
+                other.orderPrice == orderPrice) &&
+            const DeepCollectionEquality()
+                .equals(other._orderTasks, _orderTasks) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                other.failureOrSuccessOption == failureOrSuccessOption));
+                other.failureOrSuccessOption == failureOrSuccessOption) &&
+            (identical(other.oldClientOption, oldClientOption) ||
+                other.oldClientOption == oldClientOption));
   }
 
   @override
@@ -2781,14 +3770,16 @@ class _$_NewOrderFormState implements _NewOrderFormState {
       runtimeType,
       inProgress,
       autovalidate,
-      orderTitle,
       clientName,
+      clientWilaya,
+      clientAddress,
       clientPhoneNumber,
-      orderDescription,
-      deliveryDate,
-      price,
-      const DeepCollectionEquality().hash(_tasks),
-      failureOrSuccessOption);
+      orderDate,
+      orderDeliveryDate,
+      orderPrice,
+      const DeepCollectionEquality().hash(_orderTasks),
+      failureOrSuccessOption,
+      oldClientOption);
 
   @JsonKey(ignore: true)
   @override
@@ -2802,36 +3793,42 @@ abstract class _NewOrderFormState implements NewOrderFormState {
   const factory _NewOrderFormState(
       {required final bool inProgress,
       required final bool autovalidate,
-      required final String orderTitle,
       required final Name clientName,
+      required final Wilaya? clientWilaya,
+      required final String clientAddress,
       required final PhoneNumber clientPhoneNumber,
-      required final String orderDescription,
-      required final DateTime deliveryDate,
-      required final Price price,
-      required final List<OrderTask> tasks,
+      required final DateTime orderDate,
+      required final DateTime orderDeliveryDate,
+      required final Price orderPrice,
+      required final List<OrderTask> orderTasks,
       required final Option<Either<FirebaseFailure, FirebaseSuccess>>
-          failureOrSuccessOption}) = _$_NewOrderFormState;
+          failureOrSuccessOption,
+      required final Option<Client> oldClientOption}) = _$_NewOrderFormState;
 
   @override
   bool get inProgress;
   @override
   bool get autovalidate;
   @override
-  String get orderTitle;
-  @override
   Name get clientName;
+  @override
+  Wilaya? get clientWilaya;
+  @override
+  String get clientAddress;
   @override
   PhoneNumber get clientPhoneNumber;
   @override
-  String get orderDescription;
+  DateTime get orderDate;
   @override
-  DateTime get deliveryDate;
+  DateTime get orderDeliveryDate;
   @override
-  Price get price;
+  Price get orderPrice;
   @override
-  List<OrderTask> get tasks;
+  List<OrderTask> get orderTasks;
   @override
   Option<Either<FirebaseFailure, FirebaseSuccess>> get failureOrSuccessOption;
+  @override
+  Option<Client> get oldClientOption;
   @override
   @JsonKey(ignore: true)
   _$$_NewOrderFormStateCopyWith<_$_NewOrderFormState> get copyWith =>

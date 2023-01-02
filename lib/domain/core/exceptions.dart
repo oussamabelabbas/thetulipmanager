@@ -1,0 +1,1 @@
+class TooManyClientsException implements Exception {}

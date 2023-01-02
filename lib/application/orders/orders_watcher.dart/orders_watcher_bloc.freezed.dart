@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'orders_watcher_bloc.dart';
 
@@ -18,9 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$OrdersWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchActiveStarted,
-    required TResult Function() watchDoneStarted,
-    required TResult Function() watchArchivedStarted,
+    required TResult Function() watchOrdersStarted,
+    required TResult Function(OrderState watchedState) watchedStateChanged,
     required TResult Function(
             Either<FirebaseFailure, KtList<Order>> failureOrOrders)
         ordersReceived,
@@ -28,18 +27,16 @@ mixin _$OrdersWatcherEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? watchActiveStarted,
-    TResult? Function()? watchDoneStarted,
-    TResult? Function()? watchArchivedStarted,
+    TResult? Function()? watchOrdersStarted,
+    TResult? Function(OrderState watchedState)? watchedStateChanged,
     TResult? Function(Either<FirebaseFailure, KtList<Order>> failureOrOrders)?
         ordersReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchActiveStarted,
-    TResult Function()? watchDoneStarted,
-    TResult Function()? watchArchivedStarted,
+    TResult Function()? watchOrdersStarted,
+    TResult Function(OrderState watchedState)? watchedStateChanged,
     TResult Function(Either<FirebaseFailure, KtList<Order>> failureOrOrders)?
         ordersReceived,
     required TResult orElse(),
@@ -47,25 +44,22 @@ mixin _$OrdersWatcherEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WatchActiveStarted value) watchActiveStarted,
-    required TResult Function(WatchDoneStarted value) watchDoneStarted,
-    required TResult Function(WatchArchivedStarted value) watchArchivedStarted,
+    required TResult Function(WatchOrdersStarted value) watchOrdersStarted,
+    required TResult Function(WatchedStateChanged value) watchedStateChanged,
     required TResult Function(OrdersReceived value) ordersReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WatchActiveStarted value)? watchActiveStarted,
-    TResult? Function(WatchDoneStarted value)? watchDoneStarted,
-    TResult? Function(WatchArchivedStarted value)? watchArchivedStarted,
+    TResult? Function(WatchOrdersStarted value)? watchOrdersStarted,
+    TResult? Function(WatchedStateChanged value)? watchedStateChanged,
     TResult? Function(OrdersReceived value)? ordersReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WatchActiveStarted value)? watchActiveStarted,
-    TResult Function(WatchDoneStarted value)? watchDoneStarted,
-    TResult Function(WatchArchivedStarted value)? watchArchivedStarted,
+    TResult Function(WatchOrdersStarted value)? watchOrdersStarted,
+    TResult Function(WatchedStateChanged value)? watchedStateChanged,
     TResult Function(OrdersReceived value)? ordersReceived,
     required TResult orElse(),
   }) =>
@@ -91,35 +85,35 @@ class _$OrdersWatcherEventCopyWithImpl<$Res, $Val extends OrdersWatcherEvent>
 }
 
 /// @nodoc
-abstract class _$$WatchActiveStartedCopyWith<$Res> {
-  factory _$$WatchActiveStartedCopyWith(_$WatchActiveStarted value,
-          $Res Function(_$WatchActiveStarted) then) =
-      __$$WatchActiveStartedCopyWithImpl<$Res>;
+abstract class _$$WatchOrdersStartedCopyWith<$Res> {
+  factory _$$WatchOrdersStartedCopyWith(_$WatchOrdersStarted value,
+          $Res Function(_$WatchOrdersStarted) then) =
+      __$$WatchOrdersStartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$WatchActiveStartedCopyWithImpl<$Res>
-    extends _$OrdersWatcherEventCopyWithImpl<$Res, _$WatchActiveStarted>
-    implements _$$WatchActiveStartedCopyWith<$Res> {
-  __$$WatchActiveStartedCopyWithImpl(
-      _$WatchActiveStarted _value, $Res Function(_$WatchActiveStarted) _then)
+class __$$WatchOrdersStartedCopyWithImpl<$Res>
+    extends _$OrdersWatcherEventCopyWithImpl<$Res, _$WatchOrdersStarted>
+    implements _$$WatchOrdersStartedCopyWith<$Res> {
+  __$$WatchOrdersStartedCopyWithImpl(
+      _$WatchOrdersStarted _value, $Res Function(_$WatchOrdersStarted) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$WatchActiveStarted implements WatchActiveStarted {
-  const _$WatchActiveStarted();
+class _$WatchOrdersStarted implements WatchOrdersStarted {
+  const _$WatchOrdersStarted();
 
   @override
   String toString() {
-    return 'OrdersWatcherEvent.watchActiveStarted()';
+    return 'OrdersWatcherEvent.watchOrdersStarted()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$WatchActiveStarted);
+        (other.runtimeType == runtimeType && other is _$WatchOrdersStarted);
   }
 
   @override
@@ -128,40 +122,37 @@ class _$WatchActiveStarted implements WatchActiveStarted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchActiveStarted,
-    required TResult Function() watchDoneStarted,
-    required TResult Function() watchArchivedStarted,
+    required TResult Function() watchOrdersStarted,
+    required TResult Function(OrderState watchedState) watchedStateChanged,
     required TResult Function(
             Either<FirebaseFailure, KtList<Order>> failureOrOrders)
         ordersReceived,
   }) {
-    return watchActiveStarted();
+    return watchOrdersStarted();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? watchActiveStarted,
-    TResult? Function()? watchDoneStarted,
-    TResult? Function()? watchArchivedStarted,
+    TResult? Function()? watchOrdersStarted,
+    TResult? Function(OrderState watchedState)? watchedStateChanged,
     TResult? Function(Either<FirebaseFailure, KtList<Order>> failureOrOrders)?
         ordersReceived,
   }) {
-    return watchActiveStarted?.call();
+    return watchOrdersStarted?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchActiveStarted,
-    TResult Function()? watchDoneStarted,
-    TResult Function()? watchArchivedStarted,
+    TResult Function()? watchOrdersStarted,
+    TResult Function(OrderState watchedState)? watchedStateChanged,
     TResult Function(Either<FirebaseFailure, KtList<Order>> failureOrOrders)?
         ordersReceived,
     required TResult orElse(),
   }) {
-    if (watchActiveStarted != null) {
-      return watchActiveStarted();
+    if (watchOrdersStarted != null) {
+      return watchOrdersStarted();
     }
     return orElse();
   }
@@ -169,117 +160,139 @@ class _$WatchActiveStarted implements WatchActiveStarted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WatchActiveStarted value) watchActiveStarted,
-    required TResult Function(WatchDoneStarted value) watchDoneStarted,
-    required TResult Function(WatchArchivedStarted value) watchArchivedStarted,
+    required TResult Function(WatchOrdersStarted value) watchOrdersStarted,
+    required TResult Function(WatchedStateChanged value) watchedStateChanged,
     required TResult Function(OrdersReceived value) ordersReceived,
   }) {
-    return watchActiveStarted(this);
+    return watchOrdersStarted(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WatchActiveStarted value)? watchActiveStarted,
-    TResult? Function(WatchDoneStarted value)? watchDoneStarted,
-    TResult? Function(WatchArchivedStarted value)? watchArchivedStarted,
+    TResult? Function(WatchOrdersStarted value)? watchOrdersStarted,
+    TResult? Function(WatchedStateChanged value)? watchedStateChanged,
     TResult? Function(OrdersReceived value)? ordersReceived,
   }) {
-    return watchActiveStarted?.call(this);
+    return watchOrdersStarted?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WatchActiveStarted value)? watchActiveStarted,
-    TResult Function(WatchDoneStarted value)? watchDoneStarted,
-    TResult Function(WatchArchivedStarted value)? watchArchivedStarted,
+    TResult Function(WatchOrdersStarted value)? watchOrdersStarted,
+    TResult Function(WatchedStateChanged value)? watchedStateChanged,
     TResult Function(OrdersReceived value)? ordersReceived,
     required TResult orElse(),
   }) {
-    if (watchActiveStarted != null) {
-      return watchActiveStarted(this);
+    if (watchOrdersStarted != null) {
+      return watchOrdersStarted(this);
     }
     return orElse();
   }
 }
 
-abstract class WatchActiveStarted implements OrdersWatcherEvent {
-  const factory WatchActiveStarted() = _$WatchActiveStarted;
+abstract class WatchOrdersStarted implements OrdersWatcherEvent {
+  const factory WatchOrdersStarted() = _$WatchOrdersStarted;
 }
 
 /// @nodoc
-abstract class _$$WatchDoneStartedCopyWith<$Res> {
-  factory _$$WatchDoneStartedCopyWith(
-          _$WatchDoneStarted value, $Res Function(_$WatchDoneStarted) then) =
-      __$$WatchDoneStartedCopyWithImpl<$Res>;
+abstract class _$$WatchedStateChangedCopyWith<$Res> {
+  factory _$$WatchedStateChangedCopyWith(_$WatchedStateChanged value,
+          $Res Function(_$WatchedStateChanged) then) =
+      __$$WatchedStateChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({OrderState watchedState});
 }
 
 /// @nodoc
-class __$$WatchDoneStartedCopyWithImpl<$Res>
-    extends _$OrdersWatcherEventCopyWithImpl<$Res, _$WatchDoneStarted>
-    implements _$$WatchDoneStartedCopyWith<$Res> {
-  __$$WatchDoneStartedCopyWithImpl(
-      _$WatchDoneStarted _value, $Res Function(_$WatchDoneStarted) _then)
+class __$$WatchedStateChangedCopyWithImpl<$Res>
+    extends _$OrdersWatcherEventCopyWithImpl<$Res, _$WatchedStateChanged>
+    implements _$$WatchedStateChangedCopyWith<$Res> {
+  __$$WatchedStateChangedCopyWithImpl(
+      _$WatchedStateChanged _value, $Res Function(_$WatchedStateChanged) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? watchedState = null,
+  }) {
+    return _then(_$WatchedStateChanged(
+      watchedState: null == watchedState
+          ? _value.watchedState
+          : watchedState // ignore: cast_nullable_to_non_nullable
+              as OrderState,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$WatchDoneStarted implements WatchDoneStarted {
-  const _$WatchDoneStarted();
+class _$WatchedStateChanged implements WatchedStateChanged {
+  const _$WatchedStateChanged({required this.watchedState});
+
+  @override
+  final OrderState watchedState;
 
   @override
   String toString() {
-    return 'OrdersWatcherEvent.watchDoneStarted()';
+    return 'OrdersWatcherEvent.watchedStateChanged(watchedState: $watchedState)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$WatchDoneStarted);
+        (other.runtimeType == runtimeType &&
+            other is _$WatchedStateChanged &&
+            (identical(other.watchedState, watchedState) ||
+                other.watchedState == watchedState));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, watchedState);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$WatchedStateChangedCopyWith<_$WatchedStateChanged> get copyWith =>
+      __$$WatchedStateChangedCopyWithImpl<_$WatchedStateChanged>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchActiveStarted,
-    required TResult Function() watchDoneStarted,
-    required TResult Function() watchArchivedStarted,
+    required TResult Function() watchOrdersStarted,
+    required TResult Function(OrderState watchedState) watchedStateChanged,
     required TResult Function(
             Either<FirebaseFailure, KtList<Order>> failureOrOrders)
         ordersReceived,
   }) {
-    return watchDoneStarted();
+    return watchedStateChanged(watchedState);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? watchActiveStarted,
-    TResult? Function()? watchDoneStarted,
-    TResult? Function()? watchArchivedStarted,
+    TResult? Function()? watchOrdersStarted,
+    TResult? Function(OrderState watchedState)? watchedStateChanged,
     TResult? Function(Either<FirebaseFailure, KtList<Order>> failureOrOrders)?
         ordersReceived,
   }) {
-    return watchDoneStarted?.call();
+    return watchedStateChanged?.call(watchedState);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchActiveStarted,
-    TResult Function()? watchDoneStarted,
-    TResult Function()? watchArchivedStarted,
+    TResult Function()? watchOrdersStarted,
+    TResult Function(OrderState watchedState)? watchedStateChanged,
     TResult Function(Either<FirebaseFailure, KtList<Order>> failureOrOrders)?
         ordersReceived,
     required TResult orElse(),
   }) {
-    if (watchDoneStarted != null) {
-      return watchDoneStarted();
+    if (watchedStateChanged != null) {
+      return watchedStateChanged(watchedState);
     }
     return orElse();
   }
@@ -287,161 +300,46 @@ class _$WatchDoneStarted implements WatchDoneStarted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WatchActiveStarted value) watchActiveStarted,
-    required TResult Function(WatchDoneStarted value) watchDoneStarted,
-    required TResult Function(WatchArchivedStarted value) watchArchivedStarted,
+    required TResult Function(WatchOrdersStarted value) watchOrdersStarted,
+    required TResult Function(WatchedStateChanged value) watchedStateChanged,
     required TResult Function(OrdersReceived value) ordersReceived,
   }) {
-    return watchDoneStarted(this);
+    return watchedStateChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WatchActiveStarted value)? watchActiveStarted,
-    TResult? Function(WatchDoneStarted value)? watchDoneStarted,
-    TResult? Function(WatchArchivedStarted value)? watchArchivedStarted,
+    TResult? Function(WatchOrdersStarted value)? watchOrdersStarted,
+    TResult? Function(WatchedStateChanged value)? watchedStateChanged,
     TResult? Function(OrdersReceived value)? ordersReceived,
   }) {
-    return watchDoneStarted?.call(this);
+    return watchedStateChanged?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WatchActiveStarted value)? watchActiveStarted,
-    TResult Function(WatchDoneStarted value)? watchDoneStarted,
-    TResult Function(WatchArchivedStarted value)? watchArchivedStarted,
+    TResult Function(WatchOrdersStarted value)? watchOrdersStarted,
+    TResult Function(WatchedStateChanged value)? watchedStateChanged,
     TResult Function(OrdersReceived value)? ordersReceived,
     required TResult orElse(),
   }) {
-    if (watchDoneStarted != null) {
-      return watchDoneStarted(this);
+    if (watchedStateChanged != null) {
+      return watchedStateChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class WatchDoneStarted implements OrdersWatcherEvent {
-  const factory WatchDoneStarted() = _$WatchDoneStarted;
-}
+abstract class WatchedStateChanged implements OrdersWatcherEvent {
+  const factory WatchedStateChanged({required final OrderState watchedState}) =
+      _$WatchedStateChanged;
 
-/// @nodoc
-abstract class _$$WatchArchivedStartedCopyWith<$Res> {
-  factory _$$WatchArchivedStartedCopyWith(_$WatchArchivedStarted value,
-          $Res Function(_$WatchArchivedStarted) then) =
-      __$$WatchArchivedStartedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$WatchArchivedStartedCopyWithImpl<$Res>
-    extends _$OrdersWatcherEventCopyWithImpl<$Res, _$WatchArchivedStarted>
-    implements _$$WatchArchivedStartedCopyWith<$Res> {
-  __$$WatchArchivedStartedCopyWithImpl(_$WatchArchivedStarted _value,
-      $Res Function(_$WatchArchivedStarted) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$WatchArchivedStarted implements WatchArchivedStarted {
-  const _$WatchArchivedStarted();
-
-  @override
-  String toString() {
-    return 'OrdersWatcherEvent.watchArchivedStarted()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$WatchArchivedStarted);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() watchActiveStarted,
-    required TResult Function() watchDoneStarted,
-    required TResult Function() watchArchivedStarted,
-    required TResult Function(
-            Either<FirebaseFailure, KtList<Order>> failureOrOrders)
-        ordersReceived,
-  }) {
-    return watchArchivedStarted();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? watchActiveStarted,
-    TResult? Function()? watchDoneStarted,
-    TResult? Function()? watchArchivedStarted,
-    TResult? Function(Either<FirebaseFailure, KtList<Order>> failureOrOrders)?
-        ordersReceived,
-  }) {
-    return watchArchivedStarted?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchActiveStarted,
-    TResult Function()? watchDoneStarted,
-    TResult Function()? watchArchivedStarted,
-    TResult Function(Either<FirebaseFailure, KtList<Order>> failureOrOrders)?
-        ordersReceived,
-    required TResult orElse(),
-  }) {
-    if (watchArchivedStarted != null) {
-      return watchArchivedStarted();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(WatchActiveStarted value) watchActiveStarted,
-    required TResult Function(WatchDoneStarted value) watchDoneStarted,
-    required TResult Function(WatchArchivedStarted value) watchArchivedStarted,
-    required TResult Function(OrdersReceived value) ordersReceived,
-  }) {
-    return watchArchivedStarted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WatchActiveStarted value)? watchActiveStarted,
-    TResult? Function(WatchDoneStarted value)? watchDoneStarted,
-    TResult? Function(WatchArchivedStarted value)? watchArchivedStarted,
-    TResult? Function(OrdersReceived value)? ordersReceived,
-  }) {
-    return watchArchivedStarted?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(WatchActiveStarted value)? watchActiveStarted,
-    TResult Function(WatchDoneStarted value)? watchDoneStarted,
-    TResult Function(WatchArchivedStarted value)? watchArchivedStarted,
-    TResult Function(OrdersReceived value)? ordersReceived,
-    required TResult orElse(),
-  }) {
-    if (watchArchivedStarted != null) {
-      return watchArchivedStarted(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class WatchArchivedStarted implements OrdersWatcherEvent {
-  const factory WatchArchivedStarted() = _$WatchArchivedStarted;
+  OrderState get watchedState;
+  @JsonKey(ignore: true)
+  _$$WatchedStateChangedCopyWith<_$WatchedStateChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -509,9 +407,8 @@ class _$OrdersReceived implements OrdersReceived {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchActiveStarted,
-    required TResult Function() watchDoneStarted,
-    required TResult Function() watchArchivedStarted,
+    required TResult Function() watchOrdersStarted,
+    required TResult Function(OrderState watchedState) watchedStateChanged,
     required TResult Function(
             Either<FirebaseFailure, KtList<Order>> failureOrOrders)
         ordersReceived,
@@ -522,9 +419,8 @@ class _$OrdersReceived implements OrdersReceived {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? watchActiveStarted,
-    TResult? Function()? watchDoneStarted,
-    TResult? Function()? watchArchivedStarted,
+    TResult? Function()? watchOrdersStarted,
+    TResult? Function(OrderState watchedState)? watchedStateChanged,
     TResult? Function(Either<FirebaseFailure, KtList<Order>> failureOrOrders)?
         ordersReceived,
   }) {
@@ -534,9 +430,8 @@ class _$OrdersReceived implements OrdersReceived {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchActiveStarted,
-    TResult Function()? watchDoneStarted,
-    TResult Function()? watchArchivedStarted,
+    TResult Function()? watchOrdersStarted,
+    TResult Function(OrderState watchedState)? watchedStateChanged,
     TResult Function(Either<FirebaseFailure, KtList<Order>> failureOrOrders)?
         ordersReceived,
     required TResult orElse(),
@@ -550,9 +445,8 @@ class _$OrdersReceived implements OrdersReceived {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WatchActiveStarted value) watchActiveStarted,
-    required TResult Function(WatchDoneStarted value) watchDoneStarted,
-    required TResult Function(WatchArchivedStarted value) watchArchivedStarted,
+    required TResult Function(WatchOrdersStarted value) watchOrdersStarted,
+    required TResult Function(WatchedStateChanged value) watchedStateChanged,
     required TResult Function(OrdersReceived value) ordersReceived,
   }) {
     return ordersReceived(this);
@@ -561,9 +455,8 @@ class _$OrdersReceived implements OrdersReceived {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(WatchActiveStarted value)? watchActiveStarted,
-    TResult? Function(WatchDoneStarted value)? watchDoneStarted,
-    TResult? Function(WatchArchivedStarted value)? watchArchivedStarted,
+    TResult? Function(WatchOrdersStarted value)? watchOrdersStarted,
+    TResult? Function(WatchedStateChanged value)? watchedStateChanged,
     TResult? Function(OrdersReceived value)? ordersReceived,
   }) {
     return ordersReceived?.call(this);
@@ -572,9 +465,8 @@ class _$OrdersReceived implements OrdersReceived {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WatchActiveStarted value)? watchActiveStarted,
-    TResult Function(WatchDoneStarted value)? watchDoneStarted,
-    TResult Function(WatchArchivedStarted value)? watchArchivedStarted,
+    TResult Function(WatchOrdersStarted value)? watchOrdersStarted,
+    TResult Function(WatchedStateChanged value)? watchedStateChanged,
     TResult Function(OrdersReceived value)? ordersReceived,
     required TResult orElse(),
   }) {
@@ -598,55 +490,13 @@ abstract class OrdersReceived implements OrdersWatcherEvent {
 
 /// @nodoc
 mixin _$OrdersWatcherState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() inProgress,
-    required TResult Function(KtList<Order> orders) fetchsucceded,
-    required TResult Function(FirebaseFailure failure) fetchFailed,
-  }) =>
+  bool get inProgress => throw _privateConstructorUsedError;
+  OrderState get watchedState => throw _privateConstructorUsedError;
+  Option<Either<FirebaseFailure, KtList<Order>>> get failureOrOrdersOption =>
       throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? inProgress,
-    TResult? Function(KtList<Order> orders)? fetchsucceded,
-    TResult? Function(FirebaseFailure failure)? fetchFailed,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? inProgress,
-    TResult Function(KtList<Order> orders)? fetchsucceded,
-    TResult Function(FirebaseFailure failure)? fetchFailed,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_Fetchsucceded value) fetchsucceded,
-    required TResult Function(_FetchFailed value) fetchFailed,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_Fetchsucceded value)? fetchsucceded,
-    TResult? Function(_FetchFailed value)? fetchFailed,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_InProgress value)? inProgress,
-    TResult Function(_Fetchsucceded value)? fetchsucceded,
-    TResult Function(_FetchFailed value)? fetchFailed,
-    required TResult orElse(),
-  }) =>
+
+  @JsonKey(ignore: true)
+  $OrdersWatcherStateCopyWith<OrdersWatcherState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -655,6 +505,11 @@ abstract class $OrdersWatcherStateCopyWith<$Res> {
   factory $OrdersWatcherStateCopyWith(
           OrdersWatcherState value, $Res Function(OrdersWatcherState) then) =
       _$OrdersWatcherStateCopyWithImpl<$Res, OrdersWatcherState>;
+  @useResult
+  $Res call(
+      {bool inProgress,
+      OrderState watchedState,
+      Option<Either<FirebaseFailure, KtList<Order>>> failureOrOrdersOption});
 }
 
 /// @nodoc
@@ -666,533 +521,137 @@ class _$OrdersWatcherStateCopyWithImpl<$Res, $Val extends OrdersWatcherState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? inProgress = null,
+    Object? watchedState = null,
+    Object? failureOrOrdersOption = null,
+  }) {
+    return _then(_value.copyWith(
+      inProgress: null == inProgress
+          ? _value.inProgress
+          : inProgress // ignore: cast_nullable_to_non_nullable
+              as bool,
+      watchedState: null == watchedState
+          ? _value.watchedState
+          : watchedState // ignore: cast_nullable_to_non_nullable
+              as OrderState,
+      failureOrOrdersOption: null == failureOrOrdersOption
+          ? _value.failureOrOrdersOption
+          : failureOrOrdersOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<FirebaseFailure, KtList<Order>>>,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$OrdersWatcherStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_Initial implements _Initial {
-  const _$_Initial();
-
+abstract class _$$_OrdersWatcherStateCopyWith<$Res>
+    implements $OrdersWatcherStateCopyWith<$Res> {
+  factory _$$_OrdersWatcherStateCopyWith(_$_OrdersWatcherState value,
+          $Res Function(_$_OrdersWatcherState) then) =
+      __$$_OrdersWatcherStateCopyWithImpl<$Res>;
   @override
-  String toString() {
-    return 'OrdersWatcherState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() inProgress,
-    required TResult Function(KtList<Order> orders) fetchsucceded,
-    required TResult Function(FirebaseFailure failure) fetchFailed,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? inProgress,
-    TResult? Function(KtList<Order> orders)? fetchsucceded,
-    TResult? Function(FirebaseFailure failure)? fetchFailed,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? inProgress,
-    TResult Function(KtList<Order> orders)? fetchsucceded,
-    TResult Function(FirebaseFailure failure)? fetchFailed,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_Fetchsucceded value) fetchsucceded,
-    required TResult Function(_FetchFailed value) fetchFailed,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_Fetchsucceded value)? fetchsucceded,
-    TResult? Function(_FetchFailed value)? fetchFailed,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_InProgress value)? inProgress,
-    TResult Function(_Fetchsucceded value)? fetchsucceded,
-    TResult Function(_FetchFailed value)? fetchFailed,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements OrdersWatcherState {
-  const factory _Initial() = _$_Initial;
-}
-
-/// @nodoc
-abstract class _$$_InProgressCopyWith<$Res> {
-  factory _$$_InProgressCopyWith(
-          _$_InProgress value, $Res Function(_$_InProgress) then) =
-      __$$_InProgressCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_InProgressCopyWithImpl<$Res>
-    extends _$OrdersWatcherStateCopyWithImpl<$Res, _$_InProgress>
-    implements _$$_InProgressCopyWith<$Res> {
-  __$$_InProgressCopyWithImpl(
-      _$_InProgress _value, $Res Function(_$_InProgress) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_InProgress implements _InProgress {
-  const _$_InProgress();
-
-  @override
-  String toString() {
-    return 'OrdersWatcherState.inProgress()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_InProgress);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() inProgress,
-    required TResult Function(KtList<Order> orders) fetchsucceded,
-    required TResult Function(FirebaseFailure failure) fetchFailed,
-  }) {
-    return inProgress();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? inProgress,
-    TResult? Function(KtList<Order> orders)? fetchsucceded,
-    TResult? Function(FirebaseFailure failure)? fetchFailed,
-  }) {
-    return inProgress?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? inProgress,
-    TResult Function(KtList<Order> orders)? fetchsucceded,
-    TResult Function(FirebaseFailure failure)? fetchFailed,
-    required TResult orElse(),
-  }) {
-    if (inProgress != null) {
-      return inProgress();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_Fetchsucceded value) fetchsucceded,
-    required TResult Function(_FetchFailed value) fetchFailed,
-  }) {
-    return inProgress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_Fetchsucceded value)? fetchsucceded,
-    TResult? Function(_FetchFailed value)? fetchFailed,
-  }) {
-    return inProgress?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_InProgress value)? inProgress,
-    TResult Function(_Fetchsucceded value)? fetchsucceded,
-    TResult Function(_FetchFailed value)? fetchFailed,
-    required TResult orElse(),
-  }) {
-    if (inProgress != null) {
-      return inProgress(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _InProgress implements OrdersWatcherState {
-  const factory _InProgress() = _$_InProgress;
-}
-
-/// @nodoc
-abstract class _$$_FetchsuccededCopyWith<$Res> {
-  factory _$$_FetchsuccededCopyWith(
-          _$_Fetchsucceded value, $Res Function(_$_Fetchsucceded) then) =
-      __$$_FetchsuccededCopyWithImpl<$Res>;
   @useResult
-  $Res call({KtList<Order> orders});
+  $Res call(
+      {bool inProgress,
+      OrderState watchedState,
+      Option<Either<FirebaseFailure, KtList<Order>>> failureOrOrdersOption});
 }
 
 /// @nodoc
-class __$$_FetchsuccededCopyWithImpl<$Res>
-    extends _$OrdersWatcherStateCopyWithImpl<$Res, _$_Fetchsucceded>
-    implements _$$_FetchsuccededCopyWith<$Res> {
-  __$$_FetchsuccededCopyWithImpl(
-      _$_Fetchsucceded _value, $Res Function(_$_Fetchsucceded) _then)
+class __$$_OrdersWatcherStateCopyWithImpl<$Res>
+    extends _$OrdersWatcherStateCopyWithImpl<$Res, _$_OrdersWatcherState>
+    implements _$$_OrdersWatcherStateCopyWith<$Res> {
+  __$$_OrdersWatcherStateCopyWithImpl(
+      _$_OrdersWatcherState _value, $Res Function(_$_OrdersWatcherState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? orders = null,
+    Object? inProgress = null,
+    Object? watchedState = null,
+    Object? failureOrOrdersOption = null,
   }) {
-    return _then(_$_Fetchsucceded(
-      orders: null == orders
-          ? _value.orders
-          : orders // ignore: cast_nullable_to_non_nullable
-              as KtList<Order>,
+    return _then(_$_OrdersWatcherState(
+      inProgress: null == inProgress
+          ? _value.inProgress
+          : inProgress // ignore: cast_nullable_to_non_nullable
+              as bool,
+      watchedState: null == watchedState
+          ? _value.watchedState
+          : watchedState // ignore: cast_nullable_to_non_nullable
+              as OrderState,
+      failureOrOrdersOption: null == failureOrOrdersOption
+          ? _value.failureOrOrdersOption
+          : failureOrOrdersOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<FirebaseFailure, KtList<Order>>>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_Fetchsucceded implements _Fetchsucceded {
-  const _$_Fetchsucceded({required this.orders});
+class _$_OrdersWatcherState implements _OrdersWatcherState {
+  const _$_OrdersWatcherState(
+      {required this.inProgress,
+      required this.watchedState,
+      required this.failureOrOrdersOption});
 
   @override
-  final KtList<Order> orders;
+  final bool inProgress;
+  @override
+  final OrderState watchedState;
+  @override
+  final Option<Either<FirebaseFailure, KtList<Order>>> failureOrOrdersOption;
 
   @override
   String toString() {
-    return 'OrdersWatcherState.fetchsucceded(orders: $orders)';
+    return 'OrdersWatcherState(inProgress: $inProgress, watchedState: $watchedState, failureOrOrdersOption: $failureOrOrdersOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Fetchsucceded &&
-            (identical(other.orders, orders) || other.orders == orders));
+            other is _$_OrdersWatcherState &&
+            (identical(other.inProgress, inProgress) ||
+                other.inProgress == inProgress) &&
+            (identical(other.watchedState, watchedState) ||
+                other.watchedState == watchedState) &&
+            (identical(other.failureOrOrdersOption, failureOrOrdersOption) ||
+                other.failureOrOrdersOption == failureOrOrdersOption));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, orders);
+  int get hashCode =>
+      Object.hash(runtimeType, inProgress, watchedState, failureOrOrdersOption);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FetchsuccededCopyWith<_$_Fetchsucceded> get copyWith =>
-      __$$_FetchsuccededCopyWithImpl<_$_Fetchsucceded>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() inProgress,
-    required TResult Function(KtList<Order> orders) fetchsucceded,
-    required TResult Function(FirebaseFailure failure) fetchFailed,
-  }) {
-    return fetchsucceded(orders);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? inProgress,
-    TResult? Function(KtList<Order> orders)? fetchsucceded,
-    TResult? Function(FirebaseFailure failure)? fetchFailed,
-  }) {
-    return fetchsucceded?.call(orders);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? inProgress,
-    TResult Function(KtList<Order> orders)? fetchsucceded,
-    TResult Function(FirebaseFailure failure)? fetchFailed,
-    required TResult orElse(),
-  }) {
-    if (fetchsucceded != null) {
-      return fetchsucceded(orders);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_Fetchsucceded value) fetchsucceded,
-    required TResult Function(_FetchFailed value) fetchFailed,
-  }) {
-    return fetchsucceded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_Fetchsucceded value)? fetchsucceded,
-    TResult? Function(_FetchFailed value)? fetchFailed,
-  }) {
-    return fetchsucceded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_InProgress value)? inProgress,
-    TResult Function(_Fetchsucceded value)? fetchsucceded,
-    TResult Function(_FetchFailed value)? fetchFailed,
-    required TResult orElse(),
-  }) {
-    if (fetchsucceded != null) {
-      return fetchsucceded(this);
-    }
-    return orElse();
-  }
+  _$$_OrdersWatcherStateCopyWith<_$_OrdersWatcherState> get copyWith =>
+      __$$_OrdersWatcherStateCopyWithImpl<_$_OrdersWatcherState>(
+          this, _$identity);
 }
 
-abstract class _Fetchsucceded implements OrdersWatcherState {
-  const factory _Fetchsucceded({required final KtList<Order> orders}) =
-      _$_Fetchsucceded;
+abstract class _OrdersWatcherState implements OrdersWatcherState {
+  const factory _OrdersWatcherState(
+      {required final bool inProgress,
+      required final OrderState watchedState,
+      required final Option<Either<FirebaseFailure, KtList<Order>>>
+          failureOrOrdersOption}) = _$_OrdersWatcherState;
 
-  KtList<Order> get orders;
+  @override
+  bool get inProgress;
+  @override
+  OrderState get watchedState;
+  @override
+  Option<Either<FirebaseFailure, KtList<Order>>> get failureOrOrdersOption;
+  @override
   @JsonKey(ignore: true)
-  _$$_FetchsuccededCopyWith<_$_Fetchsucceded> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_FetchFailedCopyWith<$Res> {
-  factory _$$_FetchFailedCopyWith(
-          _$_FetchFailed value, $Res Function(_$_FetchFailed) then) =
-      __$$_FetchFailedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({FirebaseFailure failure});
-
-  $FirebaseFailureCopyWith<$Res> get failure;
-}
-
-/// @nodoc
-class __$$_FetchFailedCopyWithImpl<$Res>
-    extends _$OrdersWatcherStateCopyWithImpl<$Res, _$_FetchFailed>
-    implements _$$_FetchFailedCopyWith<$Res> {
-  __$$_FetchFailedCopyWithImpl(
-      _$_FetchFailed _value, $Res Function(_$_FetchFailed) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? failure = null,
-  }) {
-    return _then(_$_FetchFailed(
-      failure: null == failure
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as FirebaseFailure,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $FirebaseFailureCopyWith<$Res> get failure {
-    return $FirebaseFailureCopyWith<$Res>(_value.failure, (value) {
-      return _then(_value.copyWith(failure: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_FetchFailed implements _FetchFailed {
-  const _$_FetchFailed({required this.failure});
-
-  @override
-  final FirebaseFailure failure;
-
-  @override
-  String toString() {
-    return 'OrdersWatcherState.fetchFailed(failure: $failure)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_FetchFailed &&
-            (identical(other.failure, failure) || other.failure == failure));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, failure);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_FetchFailedCopyWith<_$_FetchFailed> get copyWith =>
-      __$$_FetchFailedCopyWithImpl<_$_FetchFailed>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() inProgress,
-    required TResult Function(KtList<Order> orders) fetchsucceded,
-    required TResult Function(FirebaseFailure failure) fetchFailed,
-  }) {
-    return fetchFailed(failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? inProgress,
-    TResult? Function(KtList<Order> orders)? fetchsucceded,
-    TResult? Function(FirebaseFailure failure)? fetchFailed,
-  }) {
-    return fetchFailed?.call(failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? inProgress,
-    TResult Function(KtList<Order> orders)? fetchsucceded,
-    TResult Function(FirebaseFailure failure)? fetchFailed,
-    required TResult orElse(),
-  }) {
-    if (fetchFailed != null) {
-      return fetchFailed(failure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_Fetchsucceded value) fetchsucceded,
-    required TResult Function(_FetchFailed value) fetchFailed,
-  }) {
-    return fetchFailed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_Fetchsucceded value)? fetchsucceded,
-    TResult? Function(_FetchFailed value)? fetchFailed,
-  }) {
-    return fetchFailed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_InProgress value)? inProgress,
-    TResult Function(_Fetchsucceded value)? fetchsucceded,
-    TResult Function(_FetchFailed value)? fetchFailed,
-    required TResult orElse(),
-  }) {
-    if (fetchFailed != null) {
-      return fetchFailed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _FetchFailed implements OrdersWatcherState {
-  const factory _FetchFailed({required final FirebaseFailure failure}) =
-      _$_FetchFailed;
-
-  FirebaseFailure get failure;
-  @JsonKey(ignore: true)
-  _$$_FetchFailedCopyWith<_$_FetchFailed> get copyWith =>
+  _$$_OrdersWatcherStateCopyWith<_$_OrdersWatcherState> get copyWith =>
       throw _privateConstructorUsedError;
 }

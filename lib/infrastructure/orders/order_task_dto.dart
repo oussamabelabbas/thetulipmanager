@@ -1,8 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../domain/core/value_object.dart';
 import '../../domain/orders/order_task.dart';
+import 'product_dto.dart';
 
 part 'order_task_dto.freezed.dart';
 part 'order_task_dto.g.dart';
@@ -11,19 +11,24 @@ part 'order_task_dto.g.dart';
 abstract class OrderTaskDto implements _$OrderTaskDto {
   const factory OrderTaskDto({
     required String taskId,
-    required String description,
-    required bool isDone,
+    required String productId,
+    required ProductDto product,
+    required String taskDescription,
+    required int isTaskDone,
   }) = _OrderTaskDto;
 
   factory OrderTaskDto.fromDomain(OrderTask orderTask) => OrderTaskDto(
         taskId: orderTask.taskId.getOrCrash(),
-        description: orderTask.description,
-        isDone: orderTask.isDone,
+        productId: orderTask.product.productId!.getOrCrash(),
+        product: ProductDto.fromDomain(orderTask.product),
+        taskDescription: orderTask.taskDescription,
+        isTaskDone: orderTask.isTaskDone ? 1 : 0,
       );
   OrderTask toDomain() => OrderTask(
         taskId: UniqueId.fromUniqueString(taskId),
-        description: description,
-        isDone: isDone,
+        product: product.copyWith(productId: productId).toDomain(),
+        taskDescription: taskDescription,
+        isTaskDone: isTaskDone == 1,
       );
 
   const OrderTaskDto._();

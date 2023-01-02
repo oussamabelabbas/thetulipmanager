@@ -6,12 +6,10 @@ class OrdersActorEvent with _$OrdersActorEvent {
     required Order order,
     required OrderTask task,
   }) = ToggleTaskState;
-  const factory OrdersActorEvent.toggleOrderDone({
+  const factory OrdersActorEvent.toggleOrderState({
     required UniqueId orderId,
-  }) = ToggleOrderDone;
-  const factory OrdersActorEvent.toggleOrderArchived({
-    required UniqueId orderId,
-  }) = ToggleOrderArchived;
+    required OrderState orderState,
+  }) = ToggleOrderState;
   const factory OrdersActorEvent.deleteOrder({
     required UniqueId orderId,
   }) = DeleteOrder;

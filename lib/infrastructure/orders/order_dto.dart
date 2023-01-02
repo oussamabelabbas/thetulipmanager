@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart' show DocumentSnapshot;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/kt.dart';
 
@@ -14,40 +14,36 @@ part 'order_dto.g.dart';
 @freezed
 abstract class OrderDto implements _$OrderDto {
   const factory OrderDto({
-    @JsonKey(ignore: true) String? id,
-    required String orderTitle,
+    @JsonKey(ignore: true) String? orderId,
+    required String clientId,
     required ClientDto client,
-    required String orderDescription,
-    required int millisecondsSinceEpochOrderDate,
-    required int millisecondsSinceEpochDeliveryDate,
-    required double price,
     required List<OrderTaskDto> tasks,
-    required bool isDone,
-    required bool isArchived,
+    required int millisecondsSinceEpochOrderDate,
+    required int millisecondsSinceEpochOrderDeliveryDate,
+    required double orderPrice,
+    required String orderStateName,
+    bool? isError,
   }) = _OrderDto;
 
   factory OrderDto.fromDomain(Order order) => OrderDto(
-        orderTitle: order.orderTitle,
+        orderId: order.orderId?.getOrCrash(),
+        clientId: order.client.clientId!.getOrCrash(),
         client: ClientDto.fromDomain(order.client),
-        orderDescription: order.orderDescription,
+        tasks: order.orderTasks.map((task) => OrderTaskDto.fromDomain(task)).asList(),
         millisecondsSinceEpochOrderDate: order.orderDate.millisecondsSinceEpoch,
-        millisecondsSinceEpochDeliveryDate: order.deliveryDate.millisecondsSinceEpoch,
-        price: double.parse(order.price.getOrCrash()),
-        tasks: order.tasks.map((orderTask) => OrderTaskDto.fromDomain(orderTask)).asList(),
-        isDone: order.isDone,
-        isArchived: order.isArchived,
+        millisecondsSinceEpochOrderDeliveryDate: order.orderDeliveryDate.millisecondsSinceEpoch,
+        orderPrice: double.parse(order.orderPrice.getOrCrash()),
+        orderStateName: order.orderState.name,
       );
+
   Order toDomain() => Order(
-        id: UniqueId.fromUniqueString(id!),
-        orderTitle: orderTitle,
-        client: client.toDomain(),
-        orderDescription: orderDescription,
+        orderId: UniqueId.fromUniqueString(orderId!),
+        client: client.copyWith(clientId: clientId).toDomain(),
+        orderTasks: tasks.map((task) => task.toDomain()).toImmutableList(),
         orderDate: DateTime.fromMillisecondsSinceEpoch(millisecondsSinceEpochOrderDate),
-        deliveryDate: DateTime.fromMillisecondsSinceEpoch(millisecondsSinceEpochDeliveryDate),
-        price: Price(price.toString()),
-        tasks: tasks.map((orderTask) => orderTask.toDomain()).toImmutableList(),
-        isDone: isDone,
-        isArchived: isArchived,
+        orderDeliveryDate: DateTime.fromMillisecondsSinceEpoch(millisecondsSinceEpochOrderDeliveryDate),
+        orderPrice: Price(orderPrice.toString()),
+        orderState: OrderState.fromName(orderStateName),
       );
 
   const OrderDto._();
@@ -55,5 +51,7 @@ abstract class OrderDto implements _$OrderDto {
   factory OrderDto.fromJson(Map<String, dynamic> json) => _$OrderDtoFromJson(json);
 
   factory OrderDto.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> snapshot) =>
-      OrderDto.fromJson(snapshot.data()!).copyWith(id: snapshot.id);
+      OrderDto.fromJson(snapshot.data() ?? {}).copyWith(
+        orderId: snapshot.id,
+      );
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'progress_indicator.dart';
+
 class ProgressOverlay extends StatelessWidget {
   final Widget child;
   final bool inProgress;
@@ -10,24 +12,23 @@ class ProgressOverlay extends StatelessWidget {
     return Stack(
       children: [
         child,
-        if (inProgress)
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: Theme.of(context).primaryColor.withOpacity(.07),
-            child: const Center(
-              child: Card(
-                elevation: 8.0,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: SizedBox.square(
-                    dimension: 64.0,
-                    child: CircularProgressIndicator(),
+        AnimatedSwitcher(
+          duration: const Duration(milliseconds: 250),
+          child: !inProgress
+              ? const SizedBox()
+              : Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  color: Theme.of(context).primaryColor.withOpacity(.07),
+                  child: const Center(
+                    child: FractionallySizedBox(
+                      widthFactor: .2,
+                      heightFactor: .2,
+                      child: RiveProgressIndicator(),
+                    ),
                   ),
                 ),
-              ),
-            ),
-          )
+        ),
       ],
     );
   }

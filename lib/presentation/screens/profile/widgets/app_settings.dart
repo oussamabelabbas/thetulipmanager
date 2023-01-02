@@ -1,10 +1,8 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../../application/theme/theme_bloc/theme_bloc.dart';
 import '../../../common/routes/app_router.gr.dart';
-import '../../../common/theme/theme.dart';
 
 class AppSettings extends StatelessWidget {
   const AppSettings({super.key});
@@ -25,44 +23,31 @@ class AppSettings extends StatelessWidget {
           leading: const Center(widthFactor: 1, child: Icon(Icons.color_lens_rounded)),
           title: const Text('Theme'),
           subtitle: const Text('Select the colors you want'),
-          children: [
-            BlocBuilder<ThemeBloc, ThemeState>(
-              builder: (context, state) {
-                return SizedBox(
-                  height: 64.0,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                    itemCount: TheTulipThemes.themes.length,
-                    separatorBuilder: (_, __) => const SizedBox(width: 12.0),
-                    itemBuilder: (_, index) => Container(
-                      height: 64.0,
-                      width: 64.0,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: state.theme == TheTulipThemes.themes[index]
-                            ? Border.all(color: TheTulipThemes.themes[index].primaryColor)
-                            : null,
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          stops: const [.5, .5],
-                          colors: [
-                            TheTulipThemes.themes[index].colorScheme.primary,
-                            TheTulipThemes.themes[index].scaffoldBackgroundColor,
-                          ],
-                        ),
-                      ),
-                      child: InkWell(
-                        onTap: () =>
-                            context.read<ThemeBloc>().add(ThemeChanged(newTheme: TheTulipThemes.themes[index])),
-                      ),
+          children: AdaptiveThemeMode.values
+              .map(
+                (mode) => ListTile(
+                  selected: mode == AdaptiveTheme.of(context).mode,
+                  onTap: () => AdaptiveTheme.of(context).setThemeMode(mode),
+                  title: Text(mode.modeName),
+                  trailing: Checkbox(
+                    value: mode == AdaptiveTheme.of(context).mode,
+                    onChanged: (_) => AdaptiveTheme.of(context).setThemeMode(mode),
+                  ),
+                  leading: Align(
+                    alignment: Alignment.center,
+                    heightFactor: 1,
+                    widthFactor: 3,
+                    child: Icon(
+                      mode.isSystem
+                          ? Icons.android_rounded
+                          : mode.isLight
+                              ? Icons.light_mode_rounded
+                              : Icons.dark_mode_rounded,
                     ),
                   ),
-                );
-              },
-            )
-          ],
+                ),
+              )
+              .toList(),
         ),
         ListTile(
           onTap: () => context.router.push(const NotificationsSettingsRoute()),

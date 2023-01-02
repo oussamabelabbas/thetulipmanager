@@ -17,11 +17,14 @@ class AboutScreen extends StatelessWidget {
         child: Column(
           children: [
             AspectRatio(
-              aspectRatio: 16 / 9,
+              aspectRatio: 1,
               child: Center(
-                child: Image.asset(
-                  'assets/icons/icon_white.png',
-                  color: Theme.of(context).colorScheme.primary,
+                child: FractionallySizedBox(
+                  heightFactor: .75,
+                  widthFactor: .75,
+                  child: Image.asset(
+                    'assets/logos/circle_logo.png',
+                  ),
                 ),
               ),
             ),

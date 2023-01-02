@@ -1,8 +1,7 @@
-import 'package:firebase_app_check/firebase_app_check.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'firebase_options.dart';
 import 'injectable.dart';
@@ -14,10 +13,9 @@ void main() async {
 
   // Initializing Firebase App
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await FirebaseAppCheck.instance.activate();
+  // await FirebaseAppCheck.instance.activate();
 
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-  int themeIndex = prefs.getInt('themeIndex') ?? 0;
+  final AdaptiveThemeMode savedThemeMode = await AdaptiveTheme.getThemeMode() ?? AdaptiveThemeMode.system;
 
-  runApp(TheTulipManager(themeIndex));
+  runApp(TheTulipManager(savedThemeMode));
 }

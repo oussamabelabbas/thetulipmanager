@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TheTulipThemes {
   TheTulipThemes._();
 
   static ThemeData pinkLight = ThemeData.from(
     useMaterial3: true,
+    textTheme: GoogleFonts.montserratTextTheme(ThemeData.light().textTheme),
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.pink,
       brightness: Brightness.light,
+      seedColor: Colors.pink,
+      error: Colors.red.shade900,
+      onError: Colors.red.shade50,
     ),
   );
   static ThemeData pinkDark = ThemeData.from(
     useMaterial3: true,
+    textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.pink,
       brightness: Brightness.dark,
+      seedColor: Colors.pink,
+      error: Colors.red.shade900,
+      onError: Colors.red.shade50,
     ),
   );
 

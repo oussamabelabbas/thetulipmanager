@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'order_task.dart';
 
@@ -17,8 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$OrderTask {
   UniqueId get taskId => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  bool get isDone => throw _privateConstructorUsedError;
+  Product get product => throw _privateConstructorUsedError;
+  String get taskDescription => throw _privateConstructorUsedError;
+  bool get isTaskDone => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OrderTaskCopyWith<OrderTask> get copyWith =>
@@ -30,7 +31,13 @@ abstract class $OrderTaskCopyWith<$Res> {
   factory $OrderTaskCopyWith(OrderTask value, $Res Function(OrderTask) then) =
       _$OrderTaskCopyWithImpl<$Res, OrderTask>;
   @useResult
-  $Res call({UniqueId taskId, String description, bool isDone});
+  $Res call(
+      {UniqueId taskId,
+      Product product,
+      String taskDescription,
+      bool isTaskDone});
+
+  $ProductCopyWith<$Res> get product;
 }
 
 /// @nodoc
@@ -47,23 +54,36 @@ class _$OrderTaskCopyWithImpl<$Res, $Val extends OrderTask>
   @override
   $Res call({
     Object? taskId = null,
-    Object? description = null,
-    Object? isDone = null,
+    Object? product = null,
+    Object? taskDescription = null,
+    Object? isTaskDone = null,
   }) {
     return _then(_value.copyWith(
       taskId: null == taskId
           ? _value.taskId
           : taskId // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      product: null == product
+          ? _value.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as Product,
+      taskDescription: null == taskDescription
+          ? _value.taskDescription
+          : taskDescription // ignore: cast_nullable_to_non_nullable
               as String,
-      isDone: null == isDone
-          ? _value.isDone
-          : isDone // ignore: cast_nullable_to_non_nullable
+      isTaskDone: null == isTaskDone
+          ? _value.isTaskDone
+          : isTaskDone // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ProductCopyWith<$Res> get product {
+    return $ProductCopyWith<$Res>(_value.product, (value) {
+      return _then(_value.copyWith(product: value) as $Val);
+    });
   }
 }
 
@@ -74,7 +94,14 @@ abstract class _$$_OrderTaskCopyWith<$Res> implements $OrderTaskCopyWith<$Res> {
       __$$_OrderTaskCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({UniqueId taskId, String description, bool isDone});
+  $Res call(
+      {UniqueId taskId,
+      Product product,
+      String taskDescription,
+      bool isTaskDone});
+
+  @override
+  $ProductCopyWith<$Res> get product;
 }
 
 /// @nodoc
@@ -89,21 +116,26 @@ class __$$_OrderTaskCopyWithImpl<$Res>
   @override
   $Res call({
     Object? taskId = null,
-    Object? description = null,
-    Object? isDone = null,
+    Object? product = null,
+    Object? taskDescription = null,
+    Object? isTaskDone = null,
   }) {
     return _then(_$_OrderTask(
       taskId: null == taskId
           ? _value.taskId
           : taskId // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      product: null == product
+          ? _value.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as Product,
+      taskDescription: null == taskDescription
+          ? _value.taskDescription
+          : taskDescription // ignore: cast_nullable_to_non_nullable
               as String,
-      isDone: null == isDone
-          ? _value.isDone
-          : isDone // ignore: cast_nullable_to_non_nullable
+      isTaskDone: null == isTaskDone
+          ? _value.isTaskDone
+          : isTaskDone // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -113,18 +145,23 @@ class __$$_OrderTaskCopyWithImpl<$Res>
 
 class _$_OrderTask implements _OrderTask {
   const _$_OrderTask(
-      {required this.taskId, required this.description, required this.isDone});
+      {required this.taskId,
+      required this.product,
+      required this.taskDescription,
+      required this.isTaskDone});
 
   @override
   final UniqueId taskId;
   @override
-  final String description;
+  final Product product;
   @override
-  final bool isDone;
+  final String taskDescription;
+  @override
+  final bool isTaskDone;
 
   @override
   String toString() {
-    return 'OrderTask(taskId: $taskId, description: $description, isDone: $isDone)';
+    return 'OrderTask(taskId: $taskId, product: $product, taskDescription: $taskDescription, isTaskDone: $isTaskDone)';
   }
 
   @override
@@ -133,13 +170,16 @@ class _$_OrderTask implements _OrderTask {
         (other.runtimeType == runtimeType &&
             other is _$_OrderTask &&
             (identical(other.taskId, taskId) || other.taskId == taskId) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.isDone, isDone) || other.isDone == isDone));
+            (identical(other.product, product) || other.product == product) &&
+            (identical(other.taskDescription, taskDescription) ||
+                other.taskDescription == taskDescription) &&
+            (identical(other.isTaskDone, isTaskDone) ||
+                other.isTaskDone == isTaskDone));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, taskId, description, isDone);
+  int get hashCode =>
+      Object.hash(runtimeType, taskId, product, taskDescription, isTaskDone);
 
   @JsonKey(ignore: true)
   @override
@@ -151,15 +191,18 @@ class _$_OrderTask implements _OrderTask {
 abstract class _OrderTask implements OrderTask {
   const factory _OrderTask(
       {required final UniqueId taskId,
-      required final String description,
-      required final bool isDone}) = _$_OrderTask;
+      required final Product product,
+      required final String taskDescription,
+      required final bool isTaskDone}) = _$_OrderTask;
 
   @override
   UniqueId get taskId;
   @override
-  String get description;
+  Product get product;
   @override
-  bool get isDone;
+  String get taskDescription;
+  @override
+  bool get isTaskDone;
   @override
   @JsonKey(ignore: true)
   _$$_OrderTaskCopyWith<_$_OrderTask> get copyWith =>

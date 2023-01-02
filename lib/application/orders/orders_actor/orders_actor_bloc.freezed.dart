@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'orders_actor_bloc.dart';
 
@@ -19,24 +19,23 @@ mixin _$OrdersActorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Order order, OrderTask task) toggleTaskState,
-    required TResult Function(UniqueId orderId) toggleOrderDone,
-    required TResult Function(UniqueId orderId) toggleOrderArchived,
+    required TResult Function(UniqueId orderId, OrderState orderState)
+        toggleOrderState,
     required TResult Function(UniqueId orderId) deleteOrder,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Order order, OrderTask task)? toggleTaskState,
-    TResult? Function(UniqueId orderId)? toggleOrderDone,
-    TResult? Function(UniqueId orderId)? toggleOrderArchived,
+    TResult? Function(UniqueId orderId, OrderState orderState)?
+        toggleOrderState,
     TResult? Function(UniqueId orderId)? deleteOrder,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Order order, OrderTask task)? toggleTaskState,
-    TResult Function(UniqueId orderId)? toggleOrderDone,
-    TResult Function(UniqueId orderId)? toggleOrderArchived,
+    TResult Function(UniqueId orderId, OrderState orderState)? toggleOrderState,
     TResult Function(UniqueId orderId)? deleteOrder,
     required TResult orElse(),
   }) =>
@@ -44,24 +43,21 @@ mixin _$OrdersActorEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ToggleTaskState value) toggleTaskState,
-    required TResult Function(ToggleOrderDone value) toggleOrderDone,
-    required TResult Function(ToggleOrderArchived value) toggleOrderArchived,
+    required TResult Function(ToggleOrderState value) toggleOrderState,
     required TResult Function(DeleteOrder value) deleteOrder,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ToggleTaskState value)? toggleTaskState,
-    TResult? Function(ToggleOrderDone value)? toggleOrderDone,
-    TResult? Function(ToggleOrderArchived value)? toggleOrderArchived,
+    TResult? Function(ToggleOrderState value)? toggleOrderState,
     TResult? Function(DeleteOrder value)? deleteOrder,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ToggleTaskState value)? toggleTaskState,
-    TResult Function(ToggleOrderDone value)? toggleOrderDone,
-    TResult Function(ToggleOrderArchived value)? toggleOrderArchived,
+    TResult Function(ToggleOrderState value)? toggleOrderState,
     TResult Function(DeleteOrder value)? deleteOrder,
     required TResult orElse(),
   }) =>
@@ -178,8 +174,8 @@ class _$ToggleTaskState implements ToggleTaskState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Order order, OrderTask task) toggleTaskState,
-    required TResult Function(UniqueId orderId) toggleOrderDone,
-    required TResult Function(UniqueId orderId) toggleOrderArchived,
+    required TResult Function(UniqueId orderId, OrderState orderState)
+        toggleOrderState,
     required TResult Function(UniqueId orderId) deleteOrder,
   }) {
     return toggleTaskState(order, task);
@@ -189,8 +185,8 @@ class _$ToggleTaskState implements ToggleTaskState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Order order, OrderTask task)? toggleTaskState,
-    TResult? Function(UniqueId orderId)? toggleOrderDone,
-    TResult? Function(UniqueId orderId)? toggleOrderArchived,
+    TResult? Function(UniqueId orderId, OrderState orderState)?
+        toggleOrderState,
     TResult? Function(UniqueId orderId)? deleteOrder,
   }) {
     return toggleTaskState?.call(order, task);
@@ -200,8 +196,7 @@ class _$ToggleTaskState implements ToggleTaskState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Order order, OrderTask task)? toggleTaskState,
-    TResult Function(UniqueId orderId)? toggleOrderDone,
-    TResult Function(UniqueId orderId)? toggleOrderArchived,
+    TResult Function(UniqueId orderId, OrderState orderState)? toggleOrderState,
     TResult Function(UniqueId orderId)? deleteOrder,
     required TResult orElse(),
   }) {
@@ -215,8 +210,7 @@ class _$ToggleTaskState implements ToggleTaskState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ToggleTaskState value) toggleTaskState,
-    required TResult Function(ToggleOrderDone value) toggleOrderDone,
-    required TResult Function(ToggleOrderArchived value) toggleOrderArchived,
+    required TResult Function(ToggleOrderState value) toggleOrderState,
     required TResult Function(DeleteOrder value) deleteOrder,
   }) {
     return toggleTaskState(this);
@@ -226,8 +220,7 @@ class _$ToggleTaskState implements ToggleTaskState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ToggleTaskState value)? toggleTaskState,
-    TResult? Function(ToggleOrderDone value)? toggleOrderDone,
-    TResult? Function(ToggleOrderArchived value)? toggleOrderArchived,
+    TResult? Function(ToggleOrderState value)? toggleOrderState,
     TResult? Function(DeleteOrder value)? deleteOrder,
   }) {
     return toggleTaskState?.call(this);
@@ -237,8 +230,7 @@ class _$ToggleTaskState implements ToggleTaskState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ToggleTaskState value)? toggleTaskState,
-    TResult Function(ToggleOrderDone value)? toggleOrderDone,
-    TResult Function(ToggleOrderArchived value)? toggleOrderArchived,
+    TResult Function(ToggleOrderState value)? toggleOrderState,
     TResult Function(DeleteOrder value)? deleteOrder,
     required TResult orElse(),
   }) {
@@ -262,99 +254,107 @@ abstract class ToggleTaskState implements OrdersActorEvent {
 }
 
 /// @nodoc
-abstract class _$$ToggleOrderDoneCopyWith<$Res> {
-  factory _$$ToggleOrderDoneCopyWith(
-          _$ToggleOrderDone value, $Res Function(_$ToggleOrderDone) then) =
-      __$$ToggleOrderDoneCopyWithImpl<$Res>;
+abstract class _$$ToggleOrderStateCopyWith<$Res> {
+  factory _$$ToggleOrderStateCopyWith(
+          _$ToggleOrderState value, $Res Function(_$ToggleOrderState) then) =
+      __$$ToggleOrderStateCopyWithImpl<$Res>;
   @useResult
-  $Res call({UniqueId orderId});
+  $Res call({UniqueId orderId, OrderState orderState});
 }
 
 /// @nodoc
-class __$$ToggleOrderDoneCopyWithImpl<$Res>
-    extends _$OrdersActorEventCopyWithImpl<$Res, _$ToggleOrderDone>
-    implements _$$ToggleOrderDoneCopyWith<$Res> {
-  __$$ToggleOrderDoneCopyWithImpl(
-      _$ToggleOrderDone _value, $Res Function(_$ToggleOrderDone) _then)
+class __$$ToggleOrderStateCopyWithImpl<$Res>
+    extends _$OrdersActorEventCopyWithImpl<$Res, _$ToggleOrderState>
+    implements _$$ToggleOrderStateCopyWith<$Res> {
+  __$$ToggleOrderStateCopyWithImpl(
+      _$ToggleOrderState _value, $Res Function(_$ToggleOrderState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? orderId = null,
+    Object? orderState = null,
   }) {
-    return _then(_$ToggleOrderDone(
+    return _then(_$ToggleOrderState(
       orderId: null == orderId
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as UniqueId,
+      orderState: null == orderState
+          ? _value.orderState
+          : orderState // ignore: cast_nullable_to_non_nullable
+              as OrderState,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ToggleOrderDone implements ToggleOrderDone {
-  const _$ToggleOrderDone({required this.orderId});
+class _$ToggleOrderState implements ToggleOrderState {
+  const _$ToggleOrderState({required this.orderId, required this.orderState});
 
   @override
   final UniqueId orderId;
+  @override
+  final OrderState orderState;
 
   @override
   String toString() {
-    return 'OrdersActorEvent.toggleOrderDone(orderId: $orderId)';
+    return 'OrdersActorEvent.toggleOrderState(orderId: $orderId, orderState: $orderState)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ToggleOrderDone &&
-            (identical(other.orderId, orderId) || other.orderId == orderId));
+            other is _$ToggleOrderState &&
+            (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.orderState, orderState) ||
+                other.orderState == orderState));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, orderId);
+  int get hashCode => Object.hash(runtimeType, orderId, orderState);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ToggleOrderDoneCopyWith<_$ToggleOrderDone> get copyWith =>
-      __$$ToggleOrderDoneCopyWithImpl<_$ToggleOrderDone>(this, _$identity);
+  _$$ToggleOrderStateCopyWith<_$ToggleOrderState> get copyWith =>
+      __$$ToggleOrderStateCopyWithImpl<_$ToggleOrderState>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Order order, OrderTask task) toggleTaskState,
-    required TResult Function(UniqueId orderId) toggleOrderDone,
-    required TResult Function(UniqueId orderId) toggleOrderArchived,
+    required TResult Function(UniqueId orderId, OrderState orderState)
+        toggleOrderState,
     required TResult Function(UniqueId orderId) deleteOrder,
   }) {
-    return toggleOrderDone(orderId);
+    return toggleOrderState(orderId, orderState);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Order order, OrderTask task)? toggleTaskState,
-    TResult? Function(UniqueId orderId)? toggleOrderDone,
-    TResult? Function(UniqueId orderId)? toggleOrderArchived,
+    TResult? Function(UniqueId orderId, OrderState orderState)?
+        toggleOrderState,
     TResult? Function(UniqueId orderId)? deleteOrder,
   }) {
-    return toggleOrderDone?.call(orderId);
+    return toggleOrderState?.call(orderId, orderState);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Order order, OrderTask task)? toggleTaskState,
-    TResult Function(UniqueId orderId)? toggleOrderDone,
-    TResult Function(UniqueId orderId)? toggleOrderArchived,
+    TResult Function(UniqueId orderId, OrderState orderState)? toggleOrderState,
     TResult Function(UniqueId orderId)? deleteOrder,
     required TResult orElse(),
   }) {
-    if (toggleOrderDone != null) {
-      return toggleOrderDone(orderId);
+    if (toggleOrderState != null) {
+      return toggleOrderState(orderId, orderState);
     }
     return orElse();
   }
@@ -363,194 +363,46 @@ class _$ToggleOrderDone implements ToggleOrderDone {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ToggleTaskState value) toggleTaskState,
-    required TResult Function(ToggleOrderDone value) toggleOrderDone,
-    required TResult Function(ToggleOrderArchived value) toggleOrderArchived,
+    required TResult Function(ToggleOrderState value) toggleOrderState,
     required TResult Function(DeleteOrder value) deleteOrder,
   }) {
-    return toggleOrderDone(this);
+    return toggleOrderState(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ToggleTaskState value)? toggleTaskState,
-    TResult? Function(ToggleOrderDone value)? toggleOrderDone,
-    TResult? Function(ToggleOrderArchived value)? toggleOrderArchived,
+    TResult? Function(ToggleOrderState value)? toggleOrderState,
     TResult? Function(DeleteOrder value)? deleteOrder,
   }) {
-    return toggleOrderDone?.call(this);
+    return toggleOrderState?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ToggleTaskState value)? toggleTaskState,
-    TResult Function(ToggleOrderDone value)? toggleOrderDone,
-    TResult Function(ToggleOrderArchived value)? toggleOrderArchived,
+    TResult Function(ToggleOrderState value)? toggleOrderState,
     TResult Function(DeleteOrder value)? deleteOrder,
     required TResult orElse(),
   }) {
-    if (toggleOrderDone != null) {
-      return toggleOrderDone(this);
+    if (toggleOrderState != null) {
+      return toggleOrderState(this);
     }
     return orElse();
   }
 }
 
-abstract class ToggleOrderDone implements OrdersActorEvent {
-  const factory ToggleOrderDone({required final UniqueId orderId}) =
-      _$ToggleOrderDone;
+abstract class ToggleOrderState implements OrdersActorEvent {
+  const factory ToggleOrderState(
+      {required final UniqueId orderId,
+      required final OrderState orderState}) = _$ToggleOrderState;
 
   UniqueId get orderId;
+  OrderState get orderState;
   @JsonKey(ignore: true)
-  _$$ToggleOrderDoneCopyWith<_$ToggleOrderDone> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ToggleOrderArchivedCopyWith<$Res> {
-  factory _$$ToggleOrderArchivedCopyWith(_$ToggleOrderArchived value,
-          $Res Function(_$ToggleOrderArchived) then) =
-      __$$ToggleOrderArchivedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({UniqueId orderId});
-}
-
-/// @nodoc
-class __$$ToggleOrderArchivedCopyWithImpl<$Res>
-    extends _$OrdersActorEventCopyWithImpl<$Res, _$ToggleOrderArchived>
-    implements _$$ToggleOrderArchivedCopyWith<$Res> {
-  __$$ToggleOrderArchivedCopyWithImpl(
-      _$ToggleOrderArchived _value, $Res Function(_$ToggleOrderArchived) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? orderId = null,
-  }) {
-    return _then(_$ToggleOrderArchived(
-      orderId: null == orderId
-          ? _value.orderId
-          : orderId // ignore: cast_nullable_to_non_nullable
-              as UniqueId,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ToggleOrderArchived implements ToggleOrderArchived {
-  const _$ToggleOrderArchived({required this.orderId});
-
-  @override
-  final UniqueId orderId;
-
-  @override
-  String toString() {
-    return 'OrdersActorEvent.toggleOrderArchived(orderId: $orderId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ToggleOrderArchived &&
-            (identical(other.orderId, orderId) || other.orderId == orderId));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, orderId);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ToggleOrderArchivedCopyWith<_$ToggleOrderArchived> get copyWith =>
-      __$$ToggleOrderArchivedCopyWithImpl<_$ToggleOrderArchived>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Order order, OrderTask task) toggleTaskState,
-    required TResult Function(UniqueId orderId) toggleOrderDone,
-    required TResult Function(UniqueId orderId) toggleOrderArchived,
-    required TResult Function(UniqueId orderId) deleteOrder,
-  }) {
-    return toggleOrderArchived(orderId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Order order, OrderTask task)? toggleTaskState,
-    TResult? Function(UniqueId orderId)? toggleOrderDone,
-    TResult? Function(UniqueId orderId)? toggleOrderArchived,
-    TResult? Function(UniqueId orderId)? deleteOrder,
-  }) {
-    return toggleOrderArchived?.call(orderId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Order order, OrderTask task)? toggleTaskState,
-    TResult Function(UniqueId orderId)? toggleOrderDone,
-    TResult Function(UniqueId orderId)? toggleOrderArchived,
-    TResult Function(UniqueId orderId)? deleteOrder,
-    required TResult orElse(),
-  }) {
-    if (toggleOrderArchived != null) {
-      return toggleOrderArchived(orderId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ToggleTaskState value) toggleTaskState,
-    required TResult Function(ToggleOrderDone value) toggleOrderDone,
-    required TResult Function(ToggleOrderArchived value) toggleOrderArchived,
-    required TResult Function(DeleteOrder value) deleteOrder,
-  }) {
-    return toggleOrderArchived(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ToggleTaskState value)? toggleTaskState,
-    TResult? Function(ToggleOrderDone value)? toggleOrderDone,
-    TResult? Function(ToggleOrderArchived value)? toggleOrderArchived,
-    TResult? Function(DeleteOrder value)? deleteOrder,
-  }) {
-    return toggleOrderArchived?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ToggleTaskState value)? toggleTaskState,
-    TResult Function(ToggleOrderDone value)? toggleOrderDone,
-    TResult Function(ToggleOrderArchived value)? toggleOrderArchived,
-    TResult Function(DeleteOrder value)? deleteOrder,
-    required TResult orElse(),
-  }) {
-    if (toggleOrderArchived != null) {
-      return toggleOrderArchived(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ToggleOrderArchived implements OrdersActorEvent {
-  const factory ToggleOrderArchived({required final UniqueId orderId}) =
-      _$ToggleOrderArchived;
-
-  UniqueId get orderId;
-  @JsonKey(ignore: true)
-  _$$ToggleOrderArchivedCopyWith<_$ToggleOrderArchived> get copyWith =>
+  _$$ToggleOrderStateCopyWith<_$ToggleOrderState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -619,8 +471,8 @@ class _$DeleteOrder implements DeleteOrder {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Order order, OrderTask task) toggleTaskState,
-    required TResult Function(UniqueId orderId) toggleOrderDone,
-    required TResult Function(UniqueId orderId) toggleOrderArchived,
+    required TResult Function(UniqueId orderId, OrderState orderState)
+        toggleOrderState,
     required TResult Function(UniqueId orderId) deleteOrder,
   }) {
     return deleteOrder(orderId);
@@ -630,8 +482,8 @@ class _$DeleteOrder implements DeleteOrder {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Order order, OrderTask task)? toggleTaskState,
-    TResult? Function(UniqueId orderId)? toggleOrderDone,
-    TResult? Function(UniqueId orderId)? toggleOrderArchived,
+    TResult? Function(UniqueId orderId, OrderState orderState)?
+        toggleOrderState,
     TResult? Function(UniqueId orderId)? deleteOrder,
   }) {
     return deleteOrder?.call(orderId);
@@ -641,8 +493,7 @@ class _$DeleteOrder implements DeleteOrder {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Order order, OrderTask task)? toggleTaskState,
-    TResult Function(UniqueId orderId)? toggleOrderDone,
-    TResult Function(UniqueId orderId)? toggleOrderArchived,
+    TResult Function(UniqueId orderId, OrderState orderState)? toggleOrderState,
     TResult Function(UniqueId orderId)? deleteOrder,
     required TResult orElse(),
   }) {
@@ -656,8 +507,7 @@ class _$DeleteOrder implements DeleteOrder {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ToggleTaskState value) toggleTaskState,
-    required TResult Function(ToggleOrderDone value) toggleOrderDone,
-    required TResult Function(ToggleOrderArchived value) toggleOrderArchived,
+    required TResult Function(ToggleOrderState value) toggleOrderState,
     required TResult Function(DeleteOrder value) deleteOrder,
   }) {
     return deleteOrder(this);
@@ -667,8 +517,7 @@ class _$DeleteOrder implements DeleteOrder {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ToggleTaskState value)? toggleTaskState,
-    TResult? Function(ToggleOrderDone value)? toggleOrderDone,
-    TResult? Function(ToggleOrderArchived value)? toggleOrderArchived,
+    TResult? Function(ToggleOrderState value)? toggleOrderState,
     TResult? Function(DeleteOrder value)? deleteOrder,
   }) {
     return deleteOrder?.call(this);
@@ -678,8 +527,7 @@ class _$DeleteOrder implements DeleteOrder {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ToggleTaskState value)? toggleTaskState,
-    TResult Function(ToggleOrderDone value)? toggleOrderDone,
-    TResult Function(ToggleOrderArchived value)? toggleOrderArchived,
+    TResult Function(ToggleOrderState value)? toggleOrderState,
     TResult Function(DeleteOrder value)? deleteOrder,
     required TResult orElse(),
   }) {

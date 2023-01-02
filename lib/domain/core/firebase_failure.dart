@@ -8,6 +8,7 @@ class FirebaseFailure with _$FirebaseFailure {
     required String message,
   }) = _FirebaseFailure;
 
-  factory FirebaseFailure.firebaseException({required String text}) => FirebaseFailure(message: text);
+  factory FirebaseFailure.tooManyClients() =>
+      const FirebaseFailure(message: 'Found multiple clients with a single phone number');
   factory FirebaseFailure.serverError() => const FirebaseFailure(message: 'Server Error');
 }

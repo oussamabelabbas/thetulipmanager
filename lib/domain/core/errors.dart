@@ -2,6 +2,8 @@ import 'value_failure.dart';
 
 class UserAlreadyExistsError extends Error {}
 
+class ClientAlreadyExistsError extends Error {}
+
 class NotAuthenticatedError extends Error {}
 
 class FatalError extends Error {}

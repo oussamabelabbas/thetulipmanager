@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'order_dto.dart';
 
@@ -21,17 +21,16 @@ OrderDto _$OrderDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$OrderDto {
   @JsonKey(ignore: true)
-  String? get id => throw _privateConstructorUsedError;
-  String get orderTitle => throw _privateConstructorUsedError;
+  String? get orderId => throw _privateConstructorUsedError;
+  String get clientId => throw _privateConstructorUsedError;
   ClientDto get client => throw _privateConstructorUsedError;
-  String get orderDescription => throw _privateConstructorUsedError;
-  int get millisecondsSinceEpochOrderDate => throw _privateConstructorUsedError;
-  int get millisecondsSinceEpochDeliveryDate =>
-      throw _privateConstructorUsedError;
-  double get price => throw _privateConstructorUsedError;
   List<OrderTaskDto> get tasks => throw _privateConstructorUsedError;
-  bool get isDone => throw _privateConstructorUsedError;
-  bool get isArchived => throw _privateConstructorUsedError;
+  int get millisecondsSinceEpochOrderDate => throw _privateConstructorUsedError;
+  int get millisecondsSinceEpochOrderDeliveryDate =>
+      throw _privateConstructorUsedError;
+  double get orderPrice => throw _privateConstructorUsedError;
+  String get orderStateName => throw _privateConstructorUsedError;
+  bool? get isError => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,16 +44,15 @@ abstract class $OrderDtoCopyWith<$Res> {
       _$OrderDtoCopyWithImpl<$Res, OrderDto>;
   @useResult
   $Res call(
-      {@JsonKey(ignore: true) String? id,
-      String orderTitle,
+      {@JsonKey(ignore: true) String? orderId,
+      String clientId,
       ClientDto client,
-      String orderDescription,
-      int millisecondsSinceEpochOrderDate,
-      int millisecondsSinceEpochDeliveryDate,
-      double price,
       List<OrderTaskDto> tasks,
-      bool isDone,
-      bool isArchived});
+      int millisecondsSinceEpochOrderDate,
+      int millisecondsSinceEpochOrderDeliveryDate,
+      double orderPrice,
+      String orderStateName,
+      bool? isError});
 
   $ClientDtoCopyWith<$Res> get client;
 }
@@ -72,59 +70,54 @@ class _$OrderDtoCopyWithImpl<$Res, $Val extends OrderDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? orderTitle = null,
+    Object? orderId = freezed,
+    Object? clientId = null,
     Object? client = null,
-    Object? orderDescription = null,
-    Object? millisecondsSinceEpochOrderDate = null,
-    Object? millisecondsSinceEpochDeliveryDate = null,
-    Object? price = null,
     Object? tasks = null,
-    Object? isDone = null,
-    Object? isArchived = null,
+    Object? millisecondsSinceEpochOrderDate = null,
+    Object? millisecondsSinceEpochOrderDeliveryDate = null,
+    Object? orderPrice = null,
+    Object? orderStateName = null,
+    Object? isError = freezed,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      orderId: freezed == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
               as String?,
-      orderTitle: null == orderTitle
-          ? _value.orderTitle
-          : orderTitle // ignore: cast_nullable_to_non_nullable
+      clientId: null == clientId
+          ? _value.clientId
+          : clientId // ignore: cast_nullable_to_non_nullable
               as String,
       client: null == client
           ? _value.client
           : client // ignore: cast_nullable_to_non_nullable
               as ClientDto,
-      orderDescription: null == orderDescription
-          ? _value.orderDescription
-          : orderDescription // ignore: cast_nullable_to_non_nullable
-              as String,
-      millisecondsSinceEpochOrderDate: null == millisecondsSinceEpochOrderDate
-          ? _value.millisecondsSinceEpochOrderDate
-          : millisecondsSinceEpochOrderDate // ignore: cast_nullable_to_non_nullable
-              as int,
-      millisecondsSinceEpochDeliveryDate: null ==
-              millisecondsSinceEpochDeliveryDate
-          ? _value.millisecondsSinceEpochDeliveryDate
-          : millisecondsSinceEpochDeliveryDate // ignore: cast_nullable_to_non_nullable
-              as int,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
       tasks: null == tasks
           ? _value.tasks
           : tasks // ignore: cast_nullable_to_non_nullable
               as List<OrderTaskDto>,
-      isDone: null == isDone
-          ? _value.isDone
-          : isDone // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isArchived: null == isArchived
-          ? _value.isArchived
-          : isArchived // ignore: cast_nullable_to_non_nullable
-              as bool,
+      millisecondsSinceEpochOrderDate: null == millisecondsSinceEpochOrderDate
+          ? _value.millisecondsSinceEpochOrderDate
+          : millisecondsSinceEpochOrderDate // ignore: cast_nullable_to_non_nullable
+              as int,
+      millisecondsSinceEpochOrderDeliveryDate: null ==
+              millisecondsSinceEpochOrderDeliveryDate
+          ? _value.millisecondsSinceEpochOrderDeliveryDate
+          : millisecondsSinceEpochOrderDeliveryDate // ignore: cast_nullable_to_non_nullable
+              as int,
+      orderPrice: null == orderPrice
+          ? _value.orderPrice
+          : orderPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      orderStateName: null == orderStateName
+          ? _value.orderStateName
+          : orderStateName // ignore: cast_nullable_to_non_nullable
+              as String,
+      isError: freezed == isError
+          ? _value.isError
+          : isError // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 
@@ -145,16 +138,15 @@ abstract class _$$_OrderDtoCopyWith<$Res> implements $OrderDtoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(ignore: true) String? id,
-      String orderTitle,
+      {@JsonKey(ignore: true) String? orderId,
+      String clientId,
       ClientDto client,
-      String orderDescription,
-      int millisecondsSinceEpochOrderDate,
-      int millisecondsSinceEpochDeliveryDate,
-      double price,
       List<OrderTaskDto> tasks,
-      bool isDone,
-      bool isArchived});
+      int millisecondsSinceEpochOrderDate,
+      int millisecondsSinceEpochOrderDeliveryDate,
+      double orderPrice,
+      String orderStateName,
+      bool? isError});
 
   @override
   $ClientDtoCopyWith<$Res> get client;
@@ -171,59 +163,54 @@ class __$$_OrderDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? orderTitle = null,
+    Object? orderId = freezed,
+    Object? clientId = null,
     Object? client = null,
-    Object? orderDescription = null,
-    Object? millisecondsSinceEpochOrderDate = null,
-    Object? millisecondsSinceEpochDeliveryDate = null,
-    Object? price = null,
     Object? tasks = null,
-    Object? isDone = null,
-    Object? isArchived = null,
+    Object? millisecondsSinceEpochOrderDate = null,
+    Object? millisecondsSinceEpochOrderDeliveryDate = null,
+    Object? orderPrice = null,
+    Object? orderStateName = null,
+    Object? isError = freezed,
   }) {
     return _then(_$_OrderDto(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      orderId: freezed == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
               as String?,
-      orderTitle: null == orderTitle
-          ? _value.orderTitle
-          : orderTitle // ignore: cast_nullable_to_non_nullable
+      clientId: null == clientId
+          ? _value.clientId
+          : clientId // ignore: cast_nullable_to_non_nullable
               as String,
       client: null == client
           ? _value.client
           : client // ignore: cast_nullable_to_non_nullable
               as ClientDto,
-      orderDescription: null == orderDescription
-          ? _value.orderDescription
-          : orderDescription // ignore: cast_nullable_to_non_nullable
-              as String,
-      millisecondsSinceEpochOrderDate: null == millisecondsSinceEpochOrderDate
-          ? _value.millisecondsSinceEpochOrderDate
-          : millisecondsSinceEpochOrderDate // ignore: cast_nullable_to_non_nullable
-              as int,
-      millisecondsSinceEpochDeliveryDate: null ==
-              millisecondsSinceEpochDeliveryDate
-          ? _value.millisecondsSinceEpochDeliveryDate
-          : millisecondsSinceEpochDeliveryDate // ignore: cast_nullable_to_non_nullable
-              as int,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
       tasks: null == tasks
           ? _value._tasks
           : tasks // ignore: cast_nullable_to_non_nullable
               as List<OrderTaskDto>,
-      isDone: null == isDone
-          ? _value.isDone
-          : isDone // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isArchived: null == isArchived
-          ? _value.isArchived
-          : isArchived // ignore: cast_nullable_to_non_nullable
-              as bool,
+      millisecondsSinceEpochOrderDate: null == millisecondsSinceEpochOrderDate
+          ? _value.millisecondsSinceEpochOrderDate
+          : millisecondsSinceEpochOrderDate // ignore: cast_nullable_to_non_nullable
+              as int,
+      millisecondsSinceEpochOrderDeliveryDate: null ==
+              millisecondsSinceEpochOrderDeliveryDate
+          ? _value.millisecondsSinceEpochOrderDeliveryDate
+          : millisecondsSinceEpochOrderDeliveryDate // ignore: cast_nullable_to_non_nullable
+              as int,
+      orderPrice: null == orderPrice
+          ? _value.orderPrice
+          : orderPrice // ignore: cast_nullable_to_non_nullable
+              as double,
+      orderStateName: null == orderStateName
+          ? _value.orderStateName
+          : orderStateName // ignore: cast_nullable_to_non_nullable
+              as String,
+      isError: freezed == isError
+          ? _value.isError
+          : isError // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -232,16 +219,15 @@ class __$$_OrderDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_OrderDto extends _OrderDto {
   const _$_OrderDto(
-      {@JsonKey(ignore: true) this.id,
-      required this.orderTitle,
+      {@JsonKey(ignore: true) this.orderId,
+      required this.clientId,
       required this.client,
-      required this.orderDescription,
-      required this.millisecondsSinceEpochOrderDate,
-      required this.millisecondsSinceEpochDeliveryDate,
-      required this.price,
       required final List<OrderTaskDto> tasks,
-      required this.isDone,
-      required this.isArchived})
+      required this.millisecondsSinceEpochOrderDate,
+      required this.millisecondsSinceEpochOrderDeliveryDate,
+      required this.orderPrice,
+      required this.orderStateName,
+      this.isError})
       : _tasks = tasks,
         super._();
 
@@ -250,34 +236,33 @@ class _$_OrderDto extends _OrderDto {
 
   @override
   @JsonKey(ignore: true)
-  final String? id;
+  final String? orderId;
   @override
-  final String orderTitle;
+  final String clientId;
   @override
   final ClientDto client;
-  @override
-  final String orderDescription;
-  @override
-  final int millisecondsSinceEpochOrderDate;
-  @override
-  final int millisecondsSinceEpochDeliveryDate;
-  @override
-  final double price;
   final List<OrderTaskDto> _tasks;
   @override
   List<OrderTaskDto> get tasks {
+    if (_tasks is EqualUnmodifiableListView) return _tasks;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tasks);
   }
 
   @override
-  final bool isDone;
+  final int millisecondsSinceEpochOrderDate;
   @override
-  final bool isArchived;
+  final int millisecondsSinceEpochOrderDeliveryDate;
+  @override
+  final double orderPrice;
+  @override
+  final String orderStateName;
+  @override
+  final bool? isError;
 
   @override
   String toString() {
-    return 'OrderDto(id: $id, orderTitle: $orderTitle, client: $client, orderDescription: $orderDescription, millisecondsSinceEpochOrderDate: $millisecondsSinceEpochOrderDate, millisecondsSinceEpochDeliveryDate: $millisecondsSinceEpochDeliveryDate, price: $price, tasks: $tasks, isDone: $isDone, isArchived: $isArchived)';
+    return 'OrderDto(orderId: $orderId, clientId: $clientId, client: $client, tasks: $tasks, millisecondsSinceEpochOrderDate: $millisecondsSinceEpochOrderDate, millisecondsSinceEpochOrderDeliveryDate: $millisecondsSinceEpochOrderDeliveryDate, orderPrice: $orderPrice, orderStateName: $orderStateName, isError: $isError)';
   }
 
   @override
@@ -285,41 +270,39 @@ class _$_OrderDto extends _OrderDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OrderDto &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.orderTitle, orderTitle) ||
-                other.orderTitle == orderTitle) &&
+            (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.clientId, clientId) ||
+                other.clientId == clientId) &&
             (identical(other.client, client) || other.client == client) &&
-            (identical(other.orderDescription, orderDescription) ||
-                other.orderDescription == orderDescription) &&
+            const DeepCollectionEquality().equals(other._tasks, _tasks) &&
             (identical(other.millisecondsSinceEpochOrderDate,
                     millisecondsSinceEpochOrderDate) ||
                 other.millisecondsSinceEpochOrderDate ==
                     millisecondsSinceEpochOrderDate) &&
-            (identical(other.millisecondsSinceEpochDeliveryDate,
-                    millisecondsSinceEpochDeliveryDate) ||
-                other.millisecondsSinceEpochDeliveryDate ==
-                    millisecondsSinceEpochDeliveryDate) &&
-            (identical(other.price, price) || other.price == price) &&
-            const DeepCollectionEquality().equals(other._tasks, _tasks) &&
-            (identical(other.isDone, isDone) || other.isDone == isDone) &&
-            (identical(other.isArchived, isArchived) ||
-                other.isArchived == isArchived));
+            (identical(other.millisecondsSinceEpochOrderDeliveryDate,
+                    millisecondsSinceEpochOrderDeliveryDate) ||
+                other.millisecondsSinceEpochOrderDeliveryDate ==
+                    millisecondsSinceEpochOrderDeliveryDate) &&
+            (identical(other.orderPrice, orderPrice) ||
+                other.orderPrice == orderPrice) &&
+            (identical(other.orderStateName, orderStateName) ||
+                other.orderStateName == orderStateName) &&
+            (identical(other.isError, isError) || other.isError == isError));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      id,
-      orderTitle,
+      orderId,
+      clientId,
       client,
-      orderDescription,
-      millisecondsSinceEpochOrderDate,
-      millisecondsSinceEpochDeliveryDate,
-      price,
       const DeepCollectionEquality().hash(_tasks),
-      isDone,
-      isArchived);
+      millisecondsSinceEpochOrderDate,
+      millisecondsSinceEpochOrderDeliveryDate,
+      orderPrice,
+      orderStateName,
+      isError);
 
   @JsonKey(ignore: true)
   @override
@@ -337,41 +320,38 @@ class _$_OrderDto extends _OrderDto {
 
 abstract class _OrderDto extends OrderDto {
   const factory _OrderDto(
-      {@JsonKey(ignore: true) final String? id,
-      required final String orderTitle,
+      {@JsonKey(ignore: true) final String? orderId,
+      required final String clientId,
       required final ClientDto client,
-      required final String orderDescription,
-      required final int millisecondsSinceEpochOrderDate,
-      required final int millisecondsSinceEpochDeliveryDate,
-      required final double price,
       required final List<OrderTaskDto> tasks,
-      required final bool isDone,
-      required final bool isArchived}) = _$_OrderDto;
+      required final int millisecondsSinceEpochOrderDate,
+      required final int millisecondsSinceEpochOrderDeliveryDate,
+      required final double orderPrice,
+      required final String orderStateName,
+      final bool? isError}) = _$_OrderDto;
   const _OrderDto._() : super._();
 
   factory _OrderDto.fromJson(Map<String, dynamic> json) = _$_OrderDto.fromJson;
 
   @override
   @JsonKey(ignore: true)
-  String? get id;
+  String? get orderId;
   @override
-  String get orderTitle;
+  String get clientId;
   @override
   ClientDto get client;
   @override
-  String get orderDescription;
+  List<OrderTaskDto> get tasks;
   @override
   int get millisecondsSinceEpochOrderDate;
   @override
-  int get millisecondsSinceEpochDeliveryDate;
+  int get millisecondsSinceEpochOrderDeliveryDate;
   @override
-  double get price;
+  double get orderPrice;
   @override
-  List<OrderTaskDto> get tasks;
+  String get orderStateName;
   @override
-  bool get isDone;
-  @override
-  bool get isArchived;
+  bool? get isError;
   @override
   @JsonKey(ignore: true)
   _$$_OrderDtoCopyWith<_$_OrderDto> get copyWith =>

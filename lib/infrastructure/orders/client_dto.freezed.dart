@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'client_dto.dart';
 
@@ -20,9 +20,12 @@ ClientDto _$ClientDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ClientDto {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get phoneNumber => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  String? get clientId => throw _privateConstructorUsedError;
+  String get clientName => throw _privateConstructorUsedError;
+  String get clientAddress => throw _privateConstructorUsedError;
+  int get clientWilayaCode => throw _privateConstructorUsedError;
+  String get clientPhoneNumber => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +38,12 @@ abstract class $ClientDtoCopyWith<$Res> {
   factory $ClientDtoCopyWith(ClientDto value, $Res Function(ClientDto) then) =
       _$ClientDtoCopyWithImpl<$Res, ClientDto>;
   @useResult
-  $Res call({String id, String name, String phoneNumber});
+  $Res call(
+      {@JsonKey(ignore: true) String? clientId,
+      String clientName,
+      String clientAddress,
+      int clientWilayaCode,
+      String clientPhoneNumber});
 }
 
 /// @nodoc
@@ -51,22 +59,32 @@ class _$ClientDtoCopyWithImpl<$Res, $Val extends ClientDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? phoneNumber = null,
+    Object? clientId = freezed,
+    Object? clientName = null,
+    Object? clientAddress = null,
+    Object? clientWilayaCode = null,
+    Object? clientPhoneNumber = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      clientId: freezed == clientId
+          ? _value.clientId
+          : clientId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientName: null == clientName
+          ? _value.clientName
+          : clientName // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      clientAddress: null == clientAddress
+          ? _value.clientAddress
+          : clientAddress // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
+      clientWilayaCode: null == clientWilayaCode
+          ? _value.clientWilayaCode
+          : clientWilayaCode // ignore: cast_nullable_to_non_nullable
+              as int,
+      clientPhoneNumber: null == clientPhoneNumber
+          ? _value.clientPhoneNumber
+          : clientPhoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -79,7 +97,12 @@ abstract class _$$_ClientDtoCopyWith<$Res> implements $ClientDtoCopyWith<$Res> {
       __$$_ClientDtoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String phoneNumber});
+  $Res call(
+      {@JsonKey(ignore: true) String? clientId,
+      String clientName,
+      String clientAddress,
+      int clientWilayaCode,
+      String clientPhoneNumber});
 }
 
 /// @nodoc
@@ -93,22 +116,32 @@ class __$$_ClientDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? phoneNumber = null,
+    Object? clientId = freezed,
+    Object? clientName = null,
+    Object? clientAddress = null,
+    Object? clientWilayaCode = null,
+    Object? clientPhoneNumber = null,
   }) {
     return _then(_$_ClientDto(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
+      clientId: freezed == clientId
+          ? _value.clientId
+          : clientId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientName: null == clientName
+          ? _value.clientName
+          : clientName // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      clientAddress: null == clientAddress
+          ? _value.clientAddress
+          : clientAddress // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: null == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
+      clientWilayaCode: null == clientWilayaCode
+          ? _value.clientWilayaCode
+          : clientWilayaCode // ignore: cast_nullable_to_non_nullable
+              as int,
+      clientPhoneNumber: null == clientPhoneNumber
+          ? _value.clientPhoneNumber
+          : clientPhoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -118,22 +151,31 @@ class __$$_ClientDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ClientDto extends _ClientDto {
   const _$_ClientDto(
-      {required this.id, required this.name, required this.phoneNumber})
+      {@JsonKey(ignore: true) this.clientId,
+      required this.clientName,
+      required this.clientAddress,
+      required this.clientWilayaCode,
+      required this.clientPhoneNumber})
       : super._();
 
   factory _$_ClientDto.fromJson(Map<String, dynamic> json) =>
       _$$_ClientDtoFromJson(json);
 
   @override
-  final String id;
+  @JsonKey(ignore: true)
+  final String? clientId;
   @override
-  final String name;
+  final String clientName;
   @override
-  final String phoneNumber;
+  final String clientAddress;
+  @override
+  final int clientWilayaCode;
+  @override
+  final String clientPhoneNumber;
 
   @override
   String toString() {
-    return 'ClientDto(id: $id, name: $name, phoneNumber: $phoneNumber)';
+    return 'ClientDto(clientId: $clientId, clientName: $clientName, clientAddress: $clientAddress, clientWilayaCode: $clientWilayaCode, clientPhoneNumber: $clientPhoneNumber)';
   }
 
   @override
@@ -141,15 +183,22 @@ class _$_ClientDto extends _ClientDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ClientDto &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber));
+            (identical(other.clientId, clientId) ||
+                other.clientId == clientId) &&
+            (identical(other.clientName, clientName) ||
+                other.clientName == clientName) &&
+            (identical(other.clientAddress, clientAddress) ||
+                other.clientAddress == clientAddress) &&
+            (identical(other.clientWilayaCode, clientWilayaCode) ||
+                other.clientWilayaCode == clientWilayaCode) &&
+            (identical(other.clientPhoneNumber, clientPhoneNumber) ||
+                other.clientPhoneNumber == clientPhoneNumber));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, phoneNumber);
+  int get hashCode => Object.hash(runtimeType, clientId, clientName,
+      clientAddress, clientWilayaCode, clientPhoneNumber);
 
   @JsonKey(ignore: true)
   @override
@@ -167,20 +216,27 @@ class _$_ClientDto extends _ClientDto {
 
 abstract class _ClientDto extends ClientDto {
   const factory _ClientDto(
-      {required final String id,
-      required final String name,
-      required final String phoneNumber}) = _$_ClientDto;
+      {@JsonKey(ignore: true) final String? clientId,
+      required final String clientName,
+      required final String clientAddress,
+      required final int clientWilayaCode,
+      required final String clientPhoneNumber}) = _$_ClientDto;
   const _ClientDto._() : super._();
 
   factory _ClientDto.fromJson(Map<String, dynamic> json) =
       _$_ClientDto.fromJson;
 
   @override
-  String get id;
+  @JsonKey(ignore: true)
+  String? get clientId;
   @override
-  String get name;
+  String get clientName;
   @override
-  String get phoneNumber;
+  String get clientAddress;
+  @override
+  int get clientWilayaCode;
+  @override
+  String get clientPhoneNumber;
   @override
   @JsonKey(ignore: true)
   _$$_ClientDtoCopyWith<_$_ClientDto> get copyWith =>
